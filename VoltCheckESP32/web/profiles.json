@@ -1,0 +1,12 @@
+{
+  "profiles": [
+    {
+      "id": "ather-rizta-2.9-reference-v1",
+      "manufacturer": "Ather",
+      "model": "Rizta",
+      "battery_variant": "2.9 kWh",
+      "source": "user supplied wroom-v5.ino",
+      "validation": "pending physical validation"
+    }
+  ]
+}
