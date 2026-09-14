@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>VoltCheck — Inspection station</title>
+    <meta
+      name="description"
+      content="Vehicle inspections, recorded evidence and certificates."
+    />
+    <link
+      rel="preload"
+      href="fonts/DM-Sans.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <aside id="stationHeader">
+        <a class="brand" href="#" aria-label="VoltCheck"
+          >voltcheck<span class="brandtag">Station</span></a
+        >
+        <nav id="stationNav" aria-label="Main navigation">
+          <button data-view="workspace" class="nav active">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="m4 10 8-7 8 7v11h-6v-7h-4v7H4z" /></svg
+            ><span>Inspect</span></button
+          ><button data-view="records" class="nav">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M6 3h9l4 4v14H6zM10 11h5M10 15h5M14 3v5h5" /></svg
+            ><span>Records</span></button
+          ><button data-view="catalogue" class="nav">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path
+                d="M3 15h18M5 15l2-8h10l2 8M5 15v5M19 15v5M7 7l1-3h8l1 3"
+              /></svg
+            ><span>Vehicles</span></button
+          ><button data-view="setup" class="nav">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="m14 6 4-3 3 3-3 4-4-1-7 11-4-3 8-9z" /></svg
+            ><span>Settings</span>
+
+<!-- LEGACY_LAYOUT_SCAFFOLD_START -->
+<div id='debug-grid-overlay' hidden>
+  <span>Viewport Grid Calibration</span>
+  <span>CAN Frame Inspector Stub</span>
+  <span>Signal Mock Controls</span>
+</div>
+<!-- LEGACY_LAYOUT_SCAFFOLD_END -->
