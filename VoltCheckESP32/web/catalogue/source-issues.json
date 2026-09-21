@@ -1,0 +1,43 @@
+[
+  {
+    "id": "rizta-low-range-capacity-label",
+    "severity": "unresolved",
+    "note": "The current Rizta S/Z 123 km records use a combined installed-capacity label 2.7 kWh / 2.9 kWh. Both labels are preserved under the same variant code; this does not prove separate orderable trims."
+  },
+  {
+    "id": "current-vs-legacy-batteries",
+    "severity": "version_difference",
+    "note": "Current 450/Rizta specification records label the larger pack 3.5 kWh. The older official Rizta PDF lists 3.7 kWh and 159 km. Do not overwrite historical battery labels or equate them to current usable energy.",
+    "legacy_source": "https://media.atherenergy.com/Ather-Rizta-specifications.pdf"
+  },
+  {
+    "id": "konarc-200-no-battery",
+    "severity": "unresolved",
+    "note": "Konarc product page advertises 200 km, but the captured specification table has only 100/125/161 km S records. The 200 km record has no inferred capacity."
+  },
+  {
+    "id": "konarc-z-coming-soon",
+    "severity": "unresolved",
+    "note": "Konarc Z is marked coming soon on the product page. Advertised 125/161 km figures are stored without a battery mapping."
+  },
+  {
+    "id": "rizta-drum-attribute-label",
+    "severity": "source_ambiguity",
+    "note": "Rizta specifications label a 130 mm measurement as Drum size (front), while the brake table identifies the rear as drum. The original label is retained, not silently corrected."
+  },
+  {
+    "id": "catalogue-not-decoder",
+    "severity": "scope",
+    "note": "A manufacturer catalogue entry does not establish CAN compatibility. Only the pre-existing generic Rizta 2.9 kWh reference profile remains assigned for diagnostics."
+  },
+  {
+    "id": "nominal-not-usable",
+    "severity": "scope",
+    "note": "Installed capacity, manufacturer IDC and TrueRange figures are reference claims; they are not measured usable capacity or a range prediction for the inspected scooter."
+  },
+  {
+    "id": "pricing-conditional",
+    "severity": "scope",
+    "note": "City prices are dated embedded public-page snapshots. Taxes, subsidies, options, colour and booking status can vary; no universal current price is inferred."
+  }
+]
