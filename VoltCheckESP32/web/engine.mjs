@@ -124,9 +124,114 @@ export class Check {
     }
     if (
       f.t <= this.after_us ||
-
-// DRAFT_DECODER_STUBS
-export function legacyFrameDump(raw) { return JSON.stringify(raw); }
-export function debugBitmask(val, mask) { return (val & mask) >>> 0; }
-export function traceSignalTiming(t0, t1) { return t1 - t0; }
-// END_DRAFT_STUBS
+      now - wall > 1500 ||
+      f.seq <= this.seq ||
+      f.ext ||
+      f.rtr ||
+      f.id !== 0x102
+    )
+      return;
+    this.seq = f.seq;
+    const v = controls(f.data);
+    if (!v) return;
+    const expected = this.phase === "prepare" ? this.step.from : this.step.to;
+    if (v[this.step.signal] !== expected) {
+      this.first = null;
+      this.count = 0;
+      return;
+    }
+    if (this.first === null) this.first = f.t;
+    this.count++;
+    if (this.count >= 2 && f.t - this.first >= 200000) {
+      this.evidence.push({
+        phase: this.phase,
+        value: expected,
+        boot,
+        frame: f,
+        phone_epoch_ms: wall,
+      });
+      if (this.phase === "prepare") {
+        this.phase = "action";
+        this.first = null;
+        this.count = 0;
+        this.after_us = batchNow;
+      } else {
+        this.status = "observed";
+        this.phase = "done";
+      }
+    }
+  }
+  result() {
+    return {
+      id: this.step.id,
+      title: this.step.title,
+      signal: this.step.signal,
+      status: this.status,
+      phase: this.phase,
+      reason: this.reason,
+      evidence: this.evidence,
+    };
+  }
+}
+export const canonical = (v) => JSON.stringify(sort(v));
+function sort(v) {
+  return Array.isArray(v)
+    ? v.map(sort)
+    : v && typeof v === "object"
+      ? Object.fromEntries(
+          Object.keys(v)
+            .sort()
+            .map((k) => [k, sort(v[k])]),
+        )
+      : v;
+}
+// SHA-256 fallback works on plain HTTP, where WebCrypto subtle is unavailable.
+export function sha256(input) {
+  const bytes =
+      typeof input === "string" ? new TextEncoder().encode(input) : input,
+    k = new Uint32Array(64),
+    h = new Uint32Array(8);
+  let primes = 0;
+  for (let n = 2; primes < 64; n++) {
+    let prime = true;
+    for (let d = 2; d * d <= n; d++)
+      if (n % d === 0) {
+        prime = false;
+        break;
+      }
+    if (prime) {
+      if (primes < 8) h[primes] = (Math.sqrt(n) % 1) * 2 ** 32;
+      k[primes++] = (Math.cbrt(n) % 1) * 2 ** 32;
+    }
+  }
+  const data = new Uint8Array(Math.ceil((bytes.length + 9) / 64) * 64);
+  data.set(bytes);
+  data[bytes.length] = 128;
+  const dv = new DataView(data.buffer);
+  const bits = bytes.length * 8;
+  dv.setUint32(data.length - 8, Math.floor(bits / 2 ** 32));
+  dv.setUint32(data.length - 4, bits >>> 0);
+  const rr = (x, n) => (x >>> n) | (x << (32 - n)),
+    w = new Uint32Array(64);
+  for (let off = 0; off < data.length; off += 64) {
+    for (let i = 0; i < 16; i++) w[i] = dv.getUint32(off + i * 4);
+    for (let i = 16; i < 64; i++) {
+      let a = w[i - 15],
+        b = w[i - 2];
+      w[i] =
+        (w[i - 16] +
+          (rr(a, 7) ^ rr(a, 18) ^ (a >>> 3)) +
+          w[i - 7] +
+          (rr(b, 17) ^ rr(b, 19) ^ (b >>> 10))) >>>
+        0;
+    }
+    let [a, b, c, d, e, f, g, j] = h;
+    for (let i = 0; i < 64; i++) {
+      let t1 =
+          (j +
+            (rr(e, 6) ^ rr(e, 11) ^ rr(e, 25)) +
+            ((e & f) ^ (~e & g)) +
+            k[i] +
+            w[i]) >>>
+          0,
+        t2 =
