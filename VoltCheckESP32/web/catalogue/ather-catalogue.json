@@ -1,0 +1,4381 @@
+{
+  "schema": "ather-public-catalogue-v1",
+  "manufacturer": "Ather",
+  "snapshot_date": "2026-11-06",
+  "collected_at_utc": "2026-11-06T16:09:14.594975+00:00",
+  "primary_source": "https://www.atherenergy.com/electric-scooter-all-models",
+  "model_families": [
+    "Konarc",
+    "Rizta",
+    "450"
+  ],
+  "models": [
+    {
+      "name": "Rizta S",
+      "family": "rizta",
+      "variant_ids": [
+        "ather-srizs1lrin",
+        "ather-srizs135in"
+      ],
+      "colours": [
+        {
+          "name": "Terracotta Red - Super Matte",
+          "finish": "Super Matte",
+          "identifier": "Terracotta Red MT",
+          "swatch_css": [
+            "linear-gradient(135deg, #822A21 0%, #822A21 50%, #822A21 50%, #822A21 100%)"
+          ],
+          "premium": true,
+          "published_colour_surcharge_inr": 2000,
+          "source_url": "https://www.atherenergy.com/rizta"
+        },
+        {
+          "name": "Deccan Grey - Mono",
+          "finish": "Mono",
+          "identifier": "Deccan-Grey MT",
+          "swatch_css": [
+            "linear-gradient(135deg, #7B7B7F 0%, #7B7B7F 50%, #7B7B7F 50%, #7B7B7F 100%)"
+          ],
+          "premium": false,
+          "published_colour_surcharge_inr": null,
+          "source_url": "https://www.atherenergy.com/rizta"
+        },
+        {
+          "name": "Siachen White - Mono",
+          "finish": "Mono",
+          "identifier": "Siachen-White",
+          "swatch_css": [
+            "linear-gradient(135deg, #fbfbf8 0%, #fbfbf8 50%, #fbfbf8 50%, #fbfbf8 100%)"
+          ],
+          "premium": false,
+          "published_colour_surcharge_inr": null,
+          "source_url": "https://www.atherenergy.com/rizta"
+        },
+        {
+          "name": "Pangong Blue - Super Matte",
+          "finish": "Super Matte",
+          "identifier": "Pangong-Blue MT",
+          "swatch_css": [
+            "linear-gradient(135deg, #343F61 0%, #343F61 50%, #343F61 50%, #343F61 100%)"
+          ],
+          "premium": true,
+          "published_colour_surcharge_inr": 2000,
+          "source_url": "https://www.atherenergy.com/rizta"
+        }
+      ],
+      "specification_colour_count": 4
+    },
+    {
+      "name": "Rizta Z",
+      "family": "rizta",
+      "variant_ids": [
+        "ather-srizz1lrin",
+        "ather-srizz135in"
+      ],
+      "colours": [
+        {
+          "name": "Terracotta Red - Super Matte",
+          "finish": "Super Matte",
+          "identifier": "Terracotta Red MT",
+          "swatch_css": [
+            "linear-gradient(135deg, #822A21 0%, #822A21 50%, #822A21 50%, #822A21 100%)"
+          ],
+          "premium": true,
+          "published_colour_surcharge_inr": 2000,
+          "source_url": "https://www.atherenergy.com/rizta"
+        },
+        {
+          "name": "Deccan Grey - Mono",
+          "finish": "Mono",
+          "identifier": "Deccan-Grey MT",
+          "swatch_css": [
+            "linear-gradient(135deg, #7B7B7F 0%, #7B7B7F 50%, #7B7B7F 50%, #7B7B7F 100%)"
+          ],
+          "premium": false,
+          "published_colour_surcharge_inr": null,
+          "source_url": "https://www.atherenergy.com/rizta"
+        },
+        {
+          "name": "Siachen White - Mono",
+          "finish": "Mono",
+          "identifier": "Siachen-White",
+          "swatch_css": [
+            "linear-gradient(135deg, #fbfbf8 0%, #fbfbf8 50%, #fbfbf8 50%, #fbfbf8 100%)"
+          ],
+          "premium": false,
+          "published_colour_surcharge_inr": null,
+          "source_url": "https://www.atherenergy.com/rizta"
+        },
+        {
+          "name": "Pangong Blue - Super Matte",
+          "finish": "Super Matte",
+          "identifier": "Pangong-Blue MT",
+          "swatch_css": [
+            "linear-gradient(135deg, #343F61 0%, #343F61 50%, #343F61 50%, #343F61 100%)"
+          ],
+          "premium": true,
+          "published_colour_surcharge_inr": 2000,
+          "source_url": "https://www.atherenergy.com/rizta"
+        },
+        {
+          "name": "Terracotta Red - Duo",
+          "finish": "Duo",
+          "identifier": "Terracotta Red DT",
+          "swatch_css": [
+            "#822A21",
+            "#E9E9EA"
+          ],
+          "premium": true,
+          "published_colour_surcharge_inr": 1000,
+          "source_url": "https://www.atherenergy.com/rizta"
+        },
+        {
+          "name": "Deccan Grey - Duo",
+          "finish": "Duo",
+          "identifier": "Deccan-Grey DT",
+          "swatch_css": [
+            "#7B7B7F",
+            "#E9E9EA"
+          ],
+          "premium": true,
+          "published_colour_surcharge_inr": 1000,
+          "source_url": "https://www.atherenergy.com/rizta"
+        },
+        {
+          "name": "Alphonso Yellow - Duo",
+          "finish": "Duo",
+          "identifier": "Alphonso-Yellow",
+          "swatch_css": [
+            "#E7CA75",
+            "#E9E9EA"
+          ],
+          "premium": true,
+          "published_colour_surcharge_inr": 1000,
+          "source_url": "https://www.atherenergy.com/rizta"
+        },
+        {
+          "name": "Cardamom Green - Duo",
+          "finish": "Duo",
+          "identifier": "Cardamom-Green",
+          "swatch_css": [
+            "#A7B9A8",
+            "#E9E9EA"
+          ],
+          "premium": true,
+          "published_colour_surcharge_inr": 1000,
+          "source_url": "https://www.atherenergy.com/rizta"
+        },
+        {
+          "name": "Pangong Blue - Duo",
+          "finish": "Duo",
+          "identifier": "Pangong-Blue DT",
+          "swatch_css": [
+            "#343F61",
+            "#E9E9EA"
+          ],
+          "premium": true,
+          "published_colour_surcharge_inr": 1000,
+          "source_url": "https://www.atherenergy.com/rizta"
+        }
+      ],
+      "specification_colour_count": 9
+    },
+    {
+      "name": "450S",
+      "family": "450",
+      "variant_ids": [
+        "ather-s450s5lrin",
+        "ather-s450s535in"
+      ],
+      "colours": [
+        {
+          "name": "Cosmic Black",
+          "finish": null,
+          "identifier": "Cosmic-Black",
+          "swatch_css": [
+            "linear-gradient(135deg, #000000 0%, #000000 50%, #000000 50%, #000000 100%)"
+          ],
+          "premium": false,
+          "published_colour_surcharge_inr": null,
+          "source_url": "https://www.atherenergy.com/450"
+        },
+        {
+          "name": "Hyper Sand",
+          "finish": null,
+          "identifier": "Hyper-Sand",
+          "swatch_css": [
+            "linear-gradient(135deg, #D9C0A9 0%, #D9C0A9 50%, #D9C0A9 50%, #D9C0A9 100%)"
+          ],
+          "premium": false,
+          "published_colour_surcharge_inr": 1000,
+          "source_url": "https://www.atherenergy.com/450"
+        },
+        {
+          "name": "Stealth Blue",
+          "finish": null,
+          "identifier": "Stealth-Blue",
+          "swatch_css": [
+            "linear-gradient(135deg, #343F61 0%, #343F61 50%, #343F61 50%, #343F61 100%)"
+          ],
+          "premium": false,
+          "published_colour_surcharge_inr": 1000,
+          "source_url": "https://www.atherenergy.com/450"
+        },
+        {
+          "name": "True Red",
+          "finish": null,
+          "identifier": "True-Red",
+          "swatch_css": [
+            "linear-gradient(135deg, #CA2C2C 0%, #CA2C2C 50%, #CA2C2C 50%, #CA2C2C 100%)"
+          ],
+          "premium": false,
+          "published_colour_surcharge_inr": null,
+          "source_url": "https://www.atherenergy.com/450"
+        },
+        {
+          "name": "Still White",
+          "finish": null,
+          "identifier": "White",
+          "swatch_css": [
+            "linear-gradient(135deg, #F3F3F3 0%, #F3F3F3 50%, #F3F3F3 50%, #F3F3F3 100%)"
+          ],
+          "premium": false,
+          "published_colour_surcharge_inr": null,
+          "source_url": "https://www.atherenergy.com/450"
+        }
+      ],
+      "specification_colour_count": 5
+    },
+    {
+      "name": "450X",
+      "family": "450",
+      "variant_ids": [
+        "ather-s450x535in",
+        "ather-s450x5lrin"
+      ],
+      "colours": [
+        {
+          "name": "Hyper Sand",
+          "finish": null,
+          "identifier": "Hyper-Sand",
+          "swatch_css": [
+            "linear-gradient(135deg, #D9C0A9 0%, #D9C0A9 50%, #D9C0A9 50%, #D9C0A9 100%)"
+          ],
+          "premium": false,
+          "published_colour_surcharge_inr": 1000,
+          "source_url": "https://www.atherenergy.com/450"
+        },
+        {
+          "name": "Stealth Blue",
+          "finish": null,
+          "identifier": "Stealth-Blue",
+          "swatch_css": [
+            "linear-gradient(135deg, #343F61 0%, #343F61 50%, #343F61 50%, #343F61 100%)"
+          ],
+          "premium": false,
+          "published_colour_surcharge_inr": 1000,
+          "source_url": "https://www.atherenergy.com/450"
+        },
+        {
+          "name": "True Red",
+          "finish": null,
+          "identifier": "True-Red",
+          "swatch_css": [
+            "linear-gradient(135deg, #CA2C2C 0%, #CA2C2C 50%, #CA2C2C 50%, #CA2C2C 100%)"
+          ],
+          "premium": false,
+          "published_colour_surcharge_inr": null,
+          "source_url": "https://www.atherenergy.com/450"
+        },
+        {
+          "name": "Cosmic Black",
+          "finish": null,
+          "identifier": "Cosmic-Black",
+          "swatch_css": [
+            "linear-gradient(135deg, #000000 0%, #000000 50%, #000000 50%, #000000 100%)"
+          ],
+          "premium": false,
+          "published_colour_surcharge_inr": null,
+          "source_url": "https://www.atherenergy.com/450"
+        },
+        {
+          "name": "Space Grey",
+          "finish": null,
+          "identifier": "Space Grey",
+          "swatch_css": [
+            "linear-gradient(135deg, #6B6B6B 0%, #6B6B6B 50%, #6B6B6B 50%, #6B6B6B 100%)"
+          ],
+          "premium": false,
+          "published_colour_surcharge_inr": 1000,
+          "source_url": "https://www.atherenergy.com/450"
+        },
+        {
+          "name": "Still White",
+          "finish": null,
+          "identifier": "White",
+          "swatch_css": [
+            "linear-gradient(135deg, #F3F3F3 0%, #F3F3F3 50%, #F3F3F3 50%, #F3F3F3 100%)"
+          ],
+          "premium": false,
+          "published_colour_surcharge_inr": 1000,
+          "source_url": "https://www.atherenergy.com/450"
+        },
+        {
+          "name": "Lunar Grey",
+          "finish": null,
+          "identifier": "Lunar-Grey",
+          "swatch_css": [
+            "linear-gradient(135deg, #C7C7C7 0%, #C7C7C7 50%, #C7C7C7 50%, #C7C7C7 100%)"
+          ],
+          "premium": false,
+          "published_colour_surcharge_inr": 1000,
+          "source_url": "https://www.atherenergy.com/450"
+        }
+      ],
+      "specification_colour_count": 7
+    },
+    {
+      "name": "450 Apex",
+      "family": "450",
+      "variant_ids": [
+        "ather-s450a235in"
+      ],
+      "colours": [],
+      "specification_colour_count": 1,
+      "colour_metadata_note": "Colour count is published; a per-variant colour-name mapping was not captured. Unpaired gallery colours, if any, are stored separately."
+    },
+    {
+      "name": "Konarc S",
+      "family": "konarc",
+      "variant_ids": [
+        "ather-sel1s121in",
+        "ather-sel1s1r2in",
+        "ather-sel1s1r3in",
+        "ather-konarc-s-announced-200"
+      ],
+      "colours": [],
+      "gallery_colour_names_unpaired": [
+        "Celestial Gold",
+        "Lumen Copper",
+        "Quartz White",
+        "Majestic Grey"
+      ],
+      "specification_colour_count": 2,
+      "colour_metadata_note": "Colour count is published; a per-variant colour-name mapping was not captured. Unpaired gallery colours, if any, are stored separately."
+    },
+    {
+      "name": "Konarc Z",
+      "family": "konarc",
+      "variant_ids": [
+        "ather-konarc-z-announced-125",
+        "ather-konarc-z-announced-161"
+      ],
+      "colours": []
+    }
+  ],
+  "variants": [
+    {
+      "id": "ather-srizs1lrin",
+      "manufacturer": "Ather",
+      "family": "rizta",
+      "model": "Rizta S",
+      "variant_code": "SRIZS1LRIN",
+      "source_variant_name": "Specifications - Rizta S (SRIZS1LRIN)",
+      "source_id": "rizta-specifications",
+      "source_url": "https://www.atherenergy.com/rizta/specifications",
+      "snapshot_date": "2026-11-06",
+      "publisher_updated_at": "2026-10-26T16:51:12.808Z",
+      "availability_status": "listed_in_specifications",
+      "battery_capacity_label": "2.7 kWh / 2.9 kWh",
+      "battery_capacity_options_kwh": [
+        2.7,
+        2.9
+      ],
+      "battery_capacity_mapping_note": "Multiple capacities are presented under one manufacturer variant code; no separate physical configuration is inferred.",
+      "idc_range_km": 123.0,
+      "true_range_km": 100.0,
+      "true_range_basis": "manufacturer SmartEco claim, not this vehicle measurement",
+      "top_speed_kmh": 80.0,
+      "peak_power_kw": 4.3,
+      "peak_torque_nm": 22.0,
+      "acceleration_0_40_s": 4.7,
+      "usable_energy_kwh": null,
+      "measured_range_km": null,
+      "diagnostic_support": "not_assigned",
+      "specifications": [
+        {
+          "order": 1,
+          "category": "Key Features",
+          "label": "Available Colours",
+          "value": "4"
+        },
+        {
+          "order": 2,
+          "category": "Key Features",
+          "label": "Bootspace",
+          "value": "34 L"
+        },
+        {
+          "order": 3,
+          "category": "Key Features",
+          "label": "IDC Range",
+          "value": "123 km"
+        },
+        {
+          "order": 4,
+          "category": "Battery",
+          "label": "Battery Casing",
+          "value": "Aluminium casing"
+        },
+        {
+          "order": 5,
+          "category": "Battery",
+          "label": "Installed capacity",
+          "value": "2.7 kWh / 2.9 kWh"
+        },
+        {
+          "order": 6,
+          "category": "Dashboard",
+          "label": "Water & dust resistance",
+          "value": "IP65"
+        },
+        {
+          "order": 7,
+          "category": "Charging",
+          "label": "0-100% (Home Charging)",
+          "value": "7 hr 25 min"
+        },
+        {
+          "order": 8,
+          "category": "Charging",
+          "label": "0-80% (Home Charging)",
+          "value": "6 hr"
+        },
+        {
+          "order": 9,
+          "category": "Charging",
+          "label": "Ather Grid access",
+          "value": "Yes"
+        },
+        {
+          "order": 10,
+          "category": "Charging",
+          "label": "Ather Grid™ charging speed",
+          "value": "Up to 15 km in 10 min"
+        },
+        {
+          "order": 11,
+          "category": "Charging",
+          "label": "On-board Charger (Default)",
+          "value": null
+        },
+        {
+          "order": 12,
+          "category": "Charging",
+          "label": "Home Charger",
+          "value": "450W"
+        },
+        {
+          "order": 13,
+          "category": "Charging",
+          "label": "Combined Charger (450 W Additional Capacity)",
+          "value": null
+        },
+        {
+          "order": 14,
+          "category": "Charging",
+          "label": "Combined Charger's Home Charging (0-80%)",
+          "value": null
+        },
+        {
+          "order": 15,
+          "category": "Performance",
+          "label": "Acceleration (0-40 km/h)",
+          "value": "4.7 s"
+        },
+        {
+          "order": 16,
+          "category": "Performance",
+          "label": "Coasting Regen",
+          "value": "Yes"
+        },
+        {
+          "order": 17,
+          "category": "Performance",
+          "label": "Gradeability",
+          "value": "15 degree"
+        },
+        {
+          "order": 18,
+          "category": "Performance",
+          "label": "Ingress protection (motor)",
+          "value": "IP67"
+        },
+        {
+          "order": 19,
+          "category": "Performance",
+          "label": "Max torque",
+          "value": "22 Nm"
+        },
+        {
+          "order": 20,
+          "category": "Performance",
+          "label": "Motor Type",
+          "value": "PMSM"
+        },
+        {
+          "order": 21,
+          "category": "Performance",
+          "label": "Peak Power",
+          "value": "4.3 kW"
+        },
+        {
+          "order": 22,
+          "category": "Performance",
+          "label": "Top speed",
+          "value": "80 km/h"
+        },
+        {
+          "order": 23,
+          "category": "Performance",
+          "label": "TrueRange™",
+          "value": "100 km"
+        },
+        {
+          "order": 24,
+          "category": "Warranty",
+          "label": "Charger Warranty",
+          "value": "3 years"
+        },
+        {
+          "order": 25,
+          "category": "Warranty",
+          "label": "Extended Battery Warranty (Add-on)",
+          "value": "Up to 10 years/100 000 km"
+        },
+        {
+          "order": 26,
+          "category": "Warranty",
+          "label": "Free Upgrade with AtherStack™ Pro",
+          "value": "5 years/60 000 km"
+        },
+        {
+          "order": 27,
+          "category": "Warranty",
+          "label": "Standard Battery Warranty",
+          "value": "3 years/30 000 km"
+        },
+        {
+          "order": 28,
+          "category": "Warranty",
+          "label": "Standard Vehicle Warranty",
+          "value": "3 years/30 000 km whichever is earlier"
+        },
+        {
+          "order": 29,
+          "category": "Build",
+          "label": "LongTravel Suspension",
+          "value": null
+        },
+        {
+          "order": 30,
+          "category": "Build",
+          "label": "Metal Body",
+          "value": null
+        },
+        {
+          "order": 31,
+          "category": "Build",
+          "label": "Silent Gear Drive",
+          "value": null
+        },
+        {
+          "order": 32,
+          "category": "Build",
+          "label": "Suspension (front)",
+          "value": "Telescopic"
+        },
+        {
+          "order": 33,
+          "category": "Build",
+          "label": "Suspension (rear)",
+          "value": "Monoshock"
+        },
+        {
+          "order": 34,
+          "category": "Build",
+          "label": "Transmission Ratio",
+          "value": "7.8:1"
+        },
+        {
+          "order": 35,
+          "category": "Build",
+          "label": "Transmission Type",
+          "value": "Belt drive"
+        },
+        {
+          "order": 36,
+          "category": "Build",
+          "label": "Tyre size (front)",
+          "value": "90/90-12 tubeless tyres"
+        },
+        {
+          "order": 37,
+          "category": "Build",
+          "label": "Tyre size (rear)",
+          "value": "100/80-12 tubeless tyres"
+        },
+        {
+          "order": 38,
+          "category": "Build",
+          "label": "Wheel size (front)",
+          "value": "12 inches"
+        },
+        {
+          "order": 39,
+          "category": "Build",
+          "label": "Wheel size (rear)",
+          "value": "12 inches"
+        },
+        {
+          "order": 40,
+          "category": "Build",
+          "label": "Wheel type",
+          "value": "Alloy rim"
+        },
+        {
+          "order": 41,
+          "category": "Brakes",
+          "label": "Brake type (front)",
+          "value": "Disc"
+        },
+        {
+          "order": 42,
+          "category": "Brakes",
+          "label": "Brake type (rear)",
+          "value": "Drum with CBS"
+        },
+        {
+          "order": 43,
+          "category": "Brakes",
+          "label": "Braking system",
+          "value": "Combined braking system & regenerative braking"
+        },
+        {
+          "order": 44,
+          "category": "Brakes",
+          "label": "Disc size (front)",
+          "value": "200 mm"
+        },
+        {
+          "order": 45,
+          "category": "Brakes",
+          "label": "Disc size (rear)",
+          "value": null
+        },
+        {
+          "order": 46,
+          "category": "Brakes",
+          "label": "Drum size (front)",
+          "value": "130 mm"
+        },
+        {
+          "order": 47,
+          "category": "Brakes",
+          "label": "Drum size (rear)",
+          "value": null
+        },
+        {
+          "order": 48,
+          "category": "Dimensions",
+          "label": "Ground clearance",
+          "value": "15 cm"
+        },
+        {
+          "order": 49,
+          "category": "Dimensions",
+          "label": "Kerb weight",
+          "value": "125 kg"
+        },
+        {
+          "order": 50,
+          "category": "Dimensions",
+          "label": "Seat Height",
+          "value": "78 cm"
+        },
+        {
+          "order": 51,
+          "category": "Dimensions",
+          "label": "Wheelbase",
+          "value": "128.5 cm"
+        },
+        {
+          "order": 52,
+          "category": "Dashboard",
+          "label": "Operating system",
+          "value": "Real Time Operating System (RTOS)"
+        },
+        {
+          "order": 53,
+          "category": "Dashboard",
+          "label": "Processor",
+          "value": "Cortex Series"
+        },
+        {
+          "order": 54,
+          "category": "Dashboard",
+          "label": "RAM",
+          "value": "1 GB"
+        },
+        {
+          "order": 55,
+          "category": "Dashboard",
+          "label": "Dashboard type",
+          "value": "DeepView™ Display"
+        },
+        {
+          "order": 56,
+          "category": "Dashboard",
+          "label": "Dashboard screen size",
+          "value": "17.7 cm (7\")"
+        },
+        {
+          "order": 57,
+          "category": "Dashboard",
+          "label": "Storage",
+          "value": "8 GB"
+        },
+        {
+          "order": 58,
+          "category": "Dashboard",
+          "label": "Water & dust resistance",
+          "value": "IP65"
+        },
+        {
+          "order": 59,
+          "category": "Ather Connect™",
+          "label": "Call decline with text",
+          "value": "No"
+        },
+        {
+          "order": 60,
+          "category": "Ather Connect™",
+          "label": "Crash Alert",
+          "value": "No"
+        },
+        {
+          "order": 61,
+          "category": "Ather Connect™",
+          "label": "Cricket Scores on Dash",
+          "value": "No"
+        },
+        {
+          "order": 62,
+          "category": "Ather Connect™",
+          "label": "Document Storage",
+          "value": "No"
+        },
+        {
+          "order": 63,
+          "category": "Ather Connect™",
+          "label": "Find my scooter",
+          "value": "Yes"
+        },
+        {
+          "order": 64,
+          "category": "Ather Connect™",
+          "label": "Inter-city Trip Planner™",
+          "value": "No"
+        },
+        {
+          "order": 65,
+          "category": "Ather Connect™",
+          "label": "Live location Sharing",
+          "value": "No"
+        },
+        {
+          "order": 66,
+          "category": "Ather Connect™",
+          "label": "LockSafe™",
+          "value": "No"
+        },
+        {
+          "order": 67,
+          "category": "Ather Connect™",
+          "label": "Multi-language dashboard",
+          "value": "No"
+        },
+        {
+          "order": 68,
+          "category": "Ather Connect™",
+          "label": "Navigation",
+          "value": "No"
+        },
+        {
+          "order": 69,
+          "category": "Ather Connect™",
+          "label": "OTA Updates",
+          "value": "Yes"
+        },
+        {
+          "order": 70,
+          "category": "Ather Connect™",
+          "label": "ParkSafe™",
+          "value": "Yes"
+        },
+        {
+          "order": 71,
+          "category": "Ather Connect™",
+          "label": "Ping my scooter",
+          "value": "No"
+        },
+        {
+          "order": 72,
+          "category": "Ather Connect™",
+          "label": "Pothole+ Alerts",
+          "value": "No"
+        },
+        {
+          "order": 73,
+          "category": "Ather Connect™",
+          "label": "Push Navigation",
+          "value": "No"
+        },
+        {
+          "order": 74,
+          "category": "Ather Connect™",
+          "label": "Remote Charging Status",
+          "value": "No"
+        },
+        {
+          "order": 75,
+          "category": "Ather Connect™",
+          "label": "Remote Control",
+          "value": "No"
+        },
+        {
+          "order": 76,
+          "category": "Ather Connect™",
+          "label": "Ride Stories",
+          "value": "Yes"
+        },
+        {
+          "order": 77,
+          "category": "Ather Connect™",
+          "label": "Savings Tracker",
+          "value": "Yes"
+        },
+        {
+          "order": 78,
+          "category": "Ather Connect™",
+          "label": "Theft & Tow Notifications",
+          "value": "Yes"
+        },
+        {
+          "order": 79,
+          "category": "Ather Connect™",
+          "label": "Voice on Ather",
+          "value": "No"
+        },
+        {
+          "order": 80,
+          "category": "Ather Connect™",
+          "label": "WhatsApp preview on dashboard",
+          "value": "No"
+        },
+        {
+          "order": 81,
+          "category": "RideAssist™",
+          "label": "AirWalk™️",
+          "value": null
+        },
+        {
+          "order": 82,
+          "category": "RideAssist™",
+          "label": "Auto Indicator cut-off",
+          "value": "Yes"
+        },
+        {
+          "order": 83,
+          "category": "RideAssist™",
+          "label": "AutoHold™",
+          "value": "Yes"
+        },
+        {
+          "order": 84,
+          "category": "RideAssist™",
+          "label": "Call & Music Alerts",
+          "value": null
+        },
+        {
+          "order": 85,
+          "category": "RideAssist™",
+          "label": "Call & Music Controls",
+          "value": "Yes"
+        },
+        {
+          "order": 86,
+          "category": "RideAssist™",
+          "label": "Dashboard auto brightness",
+          "value": "No"
+        },
+        {
+          "order": 87,
+          "category": "RideAssist™",
+          "label": "Emergency Stop Signal (ESS)",
+          "value": "Yes"
+        },
+        {
+          "order": 88,
+          "category": "RideAssist™",
+          "label": "Guide-me-home lights",
+          "value": "Yes"
+        },
+        {
+          "order": 89,
+          "category": "RideAssist™",
+          "label": "Interactive UI",
+          "value": "No"
+        },
+        {
+          "order": 90,
+          "category": "RideAssist™",
+          "label": "Magic Twist",
+          "value": "No"
+        },
+        {
+          "order": 91,
+          "category": "RideAssist™",
+          "label": "Multi-Mode Traction Control",
+          "value": null
+        },
+        {
+          "order": 92,
+          "category": "RideAssist™",
+          "label": "Optimised Charging",
+          "value": "No"
+        },
+        {
+          "order": 93,
+          "category": "RideAssist™",
+          "label": "Reverse Park Assist",
+          "value": null
+        },
+        {
+          "order": 94,
+          "category": "Key Features",
+          "label": "Riding modes",
+          "value": "Zip™ | Eco | SmartEco™"
+        },
+        {
+          "order": 95,
+          "category": "RideAssist™",
+          "label": "SkidControl™",
+          "value": "No"
+        },
+        {
+          "order": 96,
+          "category": "RideAssist™",
+          "label": "TrueRange™ Display",
+          "value": "Yes"
+        },
+        {
+          "order": 97,
+          "category": "RideAssist™",
+          "label": "Vehicle FallSafe™",
+          "value": "Yes"
+        },
+        {
+          "order": 98,
+          "category": "RideAssist™",
+          "label": "Infinite Cruise",
+          "value": null
+        },
+        {
+          "order": 99,
+          "category": "Peripherals & convenience",
+          "label": "Headlights",
+          "value": "LED"
+        },
+        {
+          "order": 100,
+          "category": "Peripherals & convenience",
+          "label": "Indicators",
+          "value": "LED"
+        },
+        {
+          "order": 101,
+          "category": "Peripherals & convenience",
+          "label": "Mobile Holder",
+          "value": null
+        },
+        {
+          "order": 102,
+          "category": "Peripherals & convenience",
+          "label": "USB Charger (Front)",
+          "value": null
+        },
+        {
+          "order": 103,
+          "category": "Peripherals & convenience",
+          "label": "Pillion Backrest",
+          "value": "Yes"
+        },
+        {
+          "order": 104,
+          "category": "Peripherals & convenience",
+          "label": "Pillion grab handle",
+          "value": "Yes"
+        },
+        {
+          "order": 105,
+          "category": "Peripherals & convenience",
+          "label": "Side stand motor cutoff",
+          "value": "Yes"
+        },
+        {
+          "order": 106,
+          "category": "Peripherals & convenience",
+          "label": "Silent Gear Drive (Closed Gearbox)",
+          "value": null
+        },
+        {
+          "order": 107,
+          "category": "Peripherals & convenience",
+          "label": "Tail lights",
+          "value": "LED"
+        },
+        {
+          "order": 108,
+          "category": "Peripherals & convenience",
+          "label": "Vehicle Key",
+          "value": "Mechanical"
+        }
+      ],
+      "model_year": null
+    },
+    {
+      "id": "ather-srizs135in",
+      "manufacturer": "Ather",
+      "family": "rizta",
+      "model": "Rizta S",
+      "variant_code": "SRIZS135IN",
+      "source_variant_name": "Specifications - Rizta S (SRIZS135IN)",
+      "source_id": "rizta-specifications",
+      "source_url": "https://www.atherenergy.com/rizta/specifications",
+      "snapshot_date": "2026-11-06",
+      "publisher_updated_at": "2026-10-26T16:51:12.808Z",
+      "availability_status": "listed_in_specifications",
+      "battery_capacity_label": "3.5 kWh",
+      "battery_capacity_options_kwh": [
+        3.5
+      ],
+      "battery_capacity_mapping_note": null,
+      "idc_range_km": 161.0,
+      "true_range_km": 125.0,
+      "true_range_basis": "manufacturer SmartEco claim, not this vehicle measurement",
+      "top_speed_kmh": 80.0,
+      "peak_power_kw": 4.3,
+      "peak_torque_nm": 22.0,
+      "acceleration_0_40_s": 4.7,
+      "usable_energy_kwh": null,
+      "measured_range_km": null,
+      "diagnostic_support": "not_assigned",
+      "specifications": [
+        {
+          "order": 1,
+          "category": "Key Features",
+          "label": "Available Colours",
+          "value": "4"
+        },
+        {
+          "order": 2,
+          "category": "Key Features",
+          "label": "Bootspace",
+          "value": "34 L"
+        },
+        {
+          "order": 3,
+          "category": "Key Features",
+          "label": "IDC Range",
+          "value": "161 km"
+        },
+        {
+          "order": 4,
+          "category": "Battery",
+          "label": "Battery Casing",
+          "value": "Aluminium casing"
+        },
+        {
+          "order": 5,
+          "category": "Battery",
+          "label": "Installed capacity",
+          "value": "3.5 kWh"
+        },
+        {
+          "order": 6,
+          "category": "Dashboard",
+          "label": "Water & dust resistance",
+          "value": "IP65"
+        },
+        {
+          "order": 7,
+          "category": "Charging",
+          "label": "0-100% (Home Charging)",
+          "value": "4 hr 30 min"
+        },
+        {
+          "order": 8,
+          "category": "Charging",
+          "label": "0-80% (Home Charging)",
+          "value": "3 hr 25 min"
+        },
+        {
+          "order": 9,
+          "category": "Charging",
+          "label": "Ather Grid access",
+          "value": "Yes"
+        },
+        {
+          "order": 10,
+          "category": "Charging",
+          "label": "Ather Grid™ charging speed",
+          "value": "Up to 15 km in 10 min"
+        },
+        {
+          "order": 11,
+          "category": "Charging",
+          "label": "On-board Charger (Default)",
+          "value": null
+        },
+        {
+          "order": 12,
+          "category": "Charging",
+          "label": "Home Charger",
+          "value": "900W"
+        },
+        {
+          "order": 13,
+          "category": "Charging",
+          "label": "Combined Charger (450 W Additional Capacity)",
+          "value": null
+        },
+        {
+          "order": 14,
+          "category": "Charging",
+          "label": "Combined Charger's Home Charging (0-80%)",
+          "value": null
+        },
+        {
+          "order": 15,
+          "category": "Performance",
+          "label": "Acceleration (0-40 km/h)",
+          "value": "4.7 s"
+        },
+        {
+          "order": 16,
+          "category": "Performance",
+          "label": "Coasting Regen",
+          "value": "Yes"
+        },
+        {
+          "order": 17,
+          "category": "Performance",
+          "label": "Gradeability",
+          "value": "15 degree"
+        },
+        {
+          "order": 18,
+          "category": "Performance",
+          "label": "Ingress protection (motor)",
+          "value": "IP67"
+        },
+        {
+          "order": 19,
+          "category": "Performance",
+          "label": "Max torque",
+          "value": "22 Nm"
+        },
+        {
+          "order": 20,
+          "category": "Performance",
+          "label": "Motor Type",
+          "value": "PMSM"
+        },
+        {
+          "order": 21,
+          "category": "Performance",
+          "label": "Peak Power",
+          "value": "4.3 kW"
+        },
+        {
+          "order": 22,
+          "category": "Performance",
+          "label": "Top speed",
+          "value": "80 km/h"
+        },
+        {
+          "order": 23,
+          "category": "Performance",
+          "label": "TrueRange™",
+          "value": "125 km"
+        },
+        {
+          "order": 24,
+          "category": "Warranty",
+          "label": "Charger Warranty",
+          "value": "3 years"
+        },
+        {
+          "order": 25,
+          "category": "Warranty",
+          "label": "Extended Battery Warranty (Add-on)",
+          "value": "Up to 10 years/100 000 km"
+        },
+        {
+          "order": 26,
+          "category": "Warranty",
+          "label": "Free Upgrade with AtherStack™ Pro",
+          "value": "5 years/60 000 km"
+        },
+        {
+          "order": 27,
+          "category": "Warranty",
+          "label": "Standard Battery Warranty",
+          "value": "3 years/30 000 km"
+        },
+        {
+          "order": 28,
+          "category": "Warranty",
+          "label": "Standard Vehicle Warranty",
+          "value": "3 years/30 000 km whichever is earlier"
+        },
+        {
+          "order": 29,
+          "category": "Build",
+          "label": "LongTravel Suspension",
+          "value": null
+        },
+        {
+          "order": 30,
+          "category": "Build",
+          "label": "Metal Body",
+          "value": null
+        },
+        {
+          "order": 31,
+          "category": "Build",
+          "label": "Silent Gear Drive",
+          "value": null
+        },
+        {
+          "order": 32,
+          "category": "Build",
+          "label": "Suspension (front)",
+          "value": "Telescopic"
+        },
+        {
+          "order": 33,
+          "category": "Build",
+          "label": "Suspension (rear)",
+          "value": "Monoshock"
+        },
+        {
+          "order": 34,
+          "category": "Build",
+          "label": "Transmission Ratio",
+          "value": "7.8:1"
+        },
+        {
+          "order": 35,
+          "category": "Build",
+          "label": "Transmission Type",
+          "value": "Belt drive"
+        },
+        {
+          "order": 36,
+          "category": "Build",
+          "label": "Tyre size (front)",
+          "value": "90/90-12 tubeless tyres"
+        },
+        {
+          "order": 37,
+          "category": "Build",
+          "label": "Tyre size (rear)",
+          "value": "100/80-12 tubeless tyres"
+        },
+        {
+          "order": 38,
+          "category": "Build",
+          "label": "Wheel size (front)",
+          "value": "12 inches"
+        },
+        {
+          "order": 39,
+          "category": "Build",
+          "label": "Wheel size (rear)",
+          "value": "12 inches"
+        },
+        {
+          "order": 40,
+          "category": "Build",
+          "label": "Wheel type",
+          "value": "Alloy rim"
+        },
+        {
+          "order": 41,
+          "category": "Brakes",
+          "label": "Brake type (front)",
+          "value": "Disc"
+        },
+        {
+          "order": 42,
+          "category": "Brakes",
+          "label": "Brake type (rear)",
+          "value": "Drum with CBS"
+        },
+        {
+          "order": 43,
+          "category": "Brakes",
+          "label": "Braking system",
+          "value": "Drum with CBS"
+        },
+        {
+          "order": 44,
+          "category": "Brakes",
+          "label": "Disc size (front)",
+          "value": "200 mm"
+        },
+        {
+          "order": 45,
+          "category": "Brakes",
+          "label": "Disc size (rear)",
+          "value": null
+        },
+        {
+          "order": 46,
+          "category": "Brakes",
+          "label": "Drum size (front)",
+          "value": "130 mm"
+        },
+        {
+          "order": 47,
+          "category": "Brakes",
+          "label": "Drum size (rear)",
+          "value": null
+        },
+        {
+          "order": 48,
+          "category": "Dimensions",
+          "label": "Ground clearance",
+          "value": "15 cm"
+        },
+        {
+          "order": 49,
+          "category": "Dimensions",
+          "label": "Kerb weight",
+          "value": "125 kg"
+        },
+        {
+          "order": 50,
+          "category": "Dimensions",
+          "label": "Seat Height",
+          "value": "78 cm"
+        },
+        {
+          "order": 51,
+          "category": "Dimensions",
+          "label": "Wheelbase",
+          "value": "128.5 cm"
+        },
+        {
+          "order": 52,
+          "category": "Dashboard",
+          "label": "Operating system",
+          "value": "Real Time Operating System (RTOS)"
+        },
+        {
+          "order": 53,
+          "category": "Dashboard",
+          "label": "Processor",
+          "value": "Cortex Series"
+        },
+        {
+          "order": 54,
+          "category": "Dashboard",
+          "label": "RAM",
+          "value": "1 GB"
+        },
+        {
+          "order": 55,
+          "category": "Dashboard",
+          "label": "Dashboard type",
+          "value": "DeepView™ Display"
+        },
+        {
+          "order": 56,
+          "category": "Dashboard",
+          "label": "Dashboard screen size",
+          "value": "17.7 cm (7\")"
+        },
+        {
+          "order": 57,
+          "category": "Dashboard",
+          "label": "Storage",
+          "value": "8 GB"
+        },
+        {
+          "order": 58,
+          "category": "Dashboard",
+          "label": "Water & dust resistance",
+          "value": "IP65"
+        },
+        {
+          "order": 59,
+          "category": "Ather Connect™",
+          "label": "Call decline with text",
+          "value": "No"
+        },
+        {
+          "order": 60,
+          "category": "Ather Connect™",
+          "label": "Crash Alert",
+          "value": "No"
+        },
+        {
+          "order": 61,
+          "category": "Ather Connect™",
+          "label": "Cricket Scores on Dash",
+          "value": "No"
+        },
+        {
+          "order": 62,
+          "category": "Ather Connect™",
+          "label": "Document Storage",
+          "value": "No"
+        },
+        {
+          "order": 63,
+          "category": "Ather Connect™",
+          "label": "Find my scooter",
+          "value": "Yes"
+        },
+        {
+          "order": 64,
+          "category": "Ather Connect™",
+          "label": "Inter-city Trip Planner™",
+          "value": "No"
+        },
+        {
+          "order": 65,
+          "category": "Ather Connect™",
+          "label": "Live location Sharing",
+          "value": "No"
+        },
+        {
+          "order": 66,
+          "category": "Ather Connect™",
+          "label": "LockSafe™",
+          "value": "No"
+        },
+        {
+          "order": 67,
+          "category": "Ather Connect™",
+          "label": "Multi-language dashboard",
+          "value": "No"
+        },
+        {
+          "order": 68,
+          "category": "Ather Connect™",
+          "label": "Navigation",
+          "value": "No"
+        },
+        {
+          "order": 69,
+          "category": "Ather Connect™",
+          "label": "OTA Updates",
+          "value": "Yes"
+        },
+        {
+          "order": 70,
+          "category": "Ather Connect™",
+          "label": "ParkSafe™",
+          "value": "Yes"
+        },
+        {
+          "order": 71,
+          "category": "Ather Connect™",
+          "label": "Ping my scooter",
+          "value": "No"
+        },
+        {
+          "order": 72,
+          "category": "Ather Connect™",
+          "label": "Pothole+ Alerts",
+          "value": "No"
+        },
+        {
+          "order": 73,
+          "category": "Ather Connect™",
+          "label": "Push Navigation",
+          "value": "No"
+        },
+        {
+          "order": 74,
+          "category": "Ather Connect™",
+          "label": "Remote Charging Status",
+          "value": "No"
+        },
+        {
+          "order": 75,
+          "category": "Ather Connect™",
+          "label": "Remote Control",
+          "value": "No"
+        },
+        {
+          "order": 76,
+          "category": "Ather Connect™",
+          "label": "Ride Stories",
+          "value": "Yes"
+        },
+        {
+          "order": 77,
+          "category": "Ather Connect™",
+          "label": "Savings Tracker",
+          "value": "Yes"
+        },
+        {
+          "order": 78,
+          "category": "Ather Connect™",
+          "label": "Theft & Tow Notifications",
+          "value": "Yes"
+        },
+        {
+          "order": 79,
+          "category": "Ather Connect™",
+          "label": "Voice on Ather",
+          "value": "No"
+        },
+        {
+          "order": 80,
+          "category": "Ather Connect™",
+          "label": "WhatsApp preview on dashboard",
+          "value": "No"
+        },
+        {
+          "order": 81,
+          "category": "RideAssist™",
+          "label": "AirWalk™️",
+          "value": null
+        },
+        {
+          "order": 82,
+          "category": "RideAssist™",
+          "label": "Auto Indicator cut-off",
+          "value": "Yes"
+        },
+        {
+          "order": 83,
+          "category": "RideAssist™",
+          "label": "AutoHold™",
+          "value": "Yes"
+        },
+        {
+          "order": 84,
+          "category": "RideAssist™",
+          "label": "Call & Music Alerts",
+          "value": null
+        },
+        {
+          "order": 85,
+          "category": "RideAssist™",
+          "label": "Call & Music Controls",
+          "value": "Yes"
+        },
+        {
+          "order": 86,
+          "category": "RideAssist™",
+          "label": "Dashboard auto brightness",
+          "value": "No"
+        },
+        {
+          "order": 87,
+          "category": "RideAssist™",
+          "label": "Emergency Stop Signal (ESS)",
+          "value": "Yes"
+        },
+        {
+          "order": 88,
+          "category": "RideAssist™",
+          "label": "Guide-me-home lights",
+          "value": "Yes"
+        },
+        {
+          "order": 89,
+          "category": "RideAssist™",
+          "label": "Interactive UI",
+          "value": "No"
+        },
+        {
+          "order": 90,
+          "category": "RideAssist™",
+          "label": "Magic Twist",
+          "value": "No"
+        },
+        {
+          "order": 91,
+          "category": "RideAssist™",
+          "label": "Multi-Mode Traction Control",
+          "value": null
+        },
+        {
+          "order": 92,
+          "category": "RideAssist™",
+          "label": "Optimised Charging",
+          "value": "No"
+        },
+        {
+          "order": 93,
+          "category": "RideAssist™",
+          "label": "Reverse Park Assist",
+          "value": null
+        },
+        {
+          "order": 94,
+          "category": "Key Features",
+          "label": "Riding modes",
+          "value": "Zip™ | Eco | SmartEco™"
+        },
+        {
+          "order": 95,
+          "category": "RideAssist™",
+          "label": "SkidControl™",
+          "value": "No"
+        },
+        {
+          "order": 96,
+          "category": "RideAssist™",
+          "label": "TrueRange™ Display",
+          "value": "Yes"
+        },
+        {
+          "order": 97,
+          "category": "RideAssist™",
+          "label": "Vehicle FallSafe™",
+          "value": "Yes"
+        },
+        {
+          "order": 98,
+          "category": "RideAssist™",
+          "label": "Infinite Cruise",
+          "value": null
+        },
+        {
+          "order": 99,
+          "category": "Peripherals & convenience",
+          "label": "Headlights",
+          "value": "LED"
+        },
+        {
+          "order": 100,
+          "category": "Peripherals & convenience",
+          "label": "Indicators",
+          "value": "LED"
+        },
+        {
+          "order": 101,
+          "category": "Peripherals & convenience",
+          "label": "Mobile Holder",
+          "value": null
+        },
+        {
+          "order": 102,
+          "category": "Peripherals & convenience",
+          "label": "USB Charger (Front)",
+          "value": null
+        },
+        {
+          "order": 103,
+          "category": "Peripherals & convenience",
+          "label": "Pillion Backrest",
+          "value": "Yes"
+        },
+        {
+          "order": 104,
+          "category": "Peripherals & convenience",
+          "label": "Pillion grab handle",
+          "value": "Yes"
+        },
+        {
+          "order": 105,
+          "category": "Peripherals & convenience",
+          "label": "Side stand motor cutoff",
+          "value": "Yes"
+        },
+        {
+          "order": 106,
+          "category": "Peripherals & convenience",
+          "label": "Silent Gear Drive (Closed Gearbox)",
+          "value": null
+        },
+        {
+          "order": 107,
+          "category": "Peripherals & convenience",
+          "label": "Tail lights",
+          "value": "LED"
+        },
+        {
+          "order": 108,
+          "category": "Peripherals & convenience",
+          "label": "Vehicle Key",
+          "value": "Mechanical"
+        }
+      ],
+      "model_year": null
+    },
+    {
+      "id": "ather-srizz1lrin",
+      "manufacturer": "Ather",
+      "family": "rizta",
+      "model": "Rizta Z",
+      "variant_code": "SRIZZ1LRIN",
+      "source_variant_name": "Specifications - Rizta Z (SRIZZ1LRIN)",
+      "source_id": "rizta-specifications",
+      "source_url": "https://www.atherenergy.com/rizta/specifications",
+      "snapshot_date": "2026-11-06",
+      "publisher_updated_at": "2026-10-26T16:51:12.808Z",
+      "availability_status": "listed_in_specifications",
+      "battery_capacity_label": "2.7 kWh / 2.9 kWh",
+      "battery_capacity_options_kwh": [
+        2.7,
+        2.9
+      ],
+      "battery_capacity_mapping_note": "Multiple capacities are presented under one manufacturer variant code; no separate physical configuration is inferred.",
+      "idc_range_km": 123.0,
+      "true_range_km": 100.0,
+      "true_range_basis": "manufacturer SmartEco claim, not this vehicle measurement",
+      "top_speed_kmh": 80.0,
+      "peak_power_kw": 4.3,
+      "peak_torque_nm": 22.0,
+      "acceleration_0_40_s": 4.7,
+      "usable_energy_kwh": null,
+      "measured_range_km": null,
+      "diagnostic_support": "not_assigned",
+      "specifications": [
+        {
+          "order": 1,
+          "category": "Key Features",
+          "label": "Available Colours",
+          "value": "9"
+        },
+        {
+          "order": 2,
+          "category": "Key Features",
+          "label": "Bootspace",
+          "value": "34 L"
+        },
+        {
+          "order": 3,
+          "category": "Key Features",
+          "label": "IDC Range",
+          "value": "123 km"
+        },
+        {
+          "order": 4,
+          "category": "Battery",
+          "label": "Battery Casing",
+          "value": "Aluminium casing"
+        },
+        {
+          "order": 5,
+          "category": "Battery",
+          "label": "Installed capacity",
+          "value": "2.7 kWh / 2.9 kWh"
+        },
+        {
+          "order": 6,
+          "category": "Dashboard",
+          "label": "Water & dust resistance",
+          "value": "IP65"
+        },
+        {
+          "order": 7,
+          "category": "Charging",
+          "label": "0-100% (Home Charging)",
+          "value": "7 hr 25 min"
+        },
+        {
+          "order": 8,
+          "category": "Charging",
+          "label": "0-80% (Home Charging)",
+          "value": "6 hr"
+        },
+        {
+          "order": 9,
+          "category": "Charging",
+          "label": "Ather Grid access",
+          "value": "Yes"
+        },
+        {
+          "order": 10,
+          "category": "Charging",
+          "label": "Ather Grid™ charging speed",
+          "value": "Up to 15 km in 10 min"
+        },
+        {
+          "order": 11,
+          "category": "Charging",
+          "label": "On-board Charger (Default)",
+          "value": null
+        },
+        {
+          "order": 12,
+          "category": "Charging",
+          "label": "Home Charger",
+          "value": "450W"
+        },
+        {
+          "order": 13,
+          "category": "Charging",
+          "label": "Combined Charger (450 W Additional Capacity)",
+          "value": null
+        },
+        {
+          "order": 14,
+          "category": "Charging",
+          "label": "Combined Charger's Home Charging (0-80%)",
+          "value": null
+        },
+        {
+          "order": 15,
+          "category": "Performance",
+          "label": "Acceleration (0-40 km/h)",
+          "value": "4.7 s"
+        },
+        {
+          "order": 16,
+          "category": "Performance",
+          "label": "Coasting Regen",
+          "value": "Yes"
+        },
+        {
+          "order": 17,
+          "category": "Performance",
+          "label": "Gradeability",
+          "value": "15 degrees"
+        },
+        {
+          "order": 18,
+          "category": "Performance",
+          "label": "Ingress protection (motor)",
+          "value": "IP67"
+        },
+        {
+          "order": 19,
+          "category": "Performance",
+          "label": "Max torque",
+          "value": "22 Nm"
+        },
+        {
+          "order": 20,
+          "category": "Performance",
+          "label": "Motor Type",
+          "value": "PMSM"
+        },
+        {
+          "order": 21,
+          "category": "Performance",
+          "label": "Peak Power",
+          "value": "4.3 kW"
+        },
+        {
+          "order": 22,
+          "category": "Performance",
+          "label": "Top speed",
+          "value": "80 km/h"
+        },
+        {
+          "order": 23,
+          "category": "Performance",
+          "label": "TrueRange™",
+          "value": "100 km"
+        },
+        {
+          "order": 24,
+          "category": "Warranty",
+          "label": "Charger Warranty",
+          "value": "3 years"
+        },
+        {
+          "order": 25,
+          "category": "Warranty",
+          "label": "Extended Battery Warranty (Add-on)",
+          "value": "Up to 10 years/100 000 km"
+        },
+        {
+          "order": 26,
+          "category": "Warranty",
+          "label": "Free Upgrade with AtherStack™ Pro",
+          "value": "5 years/60 000 km"
+        },
+        {
+          "order": 27,
+          "category": "Warranty",
+          "label": "Standard Battery Warranty",
+          "value": "3 years/30 000 km"
+        },
+        {
+          "order": 28,
+          "category": "Warranty",
+          "label": "Standard Vehicle Warranty",
+          "value": "3 years/30 000 km whichever is earlier"
+        },
+        {
+          "order": 29,
+          "category": "Build",
+          "label": "LongTravel Suspension",
+          "value": null
+        },
+        {
+          "order": 30,
+          "category": "Build",
+          "label": "Metal Body",
+          "value": null
+        },
+        {
+          "order": 31,
+          "category": "Build",
+          "label": "Silent Gear Drive",
+          "value": null
+        },
+        {
+          "order": 32,
+          "category": "Build",
+          "label": "Suspension (front)",
+          "value": "Telescopic"
+        },
+        {
+          "order": 33,
+          "category": "Build",
+          "label": "Suspension (rear)",
+          "value": "Monoshock"
+        },
+        {
+          "order": 34,
+          "category": "Build",
+          "label": "Transmission Ratio",
+          "value": "7.8:1"
+        },
+        {
+          "order": 35,
+          "category": "Build",
+          "label": "Transmission Type",
+          "value": "Belt drive"
+        },
+        {
+          "order": 36,
+          "category": "Build",
+          "label": "Tyre size (front)",
+          "value": "90/90-12 tubeless tyres"
+        },
+        {
+          "order": 37,
+          "category": "Build",
+          "label": "Tyre size (rear)",
+          "value": "100/80-12 tubeless tyres"
+        },
+        {
+          "order": 38,
+          "category": "Build",
+          "label": "Wheel size (front)",
+          "value": "12 inches"
+        },
+        {
+          "order": 39,
+          "category": "Build",
+          "label": "Wheel size (rear)",
+          "value": "12 inches"
+        },
+        {
+          "order": 40,
+          "category": "Build",
+          "label": "Wheel type",
+          "value": "Alloy rim"
+        },
+        {
+          "order": 41,
+          "category": "Brakes",
+          "label": "Brake type (front)",
+          "value": "Disc"
+        },
+        {
+          "order": 42,
+          "category": "Brakes",
+          "label": "Brake type (rear)",
+          "value": "Drum with CBS"
+        },
+        {
+          "order": 43,
+          "category": "Brakes",
+          "label": "Braking system",
+          "value": "Combined braking system & regenerative braking"
+        },
+        {
+          "order": 44,
+          "category": "Brakes",
+          "label": "Disc size (front)",
+          "value": "200 mm"
+        },
+        {
+          "order": 45,
+          "category": "Brakes",
+          "label": "Disc size (rear)",
+          "value": null
+        },
+        {
+          "order": 46,
+          "category": "Brakes",
+          "label": "Drum size (front)",
+          "value": "130 mm"
+        },
+        {
+          "order": 47,
+          "category": "Brakes",
+          "label": "Drum size (rear)",
+          "value": null
+        },
+        {
+          "order": 48,
+          "category": "Dimensions",
+          "label": "Ground clearance",
+          "value": "15 cm"
+        },
+        {
+          "order": 49,
+          "category": "Dimensions",
+          "label": "Kerb weight",
+          "value": "125 kg"
+        },
+        {
+          "order": 50,
+          "category": "Dimensions",
+          "label": "Seat Height",
+          "value": "78 cm"
+        },
+        {
+          "order": 51,
+          "category": "Dimensions",
+          "label": "Wheelbase",
+          "value": "128.5 cm"
+        },
+        {
+          "order": 52,
+          "category": "Dashboard",
+          "label": "Operating system",
+          "value": "Android Open Source"
+        },
+        {
+          "order": 53,
+          "category": "Dashboard",
+          "label": "Processor",
+          "value": "Snapdragon 212 Quadcore 1.3 Ghz"
+        },
+        {
+          "order": 54,
+          "category": "Dashboard",
+          "label": "RAM",
+          "value": "2 GB"
+        },
+        {
+          "order": 55,
+          "category": "Dashboard",
+          "label": "Dashboard type",
+          "value": "TFT Touchscreen"
+        },
+        {
+          "order": 56,
+          "category": "Dashboard",
+          "label": "Dashboard screen size",
+          "value": "17.7 cm (7\")"
+        },
+        {
+          "order": 57,
+          "category": "Dashboard",
+          "label": "Storage",
+          "value": "16 GB"
+        },
+        {
+          "order": 58,
+          "category": "Dashboard",
+          "label": "Water & dust resistance",
+          "value": "IP65"
+        },
+        {
+          "order": 59,
+          "category": "Ather Connect™",
+          "label": "Call decline with text",
+          "value": "Yes"
+        },
+        {
+          "order": 60,
+          "category": "Ather Connect™",
+          "label": "Crash Alert",
+          "value": "Yes"
+        },
+        {
+          "order": 61,
+          "category": "Ather Connect™",
+          "label": "Cricket Scores on Dash",
+          "value": "Yes"
+        },
+        {
+          "order": 62,
+          "category": "Ather Connect™",
+          "label": "Document Storage",
+          "value": "Yes"
+        },
+        {
+          "order": 63,
+          "category": "Ather Connect™",
+          "label": "Find my scooter",
+          "value": "Yes"
+        },
+        {
+          "order": 64,
+          "category": "Ather Connect™",
+          "label": "Inter-city Trip Planner™",
+          "value": "Yes"
+        },
+        {
+          "order": 65,
+          "category": "Ather Connect™",
+          "label": "Live location Sharing",
+          "value": "Yes"
+        },
+        {
+          "order": 66,
+          "category": "Ather Connect™",
+          "label": "LockSafe™",
+          "value": "Yes"
+        },
+        {
+          "order": 67,
+          "category": "Ather Connect™",
+          "label": "Multi-language dashboard",
+          "value": "Yes"
+        },
+        {
+          "order": 68,
+          "category": "Ather Connect™",
+          "label": "Navigation",
+          "value": "Google Maps"
+        },
+        {
+          "order": 69,
+          "category": "Ather Connect™",
+          "label": "OTA Updates",
+          "value": "Yes"
+        },
+        {
+          "order": 70,
+          "category": "Ather Connect™",
+          "label": "ParkSafe™",
+          "value": "Yes"
+        },
+        {
+          "order": 71,
+          "category": "Ather Connect™",
+          "label": "Ping my scooter",
+          "value": "Yes"
+        },
+        {
+          "order": 72,
+          "category": "Ather Connect™",
+          "label": "Pothole+ Alerts",
+          "value": "Yes"
+        },
+        {
+          "order": 73,
+          "category": "Ather Connect™",
+          "label": "Push Navigation",
+          "value": "Yes"
+        },
+        {
+          "order": 74,
+          "category": "Ather Connect™",
+          "label": "Remote Charging Status",
+          "value": "Yes"
+        },
+        {
+          "order": 75,
+          "category": "Ather Connect™",
+          "label": "Remote Control",
+          "value": "Yes"
+        },
+        {
+          "order": 76,
+          "category": "Ather Connect™",
+          "label": "Ride Stories",
+          "value": "Yes"
+        },
+        {
+          "order": 77,
+          "category": "Ather Connect™",
+          "label": "Savings Tracker",
+          "value": "Yes"
+        },
+        {
+          "order": 78,
+          "category": "Ather Connect™",
+          "label": "Theft & Tow Notifications",
+          "value": "Yes"
+        },
+        {
+          "order": 79,
+          "category": "Ather Connect™",
+          "label": "Voice on Ather",
+          "value": "Yes"
+        },
+        {
+          "order": 80,
+          "category": "Ather Connect™",
+          "label": "WhatsApp preview on dashboard",
+          "value": "Yes"
+        },
+        {
+          "order": 81,
+          "category": "RideAssist™",
+          "label": "AirWalk™️",
+          "value": null
+        },
+        {
+          "order": 82,
+          "category": "RideAssist™",
+          "label": "Auto Indicator cut-off",
+          "value": "Yes"
+        },
+        {
+          "order": 83,
+          "category": "RideAssist™",
+          "label": "AutoHold™",
+          "value": "Yes"
+        },
+        {
+          "order": 84,
+          "category": "RideAssist™",
+          "label": "Call & Music Alerts",
+          "value": null
+        },
+        {
+          "order": 85,
+          "category": "RideAssist™",
+          "label": "Call & Music Controls",
+          "value": "Yes"
+        },
+        {
+          "order": 86,
+          "category": "RideAssist™",
+          "label": "Dashboard auto brightness",
+          "value": "Yes"
+        },
+        {
+          "order": 87,
+          "category": "RideAssist™",
+          "label": "Emergency Stop Signal (ESS)",
+          "value": "Yes"
+        },
+        {
+          "order": 88,
+          "category": "RideAssist™",
+          "label": "Guide-me-home lights",
+          "value": "Yes"
+        },
+        {
+          "order": 89,
+          "category": "RideAssist™",
+          "label": "Interactive UI",
+          "value": "Yes"
+        },
+        {
+          "order": 90,
+          "category": "RideAssist™",
+          "label": "Magic Twist",
+          "value": "Yes"
+        },
+        {
+          "order": 91,
+          "category": "RideAssist™",
+          "label": "Multi-Mode Traction Control",
+          "value": null
+        },
+        {
+          "order": 92,
+          "category": "RideAssist™",
+          "label": "Optimised Charging",
+          "value": "Yes"
+        },
+        {
+          "order": 93,
+          "category": "RideAssist™",
+          "label": "Reverse Park Assist",
+          "value": null
+        },
+        {
+          "order": 94,
+          "category": "Key Features",
+          "label": "Riding modes",
+          "value": "Zip™ | Eco | SmartEco™"
+        },
+        {
+          "order": 95,
+          "category": "RideAssist™",
+          "label": "SkidControl™",
+          "value": "Yes"
+        },
+        {
+          "order": 96,
+          "category": "RideAssist™",
+          "label": "TrueRange™ Display",
+          "value": "Yes"
+        },
+        {
+          "order": 97,
+          "category": "RideAssist™",
+          "label": "Vehicle FallSafe™",
+          "value": "Yes"
+        },
+        {
+          "order": 98,
+          "category": "RideAssist™",
+          "label": "Infinite Cruise",
+          "value": null
+        },
+        {
+          "order": 99,
+          "category": "Peripherals & convenience",
+          "label": "Headlights",
+          "value": "LED"
+        },
+        {
+          "order": 100,
+          "category": "Peripherals & convenience",
+          "label": "Indicators",
+          "value": "LED"
+        },
+        {
+          "order": 101,
+          "category": "Peripherals & convenience",
+          "label": "Mobile Holder",
+          "value": null
+        },
+        {
+          "order": 102,
+          "category": "Peripherals & convenience",
+          "label": "USB Charger (Front)",
+          "value": null
+        },
+        {
+          "order": 103,
+          "category": "Peripherals & convenience",
+          "label": "Pillion Backrest",
+          "value": "Yes"
+        },
+        {
+          "order": 104,
+          "category": "Peripherals & convenience",
+          "label": "Pillion grab handle",
+          "value": "Yes"
+        },
+        {
+          "order": 105,
+          "category": "Peripherals & convenience",
+          "label": "Side stand motor cutoff",
+          "value": "Yes"
+        },
+        {
+          "order": 106,
+          "category": "Peripherals & convenience",
+          "label": "Silent Gear Drive (Closed Gearbox)",
+          "value": null
+        },
+        {
+          "order": 107,
+          "category": "Peripherals & convenience",
+          "label": "Tail lights",
+          "value": "LED"
+        },
+        {
+          "order": 108,
+          "category": "Peripherals & convenience",
+          "label": "Vehicle Key",
+          "value": "Mechanical"
+        }
+      ],
+      "model_year": null
+    },
+    {
+      "id": "ather-srizz135in",
+      "manufacturer": "Ather",
+      "family": "rizta",
+      "model": "Rizta Z",
+      "variant_code": "SRIZZ135IN",
+      "source_variant_name": "Specifications - Rizta Z (SRIZZ135IN)",
+      "source_id": "rizta-specifications",
+      "source_url": "https://www.atherenergy.com/rizta/specifications",
+      "snapshot_date": "2026-11-06",
+      "publisher_updated_at": "2026-10-26T16:51:12.808Z",
+      "availability_status": "listed_in_specifications",
+      "battery_capacity_label": "3.5 kWh",
+      "battery_capacity_options_kwh": [
+        3.5
+      ],
+      "battery_capacity_mapping_note": null,
+      "idc_range_km": 161.0,
+      "true_range_km": 125.0,
+      "true_range_basis": "manufacturer SmartEco claim, not this vehicle measurement",
+      "top_speed_kmh": 80.0,
+      "peak_power_kw": 4.3,
+      "peak_torque_nm": 22.0,
+      "acceleration_0_40_s": 4.7,
+      "usable_energy_kwh": null,
+      "measured_range_km": null,
+      "diagnostic_support": "not_assigned",
+      "specifications": [
+        {
+          "order": 1,
+          "category": "Key Features",
+          "label": "Available Colours",
+          "value": "9"
+        },
+        {
+          "order": 2,
+          "category": "Key Features",
+          "label": "Bootspace",
+          "value": "34 L"
+        },
+        {
+          "order": 3,
+          "category": "Key Features",
+          "label": "IDC Range",
+          "value": "161 km"
+        },
+        {
+          "order": 4,
+          "category": "Battery",
+          "label": "Battery Casing",
+          "value": "Aluminium casing"
+        },
+        {
+          "order": 5,
+          "category": "Battery",
+          "label": "Installed capacity",
+          "value": "3.5 kWh"
+        },
+        {
+          "order": 6,
+          "category": "Dashboard",
+          "label": "Water & dust resistance",
+          "value": "IP65"
+        },
+        {
+          "order": 7,
+          "category": "Charging",
+          "label": "0-100% (Home Charging)",
+          "value": "4 hr 30 min"
+        },
+        {
+          "order": 8,
+          "category": "Charging",
+          "label": "0-80% (Home Charging)",
+          "value": "3 hr 25 min"
+        },
+        {
+          "order": 9,
+          "category": "Charging",
+          "label": "Ather Grid access",
+          "value": "Yes"
+        },
+        {
+          "order": 10,
+          "category": "Charging",
+          "label": "Ather Grid™ charging speed",
+          "value": "Up to 30 km in 10 min"
+        },
+        {
+          "order": 11,
+          "category": "Charging",
+          "label": "On-board Charger (Default)",
+          "value": null
+        },
+        {
+          "order": 12,
+          "category": "Charging",
+          "label": "Home Charger",
+          "value": "900W"
+        },
+        {
+          "order": 13,
+          "category": "Charging",
+          "label": "Combined Charger (450 W Additional Capacity)",
+          "value": null
+        },
+        {
+          "order": 14,
+          "category": "Charging",
+          "label": "Combined Charger's Home Charging (0-80%)",
+          "value": null
+        },
+        {
+          "order": 15,
+          "category": "Performance",
+          "label": "Acceleration (0-40 km/h)",
+          "value": "4.7 s"
+        },
+        {
+          "order": 16,
+          "category": "Performance",
+          "label": "Coasting Regen",
+          "value": "Yes"
+        },
+        {
+          "order": 17,
+          "category": "Performance",
+          "label": "Gradeability",
+          "value": "15 degrees"
+        },
+        {
+          "order": 18,
+          "category": "Performance",
+          "label": "Ingress protection (motor)",
+          "value": "IP67"
+        },
+        {
+          "order": 19,
+          "category": "Performance",
+          "label": "Max torque",
+          "value": "22 Nm"
+        },
+        {
+          "order": 20,
+          "category": "Performance",
+          "label": "Motor Type",
+          "value": "PMSM"
+        },
+        {
+          "order": 21,
+          "category": "Performance",
+          "label": "Peak Power",
+          "value": "4.3 kW"
+        },
+        {
+          "order": 22,
+          "category": "Performance",
+          "label": "Top speed",
+          "value": "80 km/h"
+        },
+        {
+          "order": 23,
+          "category": "Performance",
+          "label": "TrueRange™",
+          "value": "125 km"
+        },
+        {
+          "order": 24,
+          "category": "Warranty",
+          "label": "Charger Warranty",
+          "value": "3 years"
+        },
+        {
+          "order": 25,
+          "category": "Warranty",
+          "label": "Extended Battery Warranty (Add-on)",
+          "value": "Up to 10 years/100 000 km"
+        },
+        {
+          "order": 26,
+          "category": "Warranty",
+          "label": "Free Upgrade with AtherStack™ Pro",
+          "value": "5 years/60 000 km"
+        },
+        {
+          "order": 27,
+          "category": "Warranty",
+          "label": "Standard Battery Warranty",
+          "value": "3 years/30 000 km"
+        },
+        {
+          "order": 28,
+          "category": "Warranty",
+          "label": "Standard Vehicle Warranty",
+          "value": "3 years/30 000 km whichever is earlier"
+        },
+        {
+          "order": 29,
+          "category": "Build",
+          "label": "LongTravel Suspension",
+          "value": null
+        },
+        {
+          "order": 30,
+          "category": "Build",
+          "label": "Metal Body",
+          "value": null
+        },
+        {
+          "order": 31,
+          "category": "Build",
+          "label": "Silent Gear Drive",
+          "value": null
+        },
+        {
+          "order": 32,
+          "category": "Build",
+          "label": "Suspension (front)",
+          "value": "Telescopic"
+        },
+        {
+          "order": 33,
+          "category": "Build",
+          "label": "Suspension (rear)",
+          "value": "Monoshock"
+        },
+        {
+          "order": 34,
+          "category": "Build",
+          "label": "Transmission Ratio",
+          "value": "7.8:1"
+        },
+        {
+          "order": 35,
+          "category": "Build",
+          "label": "Transmission Type",
+          "value": "Belt drive"
+        },
+        {
+          "order": 36,
+          "category": "Build",
+          "label": "Tyre size (front)",
+          "value": "90/90-12 tubeless tyres"
+        },
+        {
+          "order": 37,
+          "category": "Build",
+          "label": "Tyre size (rear)",
+          "value": "100/80-12 tubeless tyres"
+        },
+        {
+          "order": 38,
+          "category": "Build",
+          "label": "Wheel size (front)",
+          "value": "12 inches"
+        },
+        {
+          "order": 39,
+          "category": "Build",
+          "label": "Wheel size (rear)",
+          "value": "12 inches"
+        },
+        {
+          "order": 40,
+          "category": "Build",
+          "label": "Wheel type",
+          "value": "Alloy rim"
+        },
+        {
+          "order": 41,
+          "category": "Brakes",
+          "label": "Brake type (front)",
+          "value": "Disc"
+        },
+        {
+          "order": 42,
+          "category": "Brakes",
+          "label": "Brake type (rear)",
+          "value": "Drum with CBS"
+        },
+        {
+          "order": 43,
+          "category": "Brakes",
+          "label": "Braking system",
+          "value": "Combined braking system & regenerative braking"
+        },
+        {
+          "order": 44,
+          "category": "Brakes",
+          "label": "Disc size (front)",
+          "value": "200 mm"
+        },
+        {
+          "order": 45,
+          "category": "Brakes",
+          "label": "Disc size (rear)",
+          "value": null
+        },
+        {
+          "order": 46,
+          "category": "Brakes",
+          "label": "Drum size (front)",
+          "value": "130 mm"
+        },
+        {
+          "order": 47,
+          "category": "Brakes",
+          "label": "Drum size (rear)",
+          "value": null
+        },
+        {
+          "order": 48,
+          "category": "Dimensions",
+          "label": "Ground clearance",
+          "value": "15 cm"
+        },
+        {
+          "order": 49,
+          "category": "Dimensions",
+          "label": "Kerb weight",
+          "value": "125 kg"
+        },
+        {
+          "order": 50,
+          "category": "Dimensions",
+          "label": "Seat Height",
+          "value": "78 cm"
+        },
+        {
+          "order": 51,
+          "category": "Dimensions",
+          "label": "Wheelbase",
+          "value": "128.5 cm"
+        },
+        {
+          "order": 52,
+          "category": "Dashboard",
+          "label": "Operating system",
+          "value": "Android Open Source"
+        },
+        {
+          "order": 53,
+          "category": "Dashboard",
+          "label": "Processor",
+          "value": "Snapdragon 212 Quadcore 1.3 Ghz"
+        },
+        {
+          "order": 54,
+          "category": "Dashboard",
+          "label": "RAM",
+          "value": "2 GB"
+        },
+        {
+          "order": 55,
+          "category": "Dashboard",
+          "label": "Dashboard type",
+          "value": "TFT Touchscreen"
+        },
+        {
+          "order": 56,
+          "category": "Dashboard",
+          "label": "Dashboard screen size",
+          "value": "17.7 cm (7\")"
+        },
+        {
+          "order": 57,
+          "category": "Dashboard",
+          "label": "Storage",
+          "value": "16 GB"
+        },
+        {
+          "order": 58,
+          "category": "Dashboard",
+          "label": "Water & dust resistance",
+          "value": "IP65"
+        },
+        {
+          "order": 59,
+          "category": "Ather Connect™",
+          "label": "Call decline with text",
+          "value": "Yes"
+        },
+        {
+          "order": 60,
+          "category": "Ather Connect™",
+          "label": "Crash Alert",
+          "value": "Yes"
+        },
+        {
+          "order": 61,
+          "category": "Ather Connect™",
+          "label": "Cricket Scores on Dash",
+          "value": "Yes"
+        },
+        {
+          "order": 62,
+          "category": "Ather Connect™",
+          "label": "Document Storage",
+          "value": "Yes"
+        },
+        {
+          "order": 63,
+          "category": "Ather Connect™",
+          "label": "Find my scooter",
+          "value": "Yes"
+        },
+        {
+          "order": 64,
+          "category": "Ather Connect™",
+          "label": "Inter-city Trip Planner™",
+          "value": "Yes"
+        },
+        {
+          "order": 65,
+          "category": "Ather Connect™",
+          "label": "Live location Sharing",
+          "value": "Yes"
+        },
+        {
+          "order": 66,
+          "category": "Ather Connect™",
+          "label": "LockSafe™",
+          "value": "Yes"
+        },
+        {
+          "order": 67,
+          "category": "Ather Connect™",
+          "label": "Multi-language dashboard",
+          "value": "Yes"
+        },
+        {
+          "order": 68,
+          "category": "Ather Connect™",
+          "label": "Navigation",
+          "value": "Google Maps"
+        },
+        {
+          "order": 69,
+          "category": "Ather Connect™",
+          "label": "OTA Updates",
+          "value": "Yes"
+        },
+        {
+          "order": 70,
+          "category": "Ather Connect™",
+          "label": "ParkSafe™",
+          "value": "Yes"
+        },
+        {
+          "order": 71,
+          "category": "Ather Connect™",
+          "label": "Ping my scooter",
+          "value": "Yes"
+        },
+        {
+          "order": 72,
+          "category": "Ather Connect™",
+          "label": "Pothole+ Alerts",
+          "value": "Yes"
+        },
+        {
+          "order": 73,
+          "category": "Ather Connect™",
+          "label": "Push Navigation",
+          "value": "Yes"
+        },
+        {
+          "order": 74,
+          "category": "Ather Connect™",
+          "label": "Remote Charging Status",
+          "value": "Yes"
+        },
+        {
+          "order": 75,
+          "category": "Ather Connect™",
+          "label": "Remote Control",
+          "value": "Yes"
+        },
+        {
+          "order": 76,
+          "category": "Ather Connect™",
+          "label": "Ride Stories",
+          "value": "Yes"
+        },
+        {
+          "order": 77,
+          "category": "Ather Connect™",
+          "label": "Savings Tracker",
+          "value": "Yes"
+        },
+        {
+          "order": 78,
+          "category": "Ather Connect™",
+          "label": "Theft & Tow Notifications",
+          "value": "Yes"
+        },
+        {
+          "order": 79,
+          "category": "Ather Connect™",
+          "label": "Voice on Ather",
+          "value": "Yes"
+        },
+        {
+          "order": 80,
+          "category": "Ather Connect™",
+          "label": "WhatsApp preview on dashboard",
+          "value": "Yes"
+        },
+        {
+          "order": 81,
+          "category": "RideAssist™",
+          "label": "AirWalk™️",
+          "value": null
+        },
+        {
+          "order": 82,
+          "category": "RideAssist™",
+          "label": "Auto Indicator cut-off",
+          "value": "Yes"
+        },
+        {
+          "order": 83,
+          "category": "RideAssist™",
+          "label": "AutoHold™",
+          "value": "Yes"
+        },
+        {
+          "order": 84,
+          "category": "RideAssist™",
+          "label": "Call & Music Alerts",
+          "value": null
+        },
+        {
+          "order": 85,
+          "category": "RideAssist™",
+          "label": "Call & Music Controls",
+          "value": "Yes"
+        },
+        {
+          "order": 86,
+          "category": "RideAssist™",
+          "label": "Dashboard auto brightness",
+          "value": "Yes"
+        },
+        {
+          "order": 87,
+          "category": "RideAssist™",
+          "label": "Emergency Stop Signal (ESS)",
+          "value": "Yes"
+        },
+        {
+          "order": 88,
+          "category": "RideAssist™",
+          "label": "Guide-me-home lights",
+          "value": "Yes"
+        },
+        {
+          "order": 89,
+          "category": "RideAssist™",
+          "label": "Interactive UI",
+          "value": "Yes"
+        },
+        {
+          "order": 90,
+          "category": "RideAssist™",
+          "label": "Magic Twist",
+          "value": "Yes"
+        },
+        {
+          "order": 91,
+          "category": "RideAssist™",
+          "label": "Multi-Mode Traction Control",
+          "value": null
+        },
+        {
+          "order": 92,
+          "category": "RideAssist™",
+          "label": "Optimised Charging",
+          "value": "Yes"
+        },
+        {
+          "order": 93,
+          "category": "RideAssist™",
+          "label": "Reverse Park Assist",
+          "value": null
+        },
+        {
+          "order": 94,
+          "category": "Key Features",
+          "label": "Riding modes",
+          "value": "Zip™ | Eco | SmartEco™"
+        },
+        {
+          "order": 95,
+          "category": "RideAssist™",
+          "label": "SkidControl™",
+          "value": "Yes"
+        },
+        {
+          "order": 96,
+          "category": "RideAssist™",
+          "label": "TrueRange™ Display",
+          "value": "Yes"
+        },
+        {
+          "order": 97,
+          "category": "RideAssist™",
+          "label": "Vehicle FallSafe™",
+          "value": "Yes"
+        },
+        {
+          "order": 98,
+          "category": "RideAssist™",
+          "label": "Infinite Cruise",
+          "value": null
+        },
+        {
+          "order": 99,
+          "category": "Peripherals & convenience",
+          "label": "Headlights",
+          "value": "LED"
+        },
+        {
+          "order": 100,
+          "category": "Peripherals & convenience",
+          "label": "Indicators",
+          "value": "LED"
+        },
+        {
+          "order": 101,
+          "category": "Peripherals & convenience",
+          "label": "Mobile Holder",
+          "value": null
+        },
+        {
+          "order": 102,
+          "category": "Peripherals & convenience",
+          "label": "USB Charger (Front)",
+          "value": null
+        },
+        {
+          "order": 103,
+          "category": "Peripherals & convenience",
+          "label": "Pillion Backrest",
+          "value": "Yes"
+        },
+        {
+          "order": 104,
+          "category": "Peripherals & convenience",
+          "label": "Pillion grab handle",
+          "value": "Yes"
+        },
+        {
+          "order": 105,
+          "category": "Peripherals & convenience",
+          "label": "Side stand motor cutoff",
+          "value": "Yes"
+        },
+        {
+          "order": 106,
+          "category": "Peripherals & convenience",
+          "label": "Silent Gear Drive (Closed Gearbox)",
+          "value": null
+        },
+        {
+          "order": 107,
+          "category": "Peripherals & convenience",
+          "label": "Tail lights",
+          "value": "LED"
+        },
+        {
+          "order": 108,
+          "category": "Peripherals & convenience",
+          "label": "Vehicle Key",
+          "value": "Mechanical"
+        }
+      ],
+      "model_year": null
+    },
+    {
+      "id": "ather-s450s5lrin",
+      "manufacturer": "Ather",
+      "family": "450",
+      "model": "450S",
+      "variant_code": "S450S5LRIN",
+      "source_variant_name": "Specifications - 450S (S450S5LRIN)",
+      "source_id": "450-specifications",
+      "source_url": "https://www.atherenergy.com/450/specifications",
+      "snapshot_date": "2026-11-06",
+      "publisher_updated_at": "2026-10-26T16:51:12.808Z",
+      "availability_status": "listed_in_specifications",
+      "battery_capacity_label": "2.9 kWh",
+      "battery_capacity_options_kwh": [
+        2.9
+      ],
+      "battery_capacity_mapping_note": null,
+      "idc_range_km": 122.0,
+      "true_range_km": 105.0,
+      "true_range_basis": "manufacturer SmartEco claim, not this vehicle measurement",
+      "top_speed_kmh": 90.0,
+      "peak_power_kw": 5.4,
+      "peak_torque_nm": 22.0,
+      "acceleration_0_40_s": 3.9,
+      "usable_energy_kwh": null,
+      "measured_range_km": null,
+      "diagnostic_support": "not_assigned",
+      "specifications": [
+        {
+          "category": "Key Features",
+          "label": "Available Colours",
+          "order": 1,
+          "value": "5"
+        },
+        {
+          "category": "Key Features",
+          "label": "Bootspace",
+          "order": 2,
+          "value": "22 L"
+        },
+        {
+          "category": "Key Features",
+          "label": "IDC Range",
+          "order": 3,
+          "value": "122 km"
+        },
+        {
+          "category": "Battery",
+          "label": "Battery Casing",
+          "order": 4,
+          "value": "Aluminium casing"
+        },
+        {
+          "category": "Battery",
+          "label": "Installed capacity",
+          "order": 5,
+          "value": "2.9 kWh"
+        },
+        {
+          "category": "Dashboard",
+          "label": "Water & dust resistance",
+          "order": 6,
+          "value": "IP65"
+        },
+        {
+          "category": "Charging",
+          "label": "0-100% (Home Charging)",
+          "order": 7,
+          "value": "6 hr 30 min"
+        },
+        {
+          "category": "Charging",
+          "label": "0-80% (Home Charging)",
+          "order": 8,
+          "value": "5 hr 10 min"
+        },
+        {
+          "category": "Charging",
+          "label": "Ather Grid access",
+          "order": 9,
+          "value": "Yes"
+        },
+        {
+          "category": "Charging",
+          "label": "Ather Grid™ charging speed",
+          "order": 10,
+          "value": "Up to 15 km in 10 min"
+        },
+        {
+          "category": "Charging",
+          "label": "On-board Charger (Default)",
+          "order": 11,
+          "value": null
+        },
+        {
+          "category": "Charging",
+          "label": "Home Charger",
+          "order": 12,
+          "value": "450W"
+        },
+        {
+          "category": "Charging",
+          "label": "Combined Charger (450 W Additional Capacity)",
+          "order": 13,
+          "value": null
+        },
+        {
+          "category": "Charging",
+          "label": "Combined Charger's Home Charging (0-80%)",
+          "order": 14,
+          "value": null
+        },
+        {
+          "category": "Performance",
+          "label": "Acceleration (0-40 km/h)",
+          "order": 15,
+          "value": "3.9 s"
+        },
+        {
+          "category": "Performance",
+          "label": "Coasting Regen",
+          "order": 16,
+          "value": "Yes"
+        },
+        {
+          "category": "Performance",
+          "label": "Gradeability",
+          "order": 17,
+          "value": "18 degree"
+        },
+        {
+          "category": "Performance",
+          "label": "Ingress protection (motor)",
+          "order": 18,
+          "value": "IP66"
+        },
+        {
+          "category": "Performance",
+          "label": "Max torque",
+          "order": 19,
+          "value": "22 Nm"
+        },
+        {
+          "category": "Performance",
+          "label": "Motor Type",
+          "order": 20,
+          "value": "PMSM"
+        },
+        {
+          "category": "Performance",
+          "label": "Peak Power",
+          "order": 21,
+          "value": "5.4 kW"
+        },
+        {
+          "category": "Performance",
+          "label": "Top speed",
+          "order": 22,
+          "value": "90 km/h"
+        },
+        {
+          "category": "Performance",
+          "label": "TrueRange™",
+          "order": 23,
+          "value": "105 km"
+        },
+        {
+          "category": "Warranty",
+          "label": "Charger Warranty",
+          "order": 24,
+          "value": "3 years"
+        },
+        {
+          "category": "Warranty",
+          "label": "Extended Battery Warranty (Add-on)",
+          "order": 25,
+          "value": "Up to 10 years/100 000 km"
+        },
+        {
+          "category": "Warranty",
+          "label": "Free Upgrade with AtherStack™ Pro",
+          "order": 26,
+          "value": "5 years/60 000 km"
+        },
+        {
+          "category": "Warranty",
+          "label": "Standard Battery Warranty",
+          "order": 27,
+          "value": "3 years/30 000 km"
+        },
+        {
+          "category": "Warranty",
+          "label": "Standard Vehicle Warranty",
+          "order": 28,
+          "value": "3 years/30 000 km whichever is earlier"
+        },
+        {
+          "category": "Build",
+          "label": "LongTravel Suspension",
+          "order": 29,
+          "value": null
+        },
+        {
+          "category": "Build",
+          "label": "Metal Body",
+          "order": 30,
+          "value": null
+        },
+        {
+          "category": "Build",
+          "label": "Silent Gear Drive",
+          "order": 31,
+          "value": null
+        },
+        {
+          "category": "Build",
+          "label": "Suspension (front)",
+          "order": 32,
+          "value": "Telescopic forks"
+        },
+        {
+          "category": "Build",
+          "label": "Suspension (rear)",
+          "order": 33,
+          "value": "Progressive monoshock"
+        },
+        {
+          "category": "Build",
+          "label": "Transmission Ratio",
+          "order": 34,
+          "value": "7.8:1"
+        },
+        {
+          "category": "Build",
+          "label": "Transmission Type",
+          "order": 35,
+          "value": "Belt drive"
+        },
+        {
+          "category": "Build",
+          "label": "Tyre size (front)",
+          "order": 36,
+          "value": "90/90-12 tubeless tyres"
+        },
+        {
+          "category": "Build",
+          "label": "Tyre size (rear)",
+          "order": 37,
+          "value": "90/90-12 tubeless tyres"
+        },
+        {
+          "category": "Build",
+          "label": "Wheel size (front)",
+          "order": 38,
+          "value": "12 inches"
+        },
+        {
+          "category": "Build",
+          "label": "Wheel size (rear)",
+          "order": 39,
+          "value": "12 inches"
+        },
+        {
+          "category": "Build",
+          "label": "Wheel type",
+          "order": 40,
+          "value": "Alloy wheels"
+        },
+        {
+          "category": "Brakes",
+          "label": "Brake type (front)",
+          "order": 41,
+          "value": "Triple-piston calliper disc"
+        },
+        {
+          "category": "Brakes",
+          "label": "Brake type (rear)",
+          "order": 42,
+          "value": "Single-piston calliper disc"
+        },
+        {
+          "category": "Brakes",
+          "label": "Braking system",
+          "order": 43,
+          "value": "Combined braking system & regenerative braking"
+        },
+        {
+          "category": "Brakes",
+          "label": "Disc size (front)",
+          "order": 44,
+          "value": "200 mm"
+        },
+        {
+          "category": "Brakes",
+          "label": "Disc size (rear)",
+          "order": 45,
+          "value": "190 mm"
+        },
+        {
+          "category": "Brakes",
+          "label": "Drum size (front)",
+          "order": 46,
+          "value": null
+        },
+        {
+          "category": "Brakes",
+          "label": "Drum size (rear)",
+          "order": 47,
+          "value": null
+        },
+        {
+          "category": "Dimensions",
+          "label": "Ground clearance",
+          "order": 48,
+          "value": "17 cm"
+        },
+        {
+          "category": "Dimensions",
+          "label": "Kerb weight",
+          "order": 49,
+          "value": "108 kg"
+        },
+        {
+          "category": "Dimensions",
+          "label": "Seat Height",
+          "order": 50,
+          "value": "78 cm"
+        },
+        {
+          "category": "Dimensions",
+          "label": "Wheelbase",
+          "order": 51,
+          "value": "129.6 cm"
+        },
+        {
+          "category": "Dashboard",
+          "label": "Operating system",
+          "order": 52,
+          "value": "Android Open Source"
+        },
+        {
+          "category": "Dashboard",
+          "label": "Processor",
+          "order": 53,
+          "value": "Snapdragon 212"
+        },
+        {
+          "category": "Dashboard",
+          "label": "RAM",
+          "order": 54,
+          "value": "1 GB"
+        },
+        {
+          "category": "Dashboard",
+          "label": "Dashboard type",
+          "order": 55,
+          "value": "DeepView™ Display"
+        },
+        {
+          "category": "Dashboard",
+          "label": "Dashboard screen size",
+          "order": 56,
+          "value": "17.7 cm (7\")"
+        },
+        {
+          "category": "Dashboard",
+          "label": "Storage",
+          "order": 57,
+          "value": "8 GB"
+        },
+        {
+          "category": "Dashboard",
+          "label": "Water & dust resistance",
+          "order": 58,
+          "value": "IP65"
+        },
+        {
+          "category": "Ather Connect™",
+          "label": "Call decline with text",
+          "order": 59,
+          "value": "No"
+        },
+        {
+          "category": "Ather Connect™",
+          "label": "Crash Alert",
+          "order": 60,
+          "value": "No"
+        },
+        {
+          "category": "Ather Connect™",
+          "label": "Cricket Scores on Dash",
+          "order": 61,
+          "value": "No"
+        },
+        {
+          "category": "Ather Connect™",
+          "label": "Document Storage",
+          "order": 62,
+          "value": "No"
+        },
+        {
+          "category": "Ather Connect™",
+          "label": "Find my scooter",
+          "order": 63,
+          "value": "Yes"
+        },
+        {
+          "category": "Ather Connect™",
+          "label": "Inter-city Trip Planner™",
+          "order": 64,
+          "value": "No"
+        },
+        {
+          "category": "Ather Connect™",
+          "label": "Live location Sharing",
+          "order": 65,
+          "value": "No"
+        },
+        {
+          "category": "Ather Connect™",
+          "label": "LockSafe™",
+          "order": 66,
+          "value": "No"
+        },
+        {
+          "category": "Ather Connect™",
+          "label": "Multi-language dashboard",
+          "order": 67,
+          "value": "No"
+        },
+        {
+          "category": "Ather Connect™",
+          "label": "Navigation",
+          "order": 68,
+          "value": "No"
+        },
+        {
+          "category": "Ather Connect™",
+          "label": "OTA Updates",
+          "order": 69,
+          "value": "Yes"
+        },
+        {
+          "category": "Ather Connect™",
+          "label": "ParkSafe™",
+          "order": 70,
+          "value": "Yes"
+        },
+        {
+          "category": "Ather Connect™",
+          "label": "Ping my scooter",
+          "order": 71,
+          "value": "No"
+        },
+        {
+          "category": "Ather Connect™",
+          "label": "Pothole+ Alerts",
+          "order": 72,
+          "value": "No"
+        },
+        {
+          "category": "Ather Connect™",
+          "label": "Push Navigation",
+          "order": 73,
+          "value": "No"
+        },
+        {
+          "category": "Ather Connect™",
+          "label": "Remote Charging Status",
+          "order": 74,
+          "value": "No"
+        },
+        {
+          "category": "Ather Connect™",
+          "label": "Remote Control",
+          "order": 75,
+          "value": "No"
+        },
+        {
+          "category": "Ather Connect™",
+          "label": "Ride Stories",
+          "order": 76,
+          "value": "Yes"
+        },
+        {
+          "category": "Ather Connect™",
+          "label": "Savings Tracker",
+          "order": 77,
+          "value": "Yes"
+        },
+        {
+          "category": "Ather Connect™",
+          "label": "Theft & Tow Notifications",
+          "order": 78,
+          "value": "Yes"
+        },
+        {
+          "category": "Ather Connect™",
+          "label": "Voice on Ather",
+          "order": 79,
+          "value": "No"
+        },
+        {
+          "category": "Ather Connect™",
+          "label": "WhatsApp preview on dashboard",
+          "order": 80,
+          "value": "No"
+        },
+        {
+          "category": "RideAssist™",
+          "label": "AirWalk™️",
+          "order": 81,
+          "value": null
+        },
+        {
+          "category": "RideAssist™",
+          "label": "Auto Indicator cut-off",
+          "order": 82,
+          "value": "Yes"
+        },
+        {
+          "category": "RideAssist™",
+          "label": "AutoHold™",
+          "order": 83,
+          "value": "Yes"
+        },
+        {
+          "category": "RideAssist™",
+          "label": "Call & Music Alerts",
+          "order": 84,
+          "value": null
+        },
+        {
+          "category": "RideAssist™",
+          "label": "Call & Music Controls",
+          "order": 85,
+          "value": "Yes"
+        },
+        {
+          "category": "RideAssist™",
+          "label": "Dashboard auto brightness",
+          "order": 86,
+          "value": "Yes"
+        },
+        {
+          "category": "RideAssist™",
+          "label": "Emergency Stop Signal (ESS)",
+          "order": 87,
+          "value": "Yes"
+        },
+        {
+          "category": "RideAssist™",
+          "label": "Guide-me-home lights",
+          "order": 88,
+          "value": "Yes"
+        },
+        {
+          "category": "RideAssist™",
+          "label": "Interactive UI",
+          "order": 89,
+          "value": "Yes"
+        },
+        {
+          "category": "RideAssist™",
+          "label": "Magic Twist",
+          "order": 90,
+          "value": "No"
+        },
+        {
+          "category": "RideAssist™",
+          "label": "Multi-Mode Traction Control",
+          "order": 91,
+          "value": "No"
+        },
+        {
+          "category": "RideAssist™",
+          "label": "Optimised Charging",
+          "order": 92,
+          "value": "No"
+        },
+        {
+          "category": "RideAssist™",
+          "label": "Reverse Park Assist",
+          "order": 93,
+          "value": "Yes"
+        },
+        {
+          "category": "Key Features",
+          "label": "Riding modes",
+          "order": 94,
+          "value": "SmartEco | Eco | Ride | Sport"
+        },
+        {
+          "category": "RideAssist™",
+          "label": "SkidControl™",
+          "order": 95,
+          "value": null
+        },
+        {
+          "category": "RideAssist™",
+          "label": "TrueRange™ Display",
+          "order": 96,
+          "value": "Yes"
+        },
+        {
+          "category": "RideAssist™",
+          "label": "Vehicle FallSafe™",
+          "order": 97,
+          "value": "Yes"
+        },
+        {
+          "category": "RideAssist™",
+          "label": "Infinite Cruise",
+          "order": 98,
+          "value": "No"
+        },
+        {
+          "category": "Peripherals & convenience",
+          "label": "Headlights",
+          "order": 99,
+          "value": "LED"
+        },
+        {
+          "category": "Peripherals & convenience",
+          "label": "Indicators",
+          "order": 100,
+          "value": "LED"
+        },
+        {
+          "category": "Peripherals & convenience",
+          "label": "Mobile Holder",
+          "order": 101,
+          "value": null
+        },
+        {
+          "category": "Peripherals & convenience",
+          "label": "USB Charger (Front)",
+          "order": 102,
+          "value": null
+        },
+        {
+          "category": "Peripherals & convenience",
+          "label": "Pillion Backrest",
+          "order": 103,
+          "value": null
+        },
+        {
+          "category": "Peripherals & convenience",
+          "label": "Pillion grab handle",
+          "order": 104,
+          "value": "Aluminium"
+        },
+        {
+          "category": "Peripherals & convenience",
+          "label": "Side stand motor cutoff",
+          "order": 105,
+          "value": "Yes"
+        },
+        {
+          "category": "Peripherals & convenience",
+          "label": "Silent Gear Drive (Closed Gearbox)",
+          "order": 106,
+          "value": null
+        },
+        {
+          "category": "Peripherals & convenience",
+          "label": "Tail lights",
+          "order": 107,
+          "value": "LED"
+        },
+        {
+          "category": "Peripherals & convenience",
+          "label": "Vehicle Key",
+          "order": 108,
+          "value": "Mechanical"
+        }
+      ],
+      "model_year": null
+    },
+    {
+      "id": "ather-s450s535in",
+      "manufacturer": "Ather",
+      "family": "450",
+      "model": "450S",
+      "variant_code": "S450S535IN",
+      "source_variant_name": "Specifications - 450S (S450S535IN)",
+      "source_id": "450-specifications",
+      "source_url": "https://www.atherenergy.com/450/specifications",
+      "snapshot_date": "2026-11-06",
+      "publisher_updated_at": "2026-10-26T16:51:12.808Z",
+      "availability_status": "listed_in_specifications",
+      "battery_capacity_label": "3.5 kWh",
+      "battery_capacity_options_kwh": [
+        3.5
+      ],
+      "battery_capacity_mapping_note": null,
+      "idc_range_km": 161.0,
+      "true_range_km": 130.0,
+      "true_range_basis": "manufacturer SmartEco claim, not this vehicle measurement",
+      "top_speed_kmh": 90.0,
+      "peak_power_kw": 5.4,
+      "peak_torque_nm": 22.0,
+      "acceleration_0_40_s": 3.9,
+      "usable_energy_kwh": null,
+      "measured_range_km": null,
+      "diagnostic_support": "not_assigned",
+      "specifications": [
+        {
+          "category": "Key Features",
+          "label": "Available Colours",
+          "order": 1,
+          "value": "5"
+        },
+        {
+          "category": "Key Features",
+          "label": "Bootspace",
+          "order": 2,
+          "value": "22 L"
+        },
+        {
+          "category": "Key Features",
+          "label": "IDC Range",
+          "order": 3,
+          "value": "161 km"
+        },
+        {
+          "category": "Battery",
+          "label": "Battery Casing",
+          "order": 4,
+          "value": "Aluminium casing"
+        },
+        {
+          "category": "Battery",
+          "label": "Installed capacity",
+          "order": 5,
+          "value": "3.5 kWh"
+        },
+        {
+          "category": "Dashboard",
+          "label": "Water & dust resistance",
+          "order": 6,
+          "value": "IP65"
+        },
+        {
+          "category": "Charging",
+          "label": "0-100% (Home Charging)",
+          "order": 7,
+          "value": "4 hr 30 min"
+        },
+        {
+          "category": "Charging",
+          "label": "0-80% (Home Charging)",
+          "order": 8,
+          "value": "3 hr 25 min"
+        },
+        {
+          "category": "Charging",
+          "label": "Ather Grid access",
+          "order": 9,
+          "value": "Yes"
+        },
+        {
+          "category": "Charging",
+          "label": "Ather Grid™ charging speed",
+          "order": 10,
+          "value": "Up to 15 km in 10 min"
+        },
+        {
+          "category": "Charging",
+          "label": "On-board Charger (Default)",
+          "order": 11,
+          "value": null
+        },
+        {
+          "category": "Charging",
+          "label": "Home Charger",
+          "order": 12,
+          "value": "900W"
+        },
+        {
+          "category": "Charging",
+          "label": "Combined Charger (450 W Additional Capacity)",
+          "order": 13,
+          "value": null
+        },
+        {
+          "category": "Charging",
+          "label": "Combined Charger's Home Charging (0-80%)",
+          "order": 14,
+          "value": null
+        },
+        {
+          "category": "Performance",
+          "label": "Acceleration (0-40 km/h)",
+          "order": 15,
+          "value": "3.9 s"
+        },
+        {
+          "category": "Performance",
+          "label": "Coasting Regen",
+          "order": 16,
+          "value": "Yes"
+        },
+        {
+          "category": "Performance",
+          "label": "Gradeability",
+          "order": 17,
+          "value": "18 degree"
+        },
+        {
+          "category": "Performance",
+          "label": "Ingress protection (motor)",
+          "order": 18,
+          "value": "IP66"
+        },
+        {
+          "category": "Performance",
+          "label": "Max torque",
+          "order": 19,
+          "value": "22 Nm"
+        },
+        {
+          "category": "Performance",
+          "label": "Motor Type",
+          "order": 20,
+          "value": "PMSM"
+        },
+        {
+          "category": "Performance",
+          "label": "Peak Power",
+          "order": 21,
+          "value": "5.4 kW"
+        },
+        {
+          "category": "Performance",
+          "label": "Top speed",
+          "order": 22,
+          "value": "90 km/h"
+        },
+        {
+          "category": "Performance",
+          "label": "TrueRange™",
+          "order": 23,
+          "value": "130 km"
+        },
+        {
+          "category": "Warranty",
+          "label": "Charger Warranty",
+          "order": 24,
+          "value": "3 years"
+        },
+        {
+          "category": "Warranty",
+          "label": "Extended Battery Warranty (Add-on)",
+          "order": 25,
+          "value": "Up to 10 years/100 000 km"
+        },
+        {
+          "category": "Warranty",
+          "label": "Free Upgrade with AtherStack™ Pro",
+          "order": 26,
+          "value": "5 years/60 000 km"
+        },
+        {
+          "category": "Warranty",
+          "label": "Standard Battery Warranty",
+          "order": 27,
+          "value": "3 years/30 000 km"
+        },
+        {
+          "category": "Warranty",
+          "label": "Standard Vehicle Warranty",
+          "order": 28,
+          "value": "3 years/30 000 km whichever is earlier"
+        },
+        {
+          "category": "Build",
+          "label": "LongTravel Suspension",
+          "order": 29,
+          "value": null
+        },
+        {
+          "category": "Build",
+          "label": "Metal Body",
+          "order": 30,
+          "value": null
+        },
+        {
+          "category": "Build",
+          "label": "Silent Gear Drive",
+          "order": 31,
+          "value": null
+        },
+        {
+          "category": "Build",
+          "label": "Suspension (front)",
+          "order": 32,
+          "value": "Telescopic forks"
+        },
+        {
+          "category": "Build",
+          "label": "Suspension (rear)",
+          "order": 33,
+          "value": "Progressive monoshock"
+        },
+        {
+          "category": "Build",
+          "label": "Transmission Ratio",
+          "order": 34,
+          "value": "7.8:1"
+        },
+        {
+          "category": "Build",
+          "label": "Transmission Type",
+          "order": 35,
+          "value": "Belt drive"
+        },
+        {
+          "category": "Build",
+          "label": "Tyre size (front)",
+          "order": 36,
+          "value": "90/90-12 tubeless tyres"
+        },
+        {
+          "category": "Build",
+          "label": "Tyre size (rear)",
+          "order": 37,
+          "value": "90/90-12 tubeless tyres"
+        },
+        {
+          "category": "Build",
+          "label": "Wheel size (front)",
+          "order": 38,
+          "value": "12 inches"
+        },
+        {
+          "category": "Build",
+          "label": "Wheel size (rear)",
+          "order": 39,
+          "value": "12 inches"
+        },
+        {
+          "category": "Build",
+          "label": "Wheel type",
+          "order": 40,
+          "value": "Alloy wheels"
+        },
+        {
+          "category": "Brakes",
+          "label": "Brake type (front)",
+          "order": 41,
+          "value": "Triple-piston calliper disc"
+        },
+        {
+          "category": "Brakes",
+          "label": "Brake type (rear)",
+          "order": 42,
+          "value": "Single-piston calliper disc"
+        },
+        {
+          "category": "Brakes",
+          "label": "Braking system",
+          "order": 43,
+          "value": "Combined braking system & regenerative braking"
+        },
+        {
+          "category": "Brakes",
+          "label": "Disc size (front)",
+          "order": 44,
+          "value": "200 mm"
+        },
+        {
+          "category": "Brakes",
+          "label": "Disc size (rear)",
+          "order": 45,
+          "value": "190 mm"
+        },
+        {
+          "category": "Brakes",
+          "label": "Drum size (front)",
+          "order": 46,
+          "value": null
+        },
+        {
+          "category": "Brakes",
+          "label": "Drum size (rear)",
+          "order": 47,
+          "value": null
+        },
+        {
+          "category": "Dimensions",
+          "label": "Ground clearance",
+          "order": 48,
+          "value": "17 cm"
+        },
+        {
+          "category": "Dimensions",
+          "label": "Kerb weight",
+          "order": 49,
+          "value": "111.6 kg"
+        },
+        {
+          "category": "Dimensions",
+          "label": "Seat Height",
+          "order": 50,
+          "value": "78 cm"
+        },
+        {
+          "category": "Dimensions",
+          "label": "Wheelbase",
+          "order": 51,
+          "value": "129.6 cm"
+        },
+        {
+          "category": "Dashboard",
+          "label": "Operating system",
+          "order": 52,
+          "value": "Android Open Source"
+        },
+        {
+          "category": "Dashboard",
+          "label": "Processor",
+          "order": 53,
+          "value": "Snapdragon 212"
+        },
+        {
+          "category": "Dashboard",
+          "label": "RAM",
+          "order": 54,
+          "value": "1 GB"
+        },
+        {
+          "category": "Dashboard",
+          "label": "Dashboard type",
+          "order": 55,
+          "value": "DeepView™ Display"
+        },
+        {
+          "category": "Dashboard",
+          "label": "Dashboard screen size",
+          "order": 56,
+          "value": "17.7 cm (7\")"
+        },
+        {
+          "category": "Dashboard",
+          "label": "Storage",
+          "order": 57,
+          "value": "8 GB"
+        },
+        {
+          "category": "Dashboard",
+          "label": "Water & dust resistance",
+          "order": 58,
+          "value": "IP65"
+        },
+        {
+          "category": "Ather Connect™",
+          "label": "Call decline with text",
+          "order": 59,
+          "value": "No"
+        },
+        {
+          "category": "Ather Connect™",
+          "label": "Crash Alert",
+          "order": 60,
+          "value": "No"
+        },
+        {
+          "category": "Ather Connect™",
+          "label": "Cricket Scores on Dash",
+          "order": 61,
+          "value": "No"
+        },
+        {
+          "category": "Ather Connect™",
+          "label": "Document Storage",
+          "order": 62,
+          "value": "No"
+        },
+        {
+          "category": "Ather Connect™",
+          "label": "Find my scooter",
+          "order": 63,
+          "value": "Yes"
+        },
+        {
+          "category": "Ather Connect™",
+          "label": "Inter-city Trip Planner™",
+          "order": 64,
+          "value": "No"
+        },
+        {
+          "category": "Ather Connect™",
+          "label": "Live location Sharing",
+          "order": 65,
+          "value": "No"
+        },
+        {
+          "category": "Ather Connect™",
+          "label": "LockSafe™",
+          "order": 66,
+          "value": "No"
+        },
+        {
+          "category": "Ather Connect™",
+          "label": "Multi-language dashboard",
+          "order": 67,
+          "value": "No"
+        },
+        {
+          "category": "Ather Connect™",
+          "label": "Navigation",
+          "order": 68,
+          "value": "No"
+        },
+        {
+          "category": "Ather Connect™",
+          "label": "OTA Updates",
+          "order": 69,
+          "value": "Yes"
+        },
+        {
+          "category": "Ather Connect™",
+          "label": "ParkSafe™",
+          "order": 70,
+          "value": "Yes"
+        },
+        {
+          "category": "Ather Connect™",
+          "label": "Ping my scooter",
+          "order": 71,
+          "value": "No"
+        },
+        {
+          "category": "Ather Connect™",
+          "label": "Pothole+ Alerts",
+          "order": 72,
+          "value": "No"
+        },
+        {
+          "category": "Ather Connect™",
+          "label": "Push Navigation",
+          "order": 73,
+          "value": "No"
+        },
+        {
+          "category": "Ather Connect™",
+          "label": "Remote Charging Status",
+          "order": 74,
+          "value": "No"
+        },
+        {
+          "category": "Ather Connect™",
+          "label": "Remote Control",
+          "order": 75,
+          "value": "No"
+        },
+        {
+          "category": "Ather Connect™",
+          "label": "Ride Stories",
+          "order": 76,
+          "value": "Yes"
+        },
+        {
+          "category": "Ather Connect™",
+          "label": "Savings Tracker",
+          "order": 77,
+          "value": "Yes"
+        },
+        {
+          "category": "Ather Connect™",
+          "label": "Theft & Tow Notifications",
+          "order": 78,
+          "value": "Yes"
+        },
+        {
+          "category": "Ather Connect™",
+          "label": "Voice on Ather",
+          "order": 79,
+          "value": "No"
+        },
+        {
+          "category": "Ather Connect™",
+          "label": "WhatsApp preview on dashboard",
+          "order": 80,
+          "value": "No"
+        },
+        {
+          "category": "RideAssist™",
+          "label": "AirWalk™️",
+          "order": 81,
+          "value": null
+        },
+        {
+          "category": "RideAssist™",
+          "label": "Auto Indicator cut-off",
+          "order": 82,
+          "value": "Yes"
+        },
+        {
+          "category": "RideAssist™",
+          "label": "AutoHold™",
+          "order": 83,
+          "value": "Yes"
+        },
+        {
+          "category": "RideAssist™",
+          "label": "Call & Music Alerts",
+          "order": 84,
+          "value": null
+        },
+        {
+          "category": "RideAssist™",
+          "label": "Call & Music Controls",
+          "order": 85,
+          "value": "Yes"
+        },
+        {
+          "category": "RideAssist™",
+          "label": "Dashboard auto brightness",
+          "order": 86,
+          "value": "Yes"
+        },
+        {
+          "category": "RideAssist™",
+          "label": "Emergency Stop Signal (ESS)",
+          "order": 87,
+          "value": "Yes"
+        },
+        {
+          "category": "RideAssist™",
+          "label": "Guide-me-home lights",
+          "order": 88,
+          "value": "Yes"
+        },
+        {
+          "category": "RideAssist™",
+          "label": "Interactive UI",
+          "order": 89,
+          "value": "Yes"
+        },
+        {
+          "category": "RideAssist™",
+          "label": "Magic Twist",
+          "order": 90,
+          "value": "No"
+        },
+        {
+          "category": "RideAssist™",
+          "label": "Multi-Mode Traction Control",
+          "order": 91,
+          "value": "No"
+        },
+        {
+          "category": "RideAssist™",
+          "label": "Optimised Charging",
+          "order": 92,
+          "value": "No"
+        },
+        {
+          "category": "RideAssist™",
+          "label": "Reverse Park Assist",
+          "order": 93,
+          "value": "Yes"
+        },
+        {
+          "category": "Key Features",
+          "label": "Riding modes",
+          "order": 94,
+          "value": "SmartEco | Eco | Ride | Sport"
+        },
+        {
+          "category": "RideAssist™",
+          "label": "SkidControl™",
+          "order": 95,
+          "value": null
+        },
+        {
+          "category": "RideAssist™",
+          "label": "TrueRange™ Display",
+          "order": 96,
+          "value": "Yes"
+        },
+        {
+          "category": "RideAssist™",
+          "label": "Vehicle FallSafe™",
+          "order": 97,
