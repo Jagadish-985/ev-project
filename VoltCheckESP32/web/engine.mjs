@@ -235,3 +235,82 @@ export function sha256(input) {
             w[i]) >>>
           0,
         t2 =
+          ((rr(a, 2) ^ rr(a, 13) ^ rr(a, 22)) +
+            ((a & b) ^ (a & c) ^ (b & c))) >>>
+          0;
+      j = g;
+      g = f;
+      f = e;
+      e = (d + t1) >>> 0;
+      d = c;
+      c = b;
+      b = a;
+      a = (t1 + t2) >>> 0;
+    }
+    [a, b, c, d, e, f, g, j].forEach((v, i) => (h[i] = (h[i] + v) >>> 0));
+  }
+  return [...h].map((v) => v.toString(16).padStart(8, "0")).join("");
+}
+export function csv(
+  rows,
+  keys = rows.length ? Object.keys(rows[0]) : ["session_id"],
+) {
+  const cell = (v) => '"' + String(v ?? "").replace(/"/g, '""') + '"';
+  return (
+    [
+      keys.map(cell).join(","),
+      ...rows.map((r) => keys.map((k) => cell(r[k])).join(",")),
+    ].join("\r\n") + "\r\n"
+  );
+}
+export function crc32(data) {
+  let c = 0xffffffff;
+  for (const b of data) {
+    c ^= b;
+    for (let j = 0; j < 8; j++) c = (c >>> 1) ^ (c & 1 ? 0xedb88320 : 0);
+  }
+  return (c ^ 0xffffffff) >>> 0;
+}
+export function zip(files) {
+  let parts = [],
+    central = [],
+    offset = 0;
+  const enc = new TextEncoder();
+  for (const [name, contents] of Object.entries(files)) {
+    const n = enc.encode(name),
+      data = typeof contents === "string" ? enc.encode(contents) : contents,
+      crc = crc32(data);
+    const hdr = new Uint8Array(30 + n.length),
+      v = new DataView(hdr.buffer);
+    v.setUint32(0, 0x04034b50, true);
+    v.setUint16(4, 20, true);
+    v.setUint32(14, crc, true);
+    v.setUint32(18, data.length, true);
+    v.setUint32(22, data.length, true);
+    v.setUint16(26, n.length, true);
+    hdr.set(n, 30);
+    parts.push(hdr, data);
+    const ch = new Uint8Array(46 + n.length),
+      cv = new DataView(ch.buffer);
+    cv.setUint32(0, 0x02014b50, true);
+    cv.setUint16(4, 20, true);
+    cv.setUint16(6, 20, true);
+    cv.setUint32(16, crc, true);
+    cv.setUint32(20, data.length, true);
+    cv.setUint32(24, data.length, true);
+    cv.setUint16(28, n.length, true);
+    cv.setUint32(42, offset, true);
+    ch.set(n, 46);
+    central.push(ch);
+    offset += hdr.length + data.length;
+  }
+  const end = new Uint8Array(22),
+    ev = new DataView(end.buffer),
+    cs = central.reduce((a, b) => a + b.length, 0);
+  ev.setUint32(0, 0x06054b50, true);
+  ev.setUint16(8, central.length, true);
+  ev.setUint16(10, central.length, true);
+  ev.setUint32(12, cs, true);
+  ev.setUint32(16, offset, true);
+  return new Blob([...parts, ...central, end], { type: "application/zip" });
+}
