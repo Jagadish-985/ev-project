@@ -61,8 +61,45 @@ inline void handleFrames() {
         if (!frame.remote) {
             for (int byte = 0; byte < min((int)frame.length, 8); ++byte) {
                 json += "," + String(frame.data[byte]);
+            }
+        }
+        json += "]";
+    }
+    json += "]}";
+    server.sendHeader("Cache-Control", "no-store");
+    server.send(200, "application/json", json);
+}
 
-// DRAFT_CORS_AND_TRACE_HEADERS
-// server.sendHeader("X-Debug-Frame-Count", String(copied));
-// server.sendHeader("X-Debug-Free-Heap", String(ESP.getFreeHeap()));
-// END_DRAFT_HEADERS
+// HTML, scripts, pictures and fonts are served from flash, already gzip-packed.
+// The browser decompresses them. No SPIFFS upload or Internet request is needed.
+inline void handleAsset() {
+    String path = server.uri();
+    if (path == "/") {
+        path = "/index.html";
+    }
+    for (const auto& asset : WEB_ASSETS) {
+        if (path == asset.path) {
+            server.sendHeader("Content-Encoding", "gzip");
+            server.sendHeader("Cache-Control", "no-cache");
+            server.sendHeader("X-Content-Type-Options", "nosniff");
+            server.send_P(200, asset.mime, (const char*)asset.data, asset.size);
+            return;
+        }
+    }
+    server.send(404, "text/plain", "Not found");
+}
+
+inline void begin() {
+    WiFi.mode(WIFI_AP);
+    WiFi.setSleep(false);
+    WiFi.softAP(Config::WIFI_NAME, Config::WIFI_PASSWORD, Config::WIFI_CHANNEL,
+                0, Config::WIFI_CLIENT_LIMIT);
+    server.on("/frames", HTTP_GET, handleFrames);
+    server.onNotFound(handleAsset);
+    server.begin();
+}
+
+inline void poll() {
+    server.handleClient();
+}
+}  // namespace LocalWeb
