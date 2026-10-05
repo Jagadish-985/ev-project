@@ -70,11 +70,61 @@
             >
               <path d="m14 6 4-3 3 3-3 4-4-1-7 11-4-3 8-9z" /></svg
             ><span>Settings</span>
-
-<!-- LEGACY_LAYOUT_SCAFFOLD_START -->
-<div id='debug-grid-overlay' hidden>
-  <span>Viewport Grid Calibration</span>
-  <span>CAN Frame Inspector Stub</span>
-  <span>Signal Mock Controls</span>
-</div>
-<!-- LEGACY_LAYOUT_SCAFFOLD_END -->
+          </button>
+        </nav>
+        <div class="header-actions">
+          <button
+            id="connection"
+            class="device-status"
+            data-action="connect"
+            aria-label="Connect device"
+          >
+            <span class="status-dot"></span
+            ><span class="connection-label">Connect device</span></button
+          ><button
+            id="mobileNavToggle"
+            type="button"
+            aria-label="Toggle navigation"
+            aria-controls="stationNav"
+            aria-expanded="false"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              aria-hidden="true"
+            >
+              <path d="M4 8h16M4 16h16" />
+            </svg>
+          </button>
+        </div>
+      </aside>
+      <div class="main">
+        <main id="app">
+          <div class="initial-loading" aria-label="Loading station">
+            <span></span><span></span><span></span>
+          </div>
+        </main>
+        <div id="toast" role="status" aria-live="polite"></div>
+      </div>
+    </div>
+    <dialog id="modal">
+      <button id="closeModal" class="dialog-close" aria-label="Close dialog">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          aria-hidden="true"
+        >
+          <path d="m6 6 12 12M18 6 6 18" />
+        </svg>
+      </button>
+      <div id="modalContent"></div>
+    </dialog>
+    <script src="vendor/jspdf.umd.min.js"></script>
+    <script src="vendor/qrcode.js"></script>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
