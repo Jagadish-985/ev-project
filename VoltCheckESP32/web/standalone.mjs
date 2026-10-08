@@ -291,8 +291,260 @@ export class BrowserStation {
             this.latest[k] = { value, t: f.t };
         }
         this.cursor = j.cursor;
-
-// LEGACY_LOCALSTORAGE_FALLBACK
-function saveDraftSessionToLocalStorage(id, data) { localStorage.setItem(id, JSON.stringify(data)); }
-function clearDraftSession(id) { localStorage.removeItem(id); }
-// END_LEGACY_FALLBACK
+      }
+      this.boot = j.boot;
+      this.now_us = j.now_us;
+      this.synced = performance.now();
+      this.rtt = end - start;
+      this.connected = j.can_ok;
+      this.error = j.can_ok
+        ? ""
+        : "CAN receiver unavailable. Check firmware/board.";
+      this.counters = {
+        missed: j.missed,
+        overrun: j.overrun,
+        bus_errors: j.bus_errors,
+      };
+      this.lost += j.lost;
+      if (j.lost) {
+        events.push({ type: "transport_gap", frames: j.lost, epoch_ms: end });
+        this.check?.fail("CAN frames were lost; retry this check");
+      }
+      if (this.session) {
+        this.check?.tick();
+        if (this.check) {
+          this.session.results[this.check.step.id] = this.check.result();
+          if (this.check.status !== "running" && this.session.running) {
+            events.push({
+              type: "check_result",
+              result: this.check.result(),
+              epoch_ms: end,
+            });
+            this.session.running = null;
+          }
+        }
+        if (end >= this.nextSample) {
+          samples.push({
+            epoch_ms: mid,
+            esp_boot: this.boot,
+            capture_phase: this.phase,
+            signals: this.snapshot(),
+            counters: copy(this.counters),
+            transport_lost_total: this.lost,
+            http_round_trip_ms: this.rtt,
+            connected: this.connected,
+          });
+          this.session.samples++;
+          this.nextSample = end + 250;
+        }
+        await this.persist([{ kind: "batch", frames, samples, events }]);
+      }
+      return this.cursor < j.next;
+    });
+  }
+  async start() {
+    await this.ready;
+    await this.exclusive(() => this.ensureSession());
+    this.loop();
+  }
+  async loop() {
+    let backlog = false;
+    try {
+      backlog = await this.poll();
+    } catch (e) {
+      this.connected = false;
+      this.error = e.message;
+      this.check?.tick();
+    }
+    setTimeout(() => this.loop(), backlog ? 0 : 100);
+  }
+  async api(path, data) {
+    await this.ready;
+    return this.exclusive(async () => {
+      if (path === "/api/token") return { token: "browser-local" };
+      if (path === "/api/status") {
+        this.rows = await this.store.all();
+        this.check?.tick();
+        if (this.check && this.session)
+          this.session.results[this.check.step.id] = this.check.result();
+        return {
+          local_service: true,
+          connected: this.connected && !this.storageError,
+          error: this.storageError || this.error,
+          active: this.session?.id || null,
+          intake: this.session?.intake || null,
+          profile: PROFILE,
+          steps: STEPS,
+          signals: this.snapshot(),
+          checks: this.session?.results || {},
+          phase: this.phase,
+          samples: this.session?.samples || 0,
+          counters: this.counters,
+          lost: this.lost,
+          sessions: this.rows
+            .sort((a, b) => b.intake.started_ms - a.intake.started_ms)
+            .map((s) => ({
+              id: s.id,
+              state: s.state,
+              registration: s.intake.registration,
+              owner: s.intake.owner_name,
+            })),
+        };
+      }
+      if (path.startsWith("/api/report/")) {
+        let s = await this.store.get(decodeURIComponent(path.split("/").pop()));
+        if (!s?.report) throw Error("Finalised report not found");
+        return s.report;
+      }
+      if (path === "/api/intake") {
+        if (this.session) throw Error("Finish the active inspection first");
+        if (this.storageError) throw Error(this.storageError);
+        this.assertLease();
+        if (data.profile_id !== PROFILE.id)
+          throw Error("This vehicle has no validated diagnostic mapping");
+        for (const k of ["owner_name", "registration", "station", "technician"])
+          if (!String(data[k] || "").trim()) throw Error("Complete " + k);
+        if (!data.consent) throw Error("Record owner consent");
+        let id =
+          "VC-" +
+          new Date().toISOString().slice(0, 10).replaceAll("-", "") +
+          "-" +
+          Math.random().toString(36).slice(2, 10).toUpperCase();
+        this.session = {
+          id,
+          state: "recording",
+          results: {},
+          running: null,
+          samples: 0,
+          bytes: 0,
+          intake: {
+            ...data,
+            session_id: id,
+            started_ms: Date.now(),
+            profile: PROFILE,
+            initial_counters: copy(this.counters),
+            initial_transport_lost: this.lost,
+          },
+        };
+        this.phase = "stationary";
+        await this.persist([
+          { kind: "event", payload: { type: "intake", epoch_ms: Date.now() } },
+        ]);
+        return { id };
+      }
+      if (!this.session) throw Error("Start an inspection first");
+      this.assertLease();
+      if (path === "/api/check") {
+        if (!this.connected) throw Error("ESP32 is offline");
+        if (this.check?.status === "running")
+          throw Error("Complete or skip the current check");
+        let step = STEPS.find((s) => s.id === data.id);
+        if (!step) throw Error("Unknown check");
+        this.check = new Check(
+          step,
+          this.boot,
+          this.cursor - 1,
+          this.now_us + Math.max(0, performance.now() - this.synced) * 1000,
+        );
+        this.session.running = step.id;
+        this.session.results[step.id] = this.check.result();
+        await this.persist([
+          {
+            kind: "event",
+            payload: {
+              type: "check_started",
+              step_id: step.id,
+              epoch_ms: Date.now(),
+            },
+          },
+        ]);
+        return { ok: true };
+      }
+      if (path === "/api/skip") {
+        let step = STEPS.find((s) => s.id === data.id);
+        if (!step || !String(data.reason || "").trim())
+          throw Error("A check and reason are required");
+        if (this.check?.status === "running" && this.check.step.id !== data.id)
+          throw Error("Complete the active check");
+        if (this.check?.step.id === data.id) this.check = null;
+        this.session.running = null;
+        this.session.results[data.id] = {
+          ...step,
+          status: "not_observed",
+          phase: "done",
+          reason: data.reason,
+          evidence: [],
+        };
+        await this.persist();
+        return { ok: true };
+      }
+      if (path === "/api/phase") {
+        if (!["stationary", "road"].includes(data.phase))
+          throw Error("Invalid phase");
+        this.phase = data.phase;
+        await this.persist([
+          {
+            kind: "event",
+            payload: { type: "phase", phase: this.phase, epoch_ms: Date.now() },
+          },
+        ]);
+        return { ok: true };
+      }
+      if (path === "/api/gps") {
+        if (
+          !Number.isFinite(data.latitude) ||
+          Math.abs(data.latitude) > 90 ||
+          !Number.isFinite(data.longitude) ||
+          Math.abs(data.longitude) > 180 ||
+          !Number.isFinite(data.accuracy_m) ||
+          data.accuracy_m < 0 ||
+          !Number.isFinite(data.fix_ms)
+        )
+          throw Error("Invalid GPS fix");
+        await this.persist([{ kind: "gps", payload: data }]);
+        return { ok: true };
+      }
+      if (path === "/api/finalize") {
+        if (this.phase === "road")
+          throw Error("End road recording while parked first");
+        if (
+          STEPS.some(
+            (s) =>
+              !["observed", "not_observed"].includes(
+                this.session.results[s.id]?.status,
+              ),
+          )
+        )
+          throw Error("Attempt each check or record a reason");
+        for (const k of [
+          "tyres",
+          "brakes",
+          "lights",
+          "battery_casing",
+          "wiring",
+        ])
+          if (
+            !["acceptable", "attention", "not_inspected"].includes(
+              data.manual?.[k],
+            )
+          )
+            throw Error("Complete manual review");
+        const sn = this.snapshot(),
+          missing = ["voltage", "current", "soc", "odometer"].filter(
+            (k) => !sn[k]?.fresh,
+          ),
+          initial = this.session.intake.initial_counters || {},
+          deltas = Object.fromEntries(
+            Object.entries(this.counters).map(([k, v]) => [
+              k,
+              Math.max(0, v - (initial[k] || 0)),
+            ]),
+          ),
+          gaps = this.lost - this.session.intake.initial_transport_lost;
+        const checks = Object.values(this.session.results);
+        const r = {
+          schema: "voltcheck-inspection-v1",
+          session_id: this.session.id,
+          intake: this.session.intake,
+          finished_ms: Date.now(),
+          checks,
