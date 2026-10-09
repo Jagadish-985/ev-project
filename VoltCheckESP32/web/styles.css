@@ -1322,9 +1322,1327 @@ dialog h2 {
   width: 100%;
   margin-top: 3px;
 }
+.drawer-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+.drawer-footer a,
+.drawer-footer button {
+  font-size: 10px;
+}
+.drawer .command {
+  min-width: 0;
+  width: 265px;
+}
+.profile-info {
+  color: #f2f3f3;
+}
+#toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translate(-50%, 12px);
+  background: #2a4421;
+  color: #272a2f;
+  padding: 13px 21px;
+  border-radius: 8px;
+  font-size: 12px;
+  line-height: 1.6;
+  z-index: 90;
+  box-shadow: 0 7px 20px #263c1615;
+  max-width: min(460px, calc(100% - 32px));
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.18s,
+    transform 0.18s,
+    visibility 0.18s;
+  pointer-events: none;
+}
+#toast.visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  visibility: visible;
+}
+.initial-loading {
+  padding: 25px 0;
+  display: grid;
+  gap: 28px;
+}
+.initial-loading span {
+  height: 15px;
+  width: 100%;
+  max-width: 550px;
+  border-radius: 5px;
+  background: #f3f6ee;
+  animation: breathe 1.5s ease-in-out infinite;
+}
+.initial-loading span:first-child {
+  width: 200px;
+  height: 29px;
+}
+.initial-loading span:last-child {
+  height: 180px;
+  max-width: 850px;
+}
+/* The document renderer retains the audit detail; the main workflow does not repeat it. */
+.certificate {
+  padding: 30px 0;
+  background: #fff;
+  color: #242a26;
+}
+.certificate .cert-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  border-bottom: 2px solid #202420;
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+}
+.certificate h1 {
+  font-size: 25px;
+}
+.certificate h2 {
+  font-size: 18px;
+}
+.certificate h3 {
+  font-size: 15px;
+}
+.certificate p,
+.certificate td,
+.certificate th {
+  color: #242a26;
+}
+.certificate .fields {
+  margin: 20px 0;
+}
+.certificate .summary-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid #e6ebdf;
+  padding: 12px 0;
+  font-size: 12px;
+}
+.cert-section {
+  margin: 28px 0;
+}
+.range-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.range-grid div {
+  padding: 16px;
+  background: #f5f7f0;
+  text-align: center;
+}
+.range-grid strong {
+  display: block;
+  font-size: 25px;
+  margin: 12px;
+}
+.hash {
+  font:
+    9px ui-monospace,
+    monospace;
+  overflow-wrap: anywhere;
+  color: #69716b !important;
+}
+.demo-watermark {
+  padding: 12px;
+  border: 1px solid #c7ae79;
+  color: #242a26;
+  margin: 0 0 20px;
+  text-align: center;
+  font-size: 11px;
+}
+.certificate .notice {
+  font-size: 11px;
+  line-height: 1.7;
+  color: #242a26;
+  background: #f6f8f1;
+  padding: 14px;
+}
+.certificate .hint {
+  color: #69716b;
+}
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+.row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+code {
+  font-size: 12px;
+}
+/* Motion belongs to route changes and confirmed state changes, never a telemetry refresh. */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+}
+::view-transition-old(workspace) {
+  animation: page-out 0.14s ease-in both;
+}
+::view-transition-new(workspace) {
+  animation: page-in 0.23s var(--ease) both;
+}
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateY(7px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes page-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-3px);
+  }
+}
+@keyframes breathe {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes complete {
+  from {
+    transform: scale(0.9);
+    opacity: 0.4;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes dialog-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes drawer-in {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (max-width: 1100px) {
+  .vehicle-layout {
+    gap: 45px;
+  }
+  .checks-layout {
+    gap: 28px;
+    grid-template-columns: 210px minmax(0, 1fr);
+  }
+  .test-stage {
+    padding-left: 23px;
+    padding-right: 14px;
+  }
+  .test-instruction {
+    font-size: 24px;
+  }
+  #stationNav {
+    gap: 24px;
+  }
+  .brandtag {
+    display: none;
+  }
+  .catalogue-toolbar {
+    flex-wrap: wrap;
+  }
+  .filter-tabs {
+    margin-right: auto;
+  }
+  .live-metric {
+    padding-left: 18px;
+  }
+  .live-metric small {
+    padding-right: 15px;
+  }
+}
+@media (max-width: 800px) {
+  main {
+    padding: 34px 26px 60px;
+  }
+  #stationHeader {
+    padding: 0 26px;
+    height: 70px;
+    gap: 20px;
+  }
+  .brand {
+    font-size: 22px;
+  }
+  #stationNav {
+    gap: 20px;
+  }
+  .device-status {
+    padding: 8px 10px;
+  }
+  .vehicle-layout {
+    gap: 30px;
+    grid-template-columns: 1fr 1fr;
+  }
+  .vehicle-reference img {
+    height: 255px;
+  }
+  .vehicle-reference figcaption {
+    padding: 20px;
+  }
+  .vehicle-reference h3 {
+    font-size: 20px;
+  }
+  .vehicle-battery {
+    font-size: 10px;
+  }
+  .fields {
+    gap: 21px 16px;
+  }
+  .vehicle-form h2 {
+    font-size: 19px;
+  }
+  .live-metric {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 3px 6px;
+  }
+  .live-metric > span {
+    grid-column: 1/-1;
+    font-size: 10px;
+    margin-bottom: 5px;
+  }
+  .live-metric small {
+    padding-right: 12px;
+  }
+  .live-metric strong {
+    font-size: 20px;
+  }
+  .test-instruction {
+    font-size: 22px;
+  }
+  .check-rail {
+    min-width: 0;
+  }
+  .checks-layout {
+    grid-template-columns: 180px minmax(0, 1fr);
+    gap: 20px;
+  }
+  #checkList button {
+    font-size: 11px;
+    gap: 8px;
+    padding: 13px 9px;
+  }
+  .check-number {
+    font-size: 8px;
+  }
+  .test-heading h2 {
+    font-size: 15px;
+  }
+  .test-stage {
+    padding: 4px 10px 0 20px;
+  }
+  .test-actions {
+    gap: 16px;
+  }
+  .review-checks {
+    column-gap: 23px;
+  }
+}
+@media (max-width: 650px) {
+  #stationHeader {
+    height: 64px;
+    padding: 0 20px;
+    gap: 14px;
+  }
+  .brand {
+    font-size: 21px;
+    letter-spacing: -0.7px;
+  }
+  #mobileNavToggle {
+    display: grid;
+    place-items: center;
+  }
+  #stationNav {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 63px;
+    padding: 12px 20px 19px;
+    background: #fff;
+    border-bottom: 1px solid #e4ecd9;
+    box-shadow: 0 12px 18px #263f1205;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+  }
+  #stationHeader.nav-open #stationNav {
+    display: flex;
+    animation: page-in 0.16s var(--ease);
+  }
+  .nav {
+    padding: 13px 10px;
+    text-align: left;
+    border-radius: 5px;
+  }
+  .nav.active {
+    background: #f0f5e8;
+  }
+  .nav.active:after {
+    display: none;
+  }
+  .device-status {
+    border: 0;
+    padding: 8px 0;
+    font-size: 10px;
+    gap: 6px;
+    background: transparent;
+  }
+  .header-actions {
+    gap: 12px;
+  }
+  .device-status:hover {
+    background: transparent;
+  }
+  main {
+    padding: 29px 20px 100px;
+  }
+  .page-title {
+    margin-bottom: 28px;
+  }
+  .page-title h1 {
+    font-size: 27px;
+    letter-spacing: -0.6px;
+  }
+  .page-title > .quiet {
+    font-size: 9px;
+  }
+  .workflow {
+    margin-bottom: 31px;
+  }
+  .workflow button {
+    font-size: 10px;
+    gap: 6px;
+    padding-bottom: 15px;
+  }
+  .workflow button span {
+    font-size: 8px;
+  }
+  .vehicle-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 27px;
+  }
+  .vehicle-form {
+    padding: 0;
+    width: 100%;
+  }
+  .vehicle-form h2 {
+    font-size: 18px;
+    margin-bottom: 23px;
+  }
+  .fields {
+    gap: 22px 16px;
+  }
+  .field {
+    font-size: 11px;
+  }
+  .field input,
+  .field select,
+  .field textarea {
+    font-size: 16px;
+    min-height: 48px;
+    padding: 12px;
+  }
+  .vehicle-reference {
+    width: 100%;
+    order: 2;
+  }
+  .vehicle-reference img {
+    height: 230px;
+    object-fit: contain;
+    padding-top: 17px;
+  }
+  .vehicle-reference figcaption {
+    padding: 15px 22px 22px;
+  }
+  .vehicle-reference h3 {
+    font-size: 21px;
+  }
+  .vehicle-battery {
+    font-size: 11px;
+  }
+  .profile-line {
+    font-size: 10px;
+    margin-top: 19px;
+  }
+  .profile-line .text-button {
+    font-size: 10px;
+  }
+  .form-actions {
+    padding-top: 20px;
+    margin-top: 28px;
+    gap: 20px;
+  }
+  .vehicle-form .form-actions {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fffffff5;
+    backdrop-filter: blur(12px);
+    border-top: 1px solid #e4ecda;
+    padding: 13px 20px calc(13px + env(safe-area-inset-bottom));
+    z-index: 22;
+    margin: 0;
+  }
+  .vehicle-form .form-actions > .primary {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .primary,
+  .secondary {
+    font-size: 12px;
+    min-height: 43px;
+    padding: 11px 17px;
+  }
+  .intake-form {
+    padding: 0;
+  }
+  .form-section {
+    padding-bottom: 24px;
+    margin-bottom: 25px;
+  }
+  .form-section h2 {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  .consent {
+    font-size: 11px;
+    gap: 9px;
+    margin-top: 25px;
+  }
+  .intake-form .form-actions > .primary {
+    margin-left: auto;
+  }
+  .optional-section summary,
+  .road-section summary {
+    font-size: 12px;
+    padding: 18px 0;
+  }
+  .optional-section summary span,
+  .road-section summary span {
+    font-size: 10px;
+  }
+  .connection-help {
+    font-size: 10px;
+  }
+  .readings-strip {
+    margin-bottom: 26px;
+    padding: 15px 0;
+  }
+  .live-metric {
+    padding-left: 11px;
+  }
+  .live-metric strong {
+    font-size: 19px;
+  }
+  .live-metric small {
+    font-size: 9px;
+    padding-right: 8px;
+  }
+  .live-metric > span {
+    font-size: 8px;
+  }
+  .checks-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  .check-rail {
+    width: 100%;
+  }
+  .rail-heading {
+    padding: 0 0 11px;
+    font-size: 11px;
+  }
+  .rail-heading > span {
+    font-size: 10px;
+  }
+  #checkList {
+    display: flex;
+    gap: 7px;
+    overflow-x: auto;
+    padding-bottom: 5px;
+    scrollbar-width: none;
+  }
+  #checkList::-webkit-scrollbar {
+    display: none;
+  }
+  #checkList button {
+    width: auto;
+    min-width: 135px;
+    flex-shrink: 0;
+    border: 1px solid #e4edd9;
+    border-radius: 6px;
+    padding: 11px 10px;
+    gap: 9px;
+    font-size: 10px;
+  }
+  .check-number {
+    font-size: 8px;
+  }
+  #checkList button.selected {
+    border-left: 1px solid #c4d7ac;
+    border-color: #c4d7ac;
+  }
+  .review-link {
+    display: none;
+  }
+  .test-stage {
+    border: 0;
+    padding: 0;
+    min-height: 475px;
+  }
+  .test-heading {
+    gap: 9px;
+  }
+  .test-heading > span {
+    font-size: 8px;
+  }
+  .test-heading h2 {
+    font-size: 15px;
+  }
+  .test-state-icon {
+    margin: 25px auto 22px;
+    width: 59px;
+    height: 59px;
+  }
+  .test-instruction {
+    font-size: 25px;
+    line-height: 1.5;
+    max-width: 350px;
+  }
+  .test-subtitle {
+    font-size: 11px;
+    max-width: 320px;
+  }
+  .signal-pill {
+    font-size: 10px;
+  }
+  .test-actions {
+    gap: 22px 17px;
+    margin-top: 28px;
+  }
+  .test-actions > .primary {
+    min-width: 156px;
+  }
+  .test-actions > .subtle {
+    font-size: 10px;
+  }
+  .signal-details {
+    margin-top: 29px;
+  }
+  .signal-details summary {
+    font-size: 10px;
+  }
+  .signal-details dl > div {
+    font-size: 10px;
+  }
+  .review-section h2 {
+    font-size: 17px;
+  }
+  .review-checks {
+    grid-template-columns: 1fr;
+  }
+  .review-checks > div {
+    padding: 12px 0;
+    font-size: 11px;
+  }
+  .result {
+    font-size: 10px;
+  }
+  .manual-checks label {
+    font-size: 11px;
+    gap: 10px;
+  }
+  .manual-checks select {
+    min-width: 143px;
+    font-size: 11px;
+  }
+  .review-section {
+    padding-bottom: 23px;
+    margin-bottom: 23px;
+  }
+  .section-heading {
+    gap: 14px;
+    margin-bottom: 17px;
+  }
+  .section-heading > .quiet {
+    font-size: 10px;
+  }
+  .recording-status {
+    flex-wrap: wrap;
+    font-size: 11px;
+  }
+  .recording-status > .quiet {
+    font-size: 9px;
+  }
+  .road-content p {
+    font-size: 10px;
+  }
+  .report-ready {
+    padding-top: 12px;
+  }
+  .report-ready h2 {
+    font-size: 27px;
+  }
+  .report-ready > p {
+    font-size: 12px;
+  }
+  .report-ready > .quiet {
+    font-size: 9px;
+  }
+  .report-actions {
+    gap: 10px;
+  }
+  .report-actions .primary,
+  .report-actions .secondary {
+    font-size: 11px;
+    gap: 15px;
+  }
+  .report-tools {
+    gap: 22px;
+  }
+  .report-tools .text-button {
+    font-size: 10px;
+  }
+  .empty {
+    padding: 45px 15px;
+  }
+  .empty h2 {
+    font-size: 22px;
+  }
+  .empty p {
+    font-size: 12px;
+  }
+  .catalogue-toolbar {
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+  .filter-tabs {
+    width: 100%;
+    gap: 6px;
+  }
+  .filter-tabs button {
+    font-size: 10px;
+    padding: 8px 11px;
+  }
+  .search-field {
+    flex: 1;
+  }
+  .search-field input {
+    width: 100%;
+    font-size: 16px;
+    padding: 9px 12px;
+  }
+  .catalogue-toolbar > .secondary {
+    font-size: 11px;
+    min-height: 42px;
+  }
+  .scroll {
+    margin-left: -7px;
+    margin-right: -7px;
+  }
+  td,
+  th {
+    padding: 14px 9px;
+    min-width: 86px;
+  }
+  td:first-child {
+    min-width: 140px;
+  }
+  td:last-child {
+    min-width: 36px;
+  }
+  .model-link {
+    font-size: 12px;
+  }
+  .variant-code {
+    font-size: 8px;
+  }
+  .table-footer {
+    margin-top: 13px;
+  }
+  .table-footer > .quiet,
+  .table-footer > .text-button {
+    font-size: 9px;
+  }
+  .catalogue-section table {
+    font-size: 11px;
+  }
+  .catalogue-section th {
+    font-size: 9px;
+  }
+  .table-actions .text-button {
+    font-size: 10px;
+  }
+  .settings-section h2 {
+    font-size: 17px;
+  }
+  .setup-steps li {
+    gap: 15px;
+    margin-bottom: 22px;
+  }
+  .setup-steps h3 {
+    font-size: 12px;
+  }
+  .setup-steps p {
+    font-size: 11px;
+  }
+  .setup-steps li > span {
+    font-size: 9px;
+  }
+  .command {
+    min-width: 240px;
+  }
+  .setting-row {
+    font-size: 11px;
+  }
+  .settings-section > .text-button {
+    font-size: 10px;
+  }
+  dialog {
+    padding: 29px 21px;
+    border-radius: 10px;
+  }
+  dialog h2 {
+    font-size: 22px;
+    max-width: calc(100% - 24px);
+  }
+  .dialog-close {
+    top: 18px;
+    right: 16px;
+  }
+  .drawer {
+    padding: 44px 25px;
+    width: min(410px, 100%);
+    border-radius: 0;
+  }
+  .drawer h2 {
+    font-size: 26px;
+  }
+  .drawer .command {
+    width: 250px;
+  }
+  .drawer-footer {
+    margin-top: 20px;
+  }
+  .dialog-copy {
+    font-size: 11px;
+  }
+  .profile-info > div {
+    font-size: 10px;
+    gap: 15px;
+  }
+  .source-notes p {
+    font-size: 11px;
+  }
+  .certificate .cert-top {
+    display: block;
+  }
+  .certificate .cert-top > div + div {
+    text-align: left !important;
+    margin-top: 20px;
+  }
+  .certificate .fields {
+    grid-template-columns: 1fr;
+  }
+  .certificate h1 {
+    font-size: 23px;
+  }
+  .certificate .hint {
+    font-size: 10px;
+  }
+  .certificate table {
+    font-size: 10px;
+  }
+  .range-grid {
+    gap: 8px;
+  }
+  .range-grid div {
+    padding: 15px 6px;
+    font-size: 10px;
+  }
+  .range-grid strong {
+    font-size: 22px;
+  }
+  #toast {
+    font-size: 11px;
+    padding: 12px 18px;
+  }
+  .demo-note {
+    font-size: 10px;
+  }
+}
+@media (max-width: 390px) {
+  .connection-label {
+    font-size: 9px;
+  }
+  .brand {
+    font-size: 20px;
+  }
+  .header-actions {
+    gap: 9px;
+  }
+  .workflow button {
+    font-size: 9px;
+    gap: 5px;
+  }
+  .fields {
+    grid-template-columns: 1fr;
+  }
+  .span2 {
+    grid-column: auto;
+  }
+  .vehicle-reference img {
+    height: 210px;
+  }
+  .intake-form .form-actions {
+    gap: 15px;
+  }
+  .page-title h1 {
+    font-size: 26px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *:before,
+  *:after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+  ::view-transition-old(workspace),
+  ::view-transition-new(workspace) {
+    animation: none !important;
+  }
+}
+@media print {
+  body {
+    color: #242a26;
+  }
+  .shell,
+  .main {
+    margin: 0;
+    width: 100%;
+  }
+  #stationHeader,
+  .page-title,
+  .workflow,
+  .demo-note,
+  .report-ready,
+  .no-print,
+  #toast,
+  dialog,
+  .report-details > summary {
+    display: none !important;
+  }
+  main {
+    padding: 0;
+    max-width: none;
+  }
+  .report-details {
+    display: block !important;
+    border: 0;
+  }
+  .report-details > .certificate {
+    display: block !important;
+  }
+  .report-details:not([open]) > article {
+    display: block !important;
+  }
+  .certificate {
+    padding: 0;
+  }
+  .certificate p,
+  .certificate td,
+  .certificate th {
+    color: #242a26;
+  }
+  .cert-section {
+    break-inside: avoid;
+  }
+  button {
+    display: none !important;
+  }
+}
+@page {
+  size: A4;
+  margin: 15mm;
+}
 
-/* DRAFT_THEME_TOKENS_TO_REFACTOR */
-.legacy-card-outline { border: 1px dashed #888; padding: 12px; }
-.legacy-status-pill { background: #222; color: #eee; }
-.legacy-debug-banner { display: none; }
-/* END_DRAFT_TOKENS */
+/* Ather app reference: charcoal canvas, inset cards, oversized measurements. */
+:root {
+  background: #18191b;
+  color: #f2f3f3;
+  --ink: #f2f3f3;
+  --muted: #a5a8ad;
+  --line: #3b3d41;
+  --surface: #272a2f;
+  --green: #8bf49b;
+  --success: #8bf49b;
+  color-scheme: dark;
+  font-size: 15px;
+}
+body {
+  background: #18191b;
+}
+p {
+  color: #a5a8ad;
+}
+h1 {
+  font-size: 36px;
+  letter-spacing: -1.1px;
+  font-weight: 550;
+}
+h2,
+h3 {
+  font-weight: 500;
+}
+#stationHeader {
+  background: #18191bf2;
+  border-color: #34363a;
+  height: 84px;
+}
+.brand {
+  color: #f4f4f4;
+}
+.brandtag {
+  color: #a5a8ad;
+  border-color: #44464a;
+}
+.nav {
+  color: #a5a8ad;
+  font-size: 14px;
+}
+.nav:hover,
+.nav.active {
+  color: #fff;
+}
+.nav.active:after {
+  background: #f4f4f4;
+  height: 3px;
+}
+.device-status {
+  border: 0;
+  background: #272a2f;
+  color: #eee;
+  border-radius: 14px;
+  padding: 12px 17px;
+}
+.device-status:hover {
+  background: #353940;
+  border-color: transparent;
+}
+.device-status[data-status="demo"] {
+  background: #3a3240;
+  color: #dbbfff;
+  border: 0;
+}
+.status-dot {
+  background: #92979d;
+}
+.device-status[data-status="online"] .status-dot {
+  background: #8bf49b;
+}
+main {
+  padding-top: 45px;
+  max-width: 1210px;
+}
+.page-title {
+  margin-bottom: 32px;
+}
+.workflow {
+  margin-bottom: 32px;
+  border-color: #3c3e42;
+}
+.workflow:after {
+  background: #f4f4f4;
+  height: 3px;
+}
+.workflow button {
+  color: #92969c;
+  font-size: 13px;
+  padding-bottom: 19px;
+  gap: 12px;
+}
+.workflow button span {
+  color: #777e86;
+}
+.workflow button.active,
+.workflow button.done {
+  color: #f2f3f3;
+}
+.workflow button.active span,
+.workflow button.done span {
+  color: #8bf49b;
+}
+.demo-note {
+  background: #272a2f;
+  border: 0;
+  border-radius: 12px;
+  color: #e5c4a2;
+  padding: 13px 17px;
+  margin: 0 0 25px;
+}
+.demo-note span {
+  color: #a5a8ad;
+}
+.vehicle-layout {
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.vehicle-form {
+  background: #272a2f;
+  border-radius: 26px;
+  padding: 32px;
+  align-self: stretch;
+}
+.vehicle-form h2 {
+  font-size: 24px;
+  margin-bottom: 32px;
+}
+.fields {
+  gap: 24px 18px;
+}
+.field {
+  color: #c0c2c6;
+  font-size: 13px;
+}
+.required {
+  color: #92979d;
+}
+.field input,
+.field select,
+.field textarea {
+  background: #1d1f22;
+  border: 1px solid #44474c;
+  border-radius: 12px;
+  color: #f2f3f3;
+  min-height: 54px;
+  padding: 14px 15px;
+}
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: #aabce0;
+  box-shadow: 0 0 0 3px #aabce014;
+}
+.profile-line {
+  color: #adb3bb;
+  font-size: 12px;
+}
+.profile-line .text-button {
+  color: #c0cce6;
+}
+.small-dot.available {
+  background: #8bf49b;
+}
+.vehicle-reference {
+  border-radius: 26px;
+  background: #e5e8f0;
+  color: #17191c;
+  display: flex;
+  flex-direction: column;
+  min-height: 440px;
+}
+.vehicle-reference img {
+  height: 330px;
+  padding: 18px 12px 0;
+  flex: 1;
+  mix-blend-mode: multiply;
+}
+.vehicle-reference figcaption {
+  padding: 22px 30px 28px;
+}
+.vehicle-reference h3 {
+  color: #18191b;
+  font-size: 28px;
+}
+.vehicle-reference .quiet,
+.vehicle-battery {
+  color: #606675;
+}
+.vehicle-battery {
+  font-size: 14px;
+}
+.reference-spec {
+  color: #606675;
+  border-color: #cdd2df;
+  font-size: 12px;
+}
+.reference-spec b {
+  color: #18191b;
+}
+.model-wordmark {
+  background: #e5e8f0;
+  color: #384f7a;
+  flex: 1;
+}
+.form-actions {
+  border-color: #44474c;
+  margin-top: 32px;
+  padding-top: 24px;
+}
+.primary,
+.secondary {
+  border-radius: 15px;
+  min-height: 49px;
+  font-size: 14px;
+  padding: 13px 21px;
+}
+.primary {
+  background: #8bf49b;
+  color: #17191b;
+}
+.primary:hover:not(:disabled) {
+  background: #a9ffb6;
+  box-shadow: none;
+}
+.primary svg {
+  width: 19px;
+  height: 19px;
+}
+.secondary {
+  background: #34383f;
+  color: #f4f4f4;
+  border: 0;
+}
+.secondary:hover:not(:disabled) {
+  background: #41464e;
+  border-color: transparent;
+}
+.text-button {
+  color: #c2cde4;
+  font-size: 13px;
+}
+.text-button:hover {
+  color: #fff;
+}
+.text-button.subtle {
+  color: #a5a8ad;
+}
+.icon-button {
+  color: #f2f3f3;
+  background: #33373d;
+  border-radius: 12px;
+}
+.icon-button:hover {
+  background: #454b55;
+}
+.intake-form {
+  max-width: 900px;
+}
+.form-section {
+  padding: 28px 30px;
+  background: #272a2f;
+  border: 0;
+  border-radius: 24px;
+  margin-bottom: 16px;
+}
+.form-section h2 {
+  color: #f2f3f3;
+  font-size: 21px;
+}
+.form-section:last-of-type {
+  margin-bottom: 16px;
+}
+.optional-section,
+.road-section {
+  background: #272a2f;
+  border: 0;
+  border-radius: 22px;
+  padding: 0 27px;
+}
+.optional-section summary,
+.road-section summary,
+.report-details > summary {
+  color: #eee;
+  font-size: 14px;
+}
+.optional-section summary span,
+.road-section summary span {
+  color: #a5a8ad;
+}
+.consent {
+  color: #bec2c7;
+  font-size: 13px;
+}
+.consent input {
+  accent-color: #8bf49b;
+}
+.connection-help {
+  color: #b7c9f0;
+}
+.readings-strip {
+  gap: 14px;
+  padding: 0;
+  border: 0;
+  margin-bottom: 26px;
+}
+.live-metric {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 3px 8px;
+  padding: 23px !important;
+  border: 0;
+  border-radius: 22px;
+  background: #272a2f;
+}
+.live-metric > span {
+  grid-column: 1/-1;
+  color: #b9bdc4;
+  font-size: 12px;
+  margin: 0 0 8px;
+}
+.live-metric strong {
+  font-size: 42px;
+  color: #f4f4f4;
+  font-weight: 450;
+  letter-spacing: -1.8px;
+  line-height: 1.15;
+}
+.live-metric small {
+  padding: 0;
+  align-self: end;
+  font-size: 13px;
+  color: #b9bdc4;
+  margin-bottom: 6px;
+}
+.live-metric:first-child {
+  background: #384f7a;
+}
