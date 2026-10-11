@@ -548,3 +548,186 @@ export class BrowserStation {
           intake: this.session.intake,
           finished_ms: Date.now(),
           checks,
+          manual: data.manual,
+          technician_notes: data.notes || "",
+          snapshot: sn,
+          samples: this.session.samples,
+          can_counters_final: copy(this.counters),
+          transport_lost_total_final: this.lost,
+          quality: {
+            missing_or_stale_essential_signals: missing,
+            can_counter_increases: deltas,
+            transport_gaps: gaps,
+            recorder_interruptions: this.session.recorder_interruptions || 0,
+          },
+          status:
+            checks.every((c) => c.status === "observed") &&
+            Object.values(data.manual).every((v) => v === "acceptable") &&
+            !missing.length &&
+            !gaps &&
+            !Object.values(deltas).some(Boolean) &&
+            !this.session.recorder_interruptions
+              ? "observations_complete"
+              : "attention_or_incomplete",
+          scope:
+            "Reference-decoded CAN observations and technician checks. No OEM approval, usable-capacity certification or roadworthiness certification.",
+          range: {
+            city_km: null,
+            highway_km: null,
+            mixed_km: null,
+            reason: "No validated range model attached.",
+          },
+        };
+        r.evidence_payload_json = canonical(r);
+        r.evidence_sha256 = sha256(r.evidence_payload_json);
+        this.session.report = r;
+        this.session.state = "finalized";
+        await this.persist([
+          {
+            kind: "event",
+            payload: { type: "finalized", epoch_ms: r.finished_ms },
+          },
+        ]);
+        return r;
+      }
+      throw Error("Unknown station action");
+    });
+  }
+  async export(id) {
+    await this.ready;
+    return this.exclusive(async () => {
+      let s = await this.store.get(id);
+      if (!s) throw Error("Inspection not found on this browser");
+      const chunks = await this.store.chunks(id),
+        frames = [],
+        samples = [],
+        events = [],
+        gps = [];
+      for (const c of chunks) {
+        if (c.kind === "batch") {
+          frames.push(...c.frames);
+          samples.push(...c.samples);
+          events.push(...c.events);
+        }
+        if (c.kind === "event") events.push(c.payload);
+        if (c.kind === "gps") gps.push(c.payload);
+      }
+      gps.sort((a, b) => a.fix_ms - b.fix_ms);
+      let gi = 0;
+      const rename = {
+        voltage: "pack_voltage_v",
+        current: "pack_current_a",
+        soc: "soc_pct",
+        odometer: "odometer_km",
+        mode: "drive_mode_code",
+        ambient: "ambient_temp_c",
+        rpm: "motor_rpm",
+        ...Object.fromEntries(
+          [1, 2, 3, 4, 5].map((i) => ["temp" + i, "battery_temp_" + i + "_c"]),
+        ),
+      };
+      const rows = samples.map((x) => {
+        const r = {
+          session_id: id,
+          timestamp_ms: x.epoch_ms,
+          esp_boot: x.esp_boot,
+          capture_phase: x.capture_phase,
+          route_type: s.intake.route_type || "mixed",
+          carried_load_kg: s.intake.carried_load_kg || "",
+          http_round_trip_ms: x.http_round_trip_ms,
+          transport_lost_cumulative: x.transport_lost_total,
+          ...Object.fromEntries(
+            Object.entries(x.counters).map(([k, v]) => ["can_" + k, v]),
+          ),
+        };
+        for (const k of FIELDS) {
+          const v = x.signals[k];
+          r[rename[k] || k] = v?.value ?? "";
+          r[k + "_age_ms"] = v?.age_ms ?? "";
+          r[k + "_fresh"] = v?.fresh ? 1 : 0;
+        }
+        r.essential_fresh = ["voltage", "current", "soc", "odometer"].every(
+          (k) => x.signals[k]?.fresh,
+        )
+          ? 1
+          : 0;
+        for (const k of [
+          "latitude",
+          "longitude",
+          "speed_kmh",
+          "accuracy_m",
+          "fix_ms",
+          "offset_ms",
+        ])
+          r["gps_" + k] = "";
+        while (gi + 1 < gps.length && gps[gi + 1].fix_ms <= x.epoch_ms) gi++;
+        let g = [gps[gi], gps[gi + 1]]
+          .filter(Boolean)
+          .sort(
+            (a, b) =>
+              Math.abs(a.fix_ms - x.epoch_ms) - Math.abs(b.fix_ms - x.epoch_ms),
+          )[0];
+        if (
+          g &&
+          g.accuracy_m <= 50 &&
+          Math.abs(g.fix_ms - x.epoch_ms) <= 2000
+        ) {
+          for (const k of [
+            "latitude",
+            "longitude",
+            "speed_kmh",
+            "accuracy_m",
+            "fix_ms",
+          ])
+            r["gps_" + k] = g[k] ?? "";
+          r.gps_offset_ms = g.fix_ms - x.epoch_ms;
+        }
+        return r;
+      });
+      return zip({
+        "intake.json": JSON.stringify(s.intake, null, 2),
+        "report.json": JSON.stringify(s.report || {}, null, 2),
+        "raw_can.jsonl": frames.map((f) => JSON.stringify(f)).join("\n"),
+        "telemetry.csv": csv(rows),
+        "range_training.csv": csv(
+          rows.filter((r) => r.capture_phase === "road"),
+          rows.length ? Object.keys(rows[0]) : ["session_id"],
+        ),
+        "events.json": JSON.stringify(events, null, 2),
+        "gps.json": JSON.stringify(gps, null, 2),
+        "DATA-NOTES.txt":
+          "Phone/browser stored records, not ESP32 permanent storage. Keep page visible. Software receive timestamps, not hardware arrival. Check freshness/gaps before training. Verify current sign and distance. No measured range or capacity labels are invented. GPS is unavailable on ordinary ESP32 HTTP in most Android browsers. No road phase means no training samples. Sample timing is measured; do not assume a fixed rate.",
+      });
+    });
+  }
+}
+export const station =
+  typeof window !== "undefined" ? new BrowserStation() : null;
+export async function stationApi(path, data) {
+  await station.ready;
+  return station.api(path, data);
+}
+export async function downloadEvidence(id) {
+  const blob = await station.export(id),
+    url = URL.createObjectURL(blob),
+    a = document.createElement("a");
+  a.href = url;
+  a.download = id + "-evidence.zip";
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(url), 10000);
+}
+if (station) {
+  station.start().catch((e) => {
+    station.error = e.message;
+    station.storageError = e.message;
+  });
+  window.addEventListener("pagehide", () => {
+    try {
+      let x = JSON.parse(
+        localStorage.getItem("voltcheck-esp32-recorder") || "null",
+      );
+      if (x?.id === station.tabId)
+        localStorage.removeItem("voltcheck-esp32-recorder");
+    } catch {}
+  });
+}
