@@ -2646,3 +2646,1138 @@ main {
 .live-metric:first-child {
   background: #384f7a;
 }
+.live-metric:first-child > span,
+.live-metric:first-child small {
+  color: #dbe3f5;
+}
+.checks-layout {
+  grid-template-columns: 250px minmax(0, 1fr);
+  gap: 22px;
+}
+.check-rail {
+  background: #272a2f;
+  border-radius: 24px;
+  padding: 22px 15px;
+}
+.rail-heading {
+  padding: 3px 12px 17px;
+  color: #f2f3f3;
+  font-size: 14px;
+}
+.rail-heading span {
+  color: #a5a8ad;
+  font-size: 12px;
+}
+#checkList button {
+  border: 0;
+  border-radius: 13px;
+  padding: 15px 12px;
+  font-size: 13px;
+  color: #a8adb5;
+  gap: 10px;
+  margin: 3px 0;
+}
+#checkList button:hover {
+  background: #34383f;
+}
+#checkList button.selected {
+  background: #3b4f74;
+  color: #fff;
+  border: 0;
+}
+.check-number {
+  color: #a1a9b5;
+}
+.is-observed .check-status {
+  color: #8bf49b;
+}
+.is-incomplete .check-status {
+  color: #f5bb72;
+}
+.review-link {
+  margin: 18px 12px 0;
+}
+.test-stage {
+  background: #272a2f;
+  border-radius: 26px;
+  border: 0;
+  padding: 28px 32px;
+  min-height: 540px;
+}
+.test-heading h2 {
+  color: #f2f3f3;
+  font-size: 19px;
+}
+.test-heading > span {
+  color: #a5a8ad;
+  font-size: 11px;
+}
+.test-state-icon {
+  background: #3b4f74;
+  color: #dce6ff;
+  width: 74px;
+  height: 74px;
+  margin: 35px auto 25px;
+}
+.test-complete .test-state-icon {
+  background: #8bf49b;
+  color: #18191b;
+}
+.listening:after {
+  border-color: #9bb3e3;
+}
+.test-instruction {
+  color: #f2f3f3;
+  font-size: 31px;
+  line-height: 1.4;
+  letter-spacing: -0.8px;
+}
+.test-subtitle {
+  color: #aeb4bd;
+  font-size: 13px;
+}
+.signal-pill {
+  background: #1c1e21;
+  color: #aeb4bd;
+  border: 0;
+  font-size: 12px;
+  padding: 10px 15px;
+}
+.signal-pill.has-signal {
+  background: #344738;
+  color: #a9f4b4;
+  border: 0;
+}
+.signal-pill.has-signal .small-dot {
+  background: #8bf49b;
+}
+.test-actions {
+  margin-top: 26px;
+}
+.signal-details {
+  border-color: #44474c;
+  margin-top: 29px;
+}
+.signal-details summary {
+  color: #aeb4bd;
+  font-size: 12px;
+}
+.signal-details dt,
+.signal-details p {
+  color: #a5a8ad;
+}
+.signal-details dd {
+  color: #e6eaf1;
+}
+.review-layout {
+  max-width: 900px;
+}
+.review-section {
+  background: #272a2f;
+  border-radius: 24px;
+  border: 0;
+  padding: 28px 30px;
+  margin-bottom: 18px;
+}
+.review-section h2 {
+  color: #f2f3f3;
+  font-size: 22px;
+}
+.review-checks > div,
+.manual-checks label {
+  color: #d4d6da;
+  border-color: #41444a;
+  font-size: 13px;
+}
+.result {
+  font-size: 12px;
+  color: #b8bec7;
+}
+.result.observed {
+  color: #8bf49b;
+}
+.result.incomplete {
+  color: #f5bb72;
+}
+.manual-checks select {
+  color: #f2f3f3;
+  background: #1d1f22;
+  border-color: #4c5057;
+  border-radius: 10px;
+  font-size: 12px;
+}
+.road-content p,
+.recording-status,
+.hint {
+  color: #aeb4bd;
+}
+.recording-status.active {
+  color: #8bf49b;
+}
+.report-ready {
+  background: #272a2f;
+  border-radius: 26px;
+  max-width: 760px;
+  padding: 40px 30px;
+  margin: 0 auto 26px;
+}
+.report-ready h2 {
+  color: #f2f3f3;
+  font-size: 34px;
+}
+.report-ready p {
+  color: #b8bec7;
+}
+.report-icon {
+  background: #8bf49b;
+  color: #18191b;
+  border-radius: 19px;
+  width: 70px;
+  height: 76px;
+}
+.report-tools .text-button {
+  color: #bfcbe4;
+}
+.report-details {
+  border-color: #44474c;
+}
+.report-details > summary {
+  color: #c4c9d1;
+}
+.empty {
+  background: #272a2f;
+  border-radius: 25px;
+  padding: 65px 25px;
+}
+.empty h2 {
+  color: #f2f3f3;
+}
+.empty p {
+  color: #aeb4bd;
+}
+.empty-icon {
+  background: #3b4f74;
+  color: #e2e9f7;
+  border-radius: 18px;
+}
+.records-section > .scroll,
+.catalogue-section > .scroll {
+  background: #272a2f;
+  border-radius: 24px;
+  padding: 6px 16px;
+}
+th {
+  color: #a5a8ad;
+  border-color: #46494f;
+  font-size: 12px;
+}
+td {
+  color: #e5e7eb;
+  border-color: #41444a;
+  font-size: 13px;
+}
+.model-link {
+  color: #f2f3f3;
+  font-size: 15px;
+}
+.variant-code {
+  color: #989fa9;
+  font-size: 10px;
+}
+.filter-tabs {
+  border-bottom: 1px solid #44474c;
+  gap: 4px;
+}
+.filter-tabs button {
+  color: #a5a8ad;
+  border-radius: 0;
+  padding: 13px 20px;
+  font-size: 13px;
+  border-bottom: 3px solid transparent;
+}
+.filter-tabs button.active {
+  color: #fff;
+  background: transparent;
+  border-color: #fff;
+}
+.search-field input {
+  background: #272a2f;
+  border: 0;
+  border-radius: 14px;
+  color: #eee;
+  padding: 15px 17px;
+  font-size: 13px;
+}
+.search-field input::placeholder {
+  color: #a5a8ad;
+}
+.table-footer .quiet,
+.table-footer .text-button {
+  color: #a5a8ad;
+  font-size: 12px;
+}
+.source-notes p {
+  color: #bdc3cb;
+  border-color: #44474c;
+}
+.settings-layout {
+  max-width: 900px;
+}
+.settings-section {
+  padding: 28px 30px;
+  background: #272a2f;
+  border: 0;
+  border-radius: 24px;
+  margin-bottom: 18px;
+}
+.settings-section h2 {
+  color: #f2f3f3;
+  font-size: 22px;
+}
+.setup-steps h3 {
+  color: #f2f3f3;
+  font-size: 15px;
+}
+.setup-steps p,
+.setup-steps li > span {
+  color: #aeb4bd;
+}
+.command {
+  background: #1d1f22;
+  border-color: #44474c;
+  border-radius: 12px;
+  padding: 13px 15px;
+}
+.command code,
+.command .text-button {
+  color: #dce5f8;
+}
+.setting-row {
+  border-color: #44474c;
+  color: #aeb4bd;
+}
+.setting-row b {
+  color: #f2f3f3;
+}
+.profile-info dt {
+  color: #aeb4bd;
+}
+.profile-info dd {
+  color: #f2f3f3;
+}
+.profile-info > div {
+  border-color: #44474c;
+}
+dialog {
+  background: #272a2f;
+  color: #eee;
+  border: 1px solid #45494f;
+  border-radius: 25px;
+  box-shadow: 0 25px 90px #0005;
+  padding: 34px;
+}
+dialog h2 {
+  color: #f4f4f4;
+}
+.dialog-copy {
+  color: #bec4ce;
+}
+.dialog-close {
+  color: #cbd1da;
+}
+.dialog-close:hover {
+  background: #3b3f46;
+}
+dialog::backdrop {
+  background: #08090bb3;
+}
+.drawer {
+  border: 0;
+  border-radius: 28px 0 0 28px;
+  background: #272a2f;
+}
+.drawer-footer .text-button {
+  color: #c2cde4;
+}
+#toast {
+  background: #e6eaf0;
+  color: #17191c;
+  border-radius: 16px;
+}
+.initial-loading span {
+  background: #272a2f;
+}
+.inline-note {
+  color: #f5bb72;
+}
+.certificate {
+  background: #fff;
+  color: #202420;
+  border-radius: 20px;
+  padding: 30px;
+  color-scheme: light;
+}
+.certificate h1,
+.certificate h2,
+.certificate h3 {
+  color: #202420;
+}
+.certificate .quiet,
+.certificate .muted {
+  color: #69716b;
+}
+@media (max-width: 800px) {
+  h1 {
+    font-size: 31px;
+  }
+  .vehicle-form {
+    padding: 25px;
+  }
+  .vehicle-layout {
+    gap: 18px;
+  }
+  .vehicle-reference img {
+    height: 300px;
+  }
+  .live-metric {
+    padding: 18px !important;
+  }
+  .live-metric strong {
+    font-size: 34px;
+  }
+  .checks-layout {
+    grid-template-columns: 200px minmax(0, 1fr);
+  }
+  .check-rail {
+    padding: 18px 10px;
+  }
+  .test-stage {
+    padding: 25px;
+  }
+  .test-instruction {
+    font-size: 27px;
+  }
+}
+@media (max-width: 650px) {
+  #stationHeader {
+    height: 72px;
+    padding: 0 20px;
+    border: 0;
+  }
+  .brand {
+    font-size: 25px;
+  }
+  .device-status {
+    padding: 10px 12px;
+    font-size: 10px;
+    border-radius: 12px;
+    background: #272a2f;
+  }
+  .device-status:hover {
+    background: #34383f;
+  }
+  #mobileNavToggle {
+    display: none;
+  }
+  #stationNav,
+  #stationHeader.nav-open #stationNav {
+    position: fixed;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    flex-direction: row;
+    padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+    gap: 0;
+    background: #f5f5f5;
+    border: 0;
+    border-radius: 22px 22px 0 0;
+    box-shadow: 0 -5px 30px #0002;
+  }
+  #stationNav .nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    text-align: center;
+    border-radius: 0;
+    background: transparent !important;
+    color: #979b9f;
+    font-size: 11px;
+    padding: 5px 8px;
+  }
+  #stationNav .nav svg {
+    width: 24px;
+    height: 24px;
+    stroke-width: 1.7;
+  }
+  #stationNav .nav.active {
+    color: #17191b;
+  }
+  #stationNav .nav:after {
+    display: none;
+  }
+  main {
+    padding: 22px 18px 175px;
+  }
+  .page-title {
+    margin-bottom: 27px;
+  }
+  .page-title h1 {
+    font-size: 30px;
+  }
+  .workflow {
+    margin-bottom: 25px;
+  }
+  .workflow button {
+    font-size: 11px;
+    gap: 6px;
+    padding-bottom: 15px;
+  }
+  .workflow button span {
+    font-size: 9px;
+  }
+  .vehicle-layout {
+    gap: 18px;
+  }
+  .vehicle-form {
+    padding: 24px 20px;
+    border-radius: 23px;
+  }
+  .vehicle-form h2 {
+    font-size: 22px;
+    margin-bottom: 27px;
+  }
+  .vehicle-reference {
+    min-height: 310px;
+    border-radius: 23px;
+  }
+  .vehicle-reference img {
+    height: 240px;
+    padding-top: 14px;
+  }
+  .vehicle-reference h3 {
+    font-size: 25px;
+  }
+  .vehicle-reference figcaption {
+    padding: 15px 23px 24px;
+  }
+  .vehicle-battery {
+    font-size: 13px;
+  }
+  .field {
+    font-size: 12px;
+  }
+  .fields {
+    gap: 23px 16px;
+  }
+  .field input,
+  .field select,
+  .field textarea {
+    font-size: 16px;
+    min-height: 54px;
+    border-radius: 12px;
+  }
+  .profile-line {
+    font-size: 11px;
+  }
+  .profile-line .text-button {
+    font-size: 11px;
+  }
+  .vehicle-form .form-actions {
+    bottom: 76px;
+    background: #18191bf5;
+    border: 0;
+    padding: 10px 18px 12px;
+    backdrop-filter: blur(15px);
+  }
+  .vehicle-form .form-actions > .primary {
+    border-radius: 15px;
+    min-height: 51px;
+  }
+  .primary,
+  .secondary {
+    font-size: 13px;
+    min-height: 48px;
+    border-radius: 14px;
+  }
+  .form-section,
+  .review-section,
+  .settings-section {
+    padding: 24px 21px;
+    border-radius: 22px;
+  }
+  .form-section h2 {
+    font-size: 20px;
+  }
+  .optional-section,
+  .road-section {
+    border-radius: 20px;
+    padding: 0 20px;
+  }
+  .intake-form .form-actions {
+    border-color: #44474c;
+  }
+  .consent {
+    font-size: 12px;
+  }
+  .readings-strip {
+    gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 20px;
+  }
+  .live-metric {
+    padding: 20px !important;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 3px 7px;
+  }
+  .live-metric > span {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+  .live-metric strong {
+    font-size: 43px;
+  }
+  .live-metric small {
+    font-size: 12px;
+    padding: 0;
+  }
+  .checks-layout {
+    gap: 18px;
+  }
+  .check-rail {
+    padding: 18px 14px 10px;
+    border-radius: 22px;
+  }
+  .rail-heading {
+    font-size: 13px;
+    padding: 0 4px 11px;
+  }
+  #checkList button {
+    margin: 0;
+    min-width: 146px;
+    border: 0;
+    border-radius: 12px;
+    background: #34383f;
+    padding: 13px 12px;
+    font-size: 11px;
+  }
+  #checkList button.selected {
+    border: 0;
+    background: #3b4f74;
+  }
+  .test-stage {
+    padding: 24px 21px;
+    min-height: 480px;
+    border-radius: 23px;
+  }
+  .test-heading h2 {
+    font-size: 18px;
+  }
+  .test-heading > span {
+    font-size: 10px;
+  }
+  .test-state-icon {
+    width: 67px;
+    height: 67px;
+    margin: 29px auto 23px;
+  }
+  .test-instruction {
+    font-size: 28px;
+  }
+  .test-subtitle {
+    font-size: 12px;
+  }
+  .signal-pill {
+    font-size: 11px;
+  }
+  .signal-details summary {
+    font-size: 11px;
+  }
+  .review-checks > div,
+  .manual-checks label {
+    font-size: 12px;
+  }
+  .review-section h2,
+  .settings-section h2 {
+    font-size: 21px;
+  }
+  .manual-checks select {
+    font-size: 12px;
+  }
+  .report-ready {
+    padding: 33px 21px;
+    border-radius: 23px;
+  }
+  .report-ready h2 {
+    font-size: 29px;
+  }
+  .report-ready p {
+    font-size: 12px;
+  }
+  .report-tools {
+    gap: 19px;
+  }
+  .report-tools .text-button {
+    font-size: 11px;
+  }
+  .report-actions .primary,
+  .report-actions .secondary {
+    font-size: 12px;
+  }
+  .filter-tabs {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .filter-tabs button {
+    font-size: 12px;
+    padding: 12px;
+  }
+  .search-field input {
+    font-size: 16px;
+    border-radius: 13px;
+    padding: 13px;
+  }
+  .catalogue-toolbar > .secondary {
+    min-height: 46px;
+  }
+  .records-section > .scroll,
+  .catalogue-section > .scroll {
+    border-radius: 22px;
+    margin: 0;
+    padding: 3px 10px;
+  }
+  td,
+  th {
+    padding: 17px 10px;
+  }
+  .model-link {
+    font-size: 13px;
+  }
+  .variant-code {
+    font-size: 9px;
+  }
+  .table-footer .quiet,
+  .table-footer .text-button {
+    font-size: 10px;
+  }
+  .drawer {
+    border-radius: 24px 0 0 24px;
+    padding: 37px 25px;
+    max-width: calc(100% - 15px);
+  }
+  dialog {
+    border-radius: 22px;
+    padding: 29px 23px;
+  }
+  .setup-steps h3 {
+    font-size: 14px;
+  }
+  .setup-steps p {
+    font-size: 12px;
+  }
+  .command {
+    min-width: 0;
+  }
+  .drawer .command {
+    width: 235px;
+  }
+  .empty h2 {
+    font-size: 24px;
+  }
+  .empty p {
+    font-size: 13px;
+  }
+  .settings-section .row {
+    gap: 17px;
+  }
+  .certificate {
+    padding: 20px;
+  }
+  .demo-note {
+    font-size: 11px;
+  }
+  .form-actions {
+    border-color: #44474c;
+  }
+}
+@media print {
+  :root,
+  body {
+    background: white;
+    color: black;
+    color-scheme: light;
+  }
+  .certificate {
+    padding: 0;
+    border-radius: 0;
+  }
+  .certificate h1,
+  .certificate h2,
+  .certificate h3 {
+    color: #111;
+  }
+}
+
+@media (min-width: 651px) {
+  #stationNav .nav svg {
+    display: none;
+  }
+}
+@media (max-width: 650px) {
+  #stationHeader {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  #stationNav {
+    margin: 0;
+    z-index: 40;
+  }
+}
+/* Vehicle imagery stays stable while the model selector changes. */
+.vehicle-photo {
+  position: relative;
+  overflow: hidden;
+  background: #e7e7e7;
+  border-radius: 18px;
+  isolation: isolate;
+}
+.vehicle-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 0;
+  mix-blend-mode: normal;
+}
+.photo-fallback {
+  display: none;
+  position: absolute;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+  color: #39435a;
+  font-size: 24px;
+  padding: 20px;
+}
+.photo-unavailable img {
+  visibility: hidden;
+}
+.photo-unavailable .photo-fallback {
+  display: flex;
+}
+.vehicle-reference > .vehicle-photo {
+  height: 330px;
+  flex: 1;
+  min-height: 280px;
+  border-radius: 0;
+}
+.vehicle-reference > .vehicle-photo img {
+  height: 100%;
+  min-height: 0;
+  padding: 0;
+  flex: none;
+  mix-blend-mode: normal;
+}
+.vehicle-reference:has(.vehicle-photo) {
+  background: #e7e7e7;
+}
+.vehicle-cell {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  min-width: 225px;
+}
+.photo-thumb {
+  width: 106px;
+  height: 76px;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+.photo-thumb .photo-fallback {
+  font-size: 11px;
+  padding: 8px;
+}
+.photo-detail {
+  width: 100%;
+  height: 240px;
+  margin: 0 0 25px;
+  border-radius: 17px;
+}
+.photo-detail img {
+  object-fit: contain;
+}
+.vehicle-cell .variant-code {
+  line-height: 1.5;
+}
+.vehicle-photo {
+  animation: photo-enter 0.26s ease-out;
+}
+@keyframes photo-enter {
+  from {
+    opacity: 0.3;
+  }
+  to {
+    opacity: 1;
+  }
+}
+#stationNav .nav {
+  transition:
+    color 0.18s,
+    background 0.18s;
+}
+.primary,
+.secondary {
+  transition:
+    background 0.18s,
+    transform 0.18s;
+}
+.primary:active:not(:disabled),
+.secondary:active:not(:disabled) {
+  transform: scale(0.98);
+}
+.field input,
+.field select,
+.field textarea {
+  scroll-margin-top: 105px;
+}
+.test-stage {
+  scroll-margin-top: 105px;
+}
+.vehicle-reference {
+  view-transition-name: vehicle-preview;
+}
+::view-transition-old(vehicle-preview) {
+  animation: page-out 0.13s ease-in;
+}
+::view-transition-new(vehicle-preview) {
+  animation: page-in 0.23s ease-out;
+}
+@media (max-width: 650px) {
+  .vehicle-reference > .vehicle-photo {
+    height: 255px;
+    min-height: 255px;
+    flex: none;
+  }
+  .vehicle-reference {
+    min-height: 0;
+  }
+  .photo-detail {
+    height: 205px;
+    margin-bottom: 23px;
+  }
+  .vehicle-cell {
+    gap: 12px;
+    min-width: 205px;
+  }
+  .photo-thumb {
+    width: 86px;
+    height: 68px;
+    border-radius: 11px;
+  }
+  .catalogue-section td:first-child {
+    min-width: 225px;
+  }
+  .vehicle-form .form-actions {
+    bottom: calc(79px + env(safe-area-inset-bottom));
+    padding-bottom: 10px;
+  }
+  .field input,
+  .field select,
+  .field textarea {
+    scroll-margin-top: 90px;
+    scroll-margin-bottom: 150px;
+  }
+  .test-stage {
+    scroll-margin-top: 90px;
+  }
+  .test-actions {
+    gap: 16px;
+  }
+  .form-actions {
+    flex-wrap: wrap;
+  }
+  .report-actions {
+    flex-wrap: wrap;
+  }
+  .settings-section .command {
+    width: 100%;
+  }
+  .drawer .command {
+    width: 100%;
+  }
+  .drawer-footer {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  .page-title {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .page-title > .quiet {
+    font-size: 11px;
+  }
+  .catalogue-toolbar .search-field {
+    min-width: 160px;
+  }
+  dialog {
+    max-height: calc(100dvh - 30px);
+  }
+  .drawer {
+    max-height: 100dvh;
+  }
+}
+@media (max-width: 360px) {
+  .workflow button {
+    font-size: 10px;
+    gap: 4px;
+  }
+  .workflow button span {
+    font-size: 8px;
+  }
+  .vehicle-form {
+    padding: 22px 17px;
+  }
+  .manual-checks label {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 9px;
+  }
+  .manual-checks select {
+    width: 100%;
+  }
+  .report-actions > .primary,
+  .report-actions > .secondary {
+    width: 100%;
+  }
+  .device-status {
+    font-size: 9px;
+    padding: 9px;
+  }
+  .brand {
+    font-size: 22px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .vehicle-photo {
+    animation: none;
+  }
+  ::view-transition-old(vehicle-preview),
+  ::view-transition-new(vehicle-preview) {
+    animation: none !important;
+  }
+}
+@media (max-width: 650px) {
+  .catalogue-section > .scroll {
+    padding: 0;
+    background: transparent;
+    overflow: visible;
+  }
+  .catalogue-section table,
+  .catalogue-section tbody {
+    display: block;
+    width: 100%;
+  }
+  .catalogue-section thead {
+    display: none;
+  }
+  .catalogue-section #catalogueRows {
+    display: grid;
+    gap: 14px;
+  }
+  .catalogue-section tr {
+    display: grid;
+    position: relative;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px 10px;
+    padding: 20px;
+    background: #272a2f;
+    border-radius: 22px;
+  }
+  .catalogue-section td {
+    display: block;
+    padding: 0;
+    border: 0;
+    min-width: 0 !important;
+    font-size: 12px;
+  }
+  .catalogue-section td:first-child {
+    grid-column: 1/-1;
+    padding-right: 33px;
+  }
+  .catalogue-section td[data-label]:before {
+    content: attr(data-label);
+    display: block;
+    color: #9ea5af;
+    font-size: 10px;
+    margin-bottom: 6px;
+  }
+  .catalogue-section td:last-child {
+    position: absolute;
+    right: 16px;
+    top: 23px;
+  }
+  .catalogue-section .vehicle-cell {
+    min-width: 0;
+    gap: 15px;
+  }
+  .catalogue-section .photo-thumb {
+    width: 105px;
+    height: 77px;
+  }
+  .catalogue-section .vehicle-cell > div:last-child {
+    min-width: 0;
+  }
+  .catalogue-section .model-link {
+    font-size: 17px;
+  }
+  .catalogue-section .variant-code {
+    font-size: 9px;
+    overflow-wrap: anywhere;
+  }
+  .catalogue-section .no-results {
+    grid-column: 1/-1;
+    padding: 25px !important;
+    position: static !important;
+  }
+  .catalogue-section .table-footer {
+    padding: 5px 2px;
+  }
+  .catalogue-section .icon-button {
+    background: #363b43;
+  }
+  .catalogue-section table {
+    margin: 0;
+  }
+}
+.dialog-close {
+  z-index: 5;
+  background: #1b1e24;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  color: #f2f3f3;
+  box-shadow: 0 2px 8px #0002;
+}
+.dialog-close:hover {
+  background: #424956;
+}
+
+.standalone-notice {
+  font-size: 12px;
+  line-height: 1.5;
+  padding: 10px 18px;
+  text-align: center;
+  background: #25282c;
+  color: #e1e3e6;
+  border-bottom: 1px solid #373a40;
+}
+@media print {
+  .standalone-notice {
+    display: none;
+  }
+}
