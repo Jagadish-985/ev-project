@@ -1,0 +1,32 @@
+{
+  "rizta-s": {
+    "src": "images/rizta-s.webp",
+    "source_url": "https://media.atherenergy.com/Ather-RIzta-S-specifications.webp",
+    "scope": "model"
+  },
+  "rizta-z": {
+    "src": "images/rizta-z.webp",
+    "source_url": "https://media.atherenergy.com/Ather-RIzta-Z-specifications.webp",
+    "scope": "model"
+  },
+  "450s": {
+    "src": "images/450s.webp",
+    "source_url": "https://media.atherenergy.com/Ather-450S-specifications.webp",
+    "scope": "model"
+  },
+  "450x": {
+    "src": "images/450x.webp",
+    "source_url": "https://media.atherenergy.com/Ather-450X-specifications.webp",
+    "scope": "model"
+  },
+  "450-apex": {
+    "src": "images/450-apex.webp",
+    "source_url": "https://media.atherenergy.com/Ather-450-apex-specifications.webp",
+    "scope": "model"
+  },
+  "konarc": {
+    "src": "images/konarc.webp",
+    "source_url": "https://media.atherenergy.com/konarc-pdp-mob.webp",
+    "scope": "family"
+  }
+}
