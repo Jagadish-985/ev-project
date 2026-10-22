@@ -1,0 +1,95 @@
+{
+  "total_gzip_bytes": 1099683,
+  "files": [
+    {
+      "path": "START-HERE.md",
+      "bytes": 7540,
+      "gzip_bytes": 3650,
+      "sha256": "d0d32de67210dfedc6e45ebb937c38a0ad24d0627a56ea62dfe8ac3ffcdee076"
+    },
+    {
+      "path": "app.js",
+      "bytes": 52986,
+      "gzip_bytes": 15542,
+      "sha256": "47c9024ff98fdcc681f645beeb6620173faefbb3f2c4f949fae51dd6c909ab7f"
+    },
+    {
+      "path": "catalogue/README.md",
+      "bytes": 4154,
+      "gzip_bytes": 1901,
+      "sha256": "d94d5c2253ccb4cdefe60b0cb97476e4e744fb2e4671950a193be708c5f75f04"
+    },
+    {
+      "path": "catalogue/ather-catalogue.json",
+      "bytes": 231262,
+      "gzip_bytes": 11185,
+      "sha256": "9d18fa6f7d750506cd6ea18c07bfbaf3a972b6cd83d2e4625a34dca67f40a068"
+    },
+    {
+      "path": "catalogue/ather-specifications.csv",
+      "bytes": 180056,
+      "gzip_bytes": 8268,
+      "sha256": "4d3364e04799076b508444850f44993b31ca6b55c9f99b3851566bcc99900665"
+    },
+    {
+      "path": "catalogue/ather-variants.csv",
+      "bytes": 2757,
+      "gzip_bytes": 642,
+      "sha256": "1cf384f515dde29bba511484ce4f12ea339522a494030da2ab210c5e501f30db"
+    },
+    {
+      "path": "catalogue/source-issues.json",
+      "bytes": 2153,
+      "gzip_bytes": 986,
+      "sha256": "513bed9065a98410ff867ffc812e1e2cc8d6dd02743a1059323cf6c5f8a490aa"
+    },
+    {
+      "path": "certificate.mjs",
+      "bytes": 18047,
+      "gzip_bytes": 6160,
+      "sha256": "3d1ccce7bee4be6c1c586624adf56d524fb34a01489ddceaf80d1ae67706d3eb"
+    },
+    {
+      "path": "engine.mjs",
+      "bytes": 9136,
+      "gzip_bytes": 3296,
+      "sha256": "98e1b25bbe52ab22f73fc4685758c7a2b4e1d1d77c7a9c36bc1584e72ba85f14"
+    },
+    {
+      "path": "fonts/DM-Sans.ttf",
+      "bytes": 240164,
+      "gzip_bytes": 108955,
+      "sha256": "8cd08d97e89c24d0aa92edd2f0f4c8ee6195eee9b7c9f154865a58b02f0c1c0d"
+    },
+    {
+      "path": "fonts/Montserrat-Bold.ttf",
+      "bytes": 454864,
+      "gzip_bytes": 190084,
+      "sha256": "bc6e854971cea46b463be6f9eef4d9cd52f51cfc1fc0dd90c9d3e6483dc0ec61"
+    },
+    {
+      "path": "fonts/Montserrat-Regular.ttf",
+      "bytes": 445928,
+      "gzip_bytes": 185960,
+      "sha256": "3e8abe50c44c82e2242e97d1ec8c0d385c4890cdc50447bcdb8605c81a38cfb2"
+    },
+    {
+      "path": "fonts/OFL-DM-Sans.txt",
+      "bytes": 4482,
+      "gzip_bytes": 2008,
+      "sha256": "9af36190332437f5ecd09974de43c1f7c77a310a996cdd8ceb25628b458840e1"
+    },
+    {
+      "path": "fonts/OFL.txt",
+      "bytes": 4400,
+      "gzip_bytes": 1964,
+      "sha256": "8b7141c03fa4f8d44e6345d5d4931709290f0f67875e452e95ac1fd3a027802e"
+    },
+    {
+      "path": "images/450-apex.webp",
+      "bytes": 37336,
+      "gzip_bytes": 36651,
+      "sha256": "f564485bbe69e2513483befc97d2a9e0f6795a27ffec462cd7175365a5e65571"
+    },
+    {
+      "path": "images/450s.webp",

@@ -9,6 +9,10 @@ with (root/'WebAssets.h').open('w') as out:
  for i,p in enumerate(files):
   rel=p.relative_to(web).as_posix();raw=p.read_bytes();data=gzip.compress(raw,compresslevel=9,mtime=0);total+=len(data)
   mime={'.mjs':'text/javascript','.js':'text/javascript','.md':'text/plain; charset=utf-8','.ttf':'font/ttf','.webp':'image/webp'}.get(p.suffix,mimetypes.guess_type(rel)[0] or 'application/octet-stream')
-
-# Temporary verbose hash verification print loop
-# for item in manifest: print(item['path'], item['sha256'])
+  out.write(f'const uint8_t asset_{i}[] PROGMEM = {{\n')
+  for j in range(0,len(data),24):out.write(','.join(str(v) for v in data[j:j+24])+',\n')
+  out.write('};\n');rows.append(f'{{"/{rel}","{mime}",asset_{i},sizeof(asset_{i})}}')
+  manifest.append({'path':rel,'bytes':len(raw),'gzip_bytes':len(data),'sha256':hashlib.sha256(raw).hexdigest()})
+ out.write('const WebAsset WEB_ASSETS[] = {\n'+',\n'.join(rows)+'\n};\n')
+(root.parent/'asset-manifest.json').write_text(json.dumps({'total_gzip_bytes':total,'files':manifest},indent=2))
+print(f'{len(files)} assets, {total:,} compressed bytes embedded')
