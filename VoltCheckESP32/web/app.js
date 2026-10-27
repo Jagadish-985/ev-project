@@ -698,3 +698,295 @@ function renderCatalogueRows() {
     '<tr><td colspan="5" class="no-results">No matching vehicles</td></tr>';
   $("#catalogueCount").textContent = variants.length + " variants";
 }
+function catalogueNotes() {
+  openInfo(
+    "Catalogue data",
+    `<p class="dialog-copy">Manufacturer reference data. Snapshot: ${E(catalogue?.snapshot_date || "—")}.</p><div class="source-notes">${(catalogue?.source_issues || []).map((x) => `<p>${E(x.note)}</p>`).join("")}</div><div class="row"><a class="text-button" href="catalogue/ather-variants.csv" download>Variants CSV</a><a class="text-button" href="catalogue/ather-specifications.csv" download>Specifications CSV</a><a class="text-button" href="catalogue/ather-catalogue.json" download>JSON</a></div>`,
+  );
+}
+function showCatalogueSpec(id) {
+  $("#modal").className = "";
+  let v = catalogue?.variants.find((v) => v.id === id);
+  if (!v) return;
+  let m = $("#modal");
+  $("#modalContent").innerHTML =
+    `${vehiclePhoto(v.model, "detail")}<h2>${E(v.model)} · ${E(v.battery_capacity_label || v.idc_range_km + " km announcement")}</h2><p class="hint">${E(v.variant_code || "Variant code not published")} · Snapshot ${E(v.snapshot_date)}</p><p><a href="${E(v.source_url)}" target="_blank" rel="noopener">Official source</a></p>${v.battery_capacity_mapping_note ? '<p class="dialog-copy">' + E(v.battery_capacity_mapping_note) + "</p>" : ""}<div class="scroll" style="max-height:55vh"><table><thead><tr><th>Category</th><th>Specification</th><th>Published value</th></tr></thead><tbody>${
+      v.specifications
+        .filter((s) => s.value !== null)
+        .map(
+          (s) =>
+            `<tr><td>${E(s.category)}</td><td>${E(s.label)}</td><td>${s.value == null ? "Not provided" : E(s.value)}</td></tr>`,
+        )
+        .join("") ||
+      '<tr><td colspan="3">Announcement only. No battery/specification mapping is inferred.</td></tr>'
+    }</tbody></table></div>`;
+  $("#closeModal").onclick = () => m.close();
+  m.oncancel = () => m.close();
+  m.showModal();
+}
+async function openReport(r) {
+  if (
+    r.schema !== "voltcheck-inspection-v1" ||
+    !r.session_id ||
+    !r.intake ||
+    !Array.isArray(r.checks)
+  )
+    throw Error("Not a VoltCheck inspection report");
+  state.reportIntegrity = "";
+  if (!r.demo && r.evidence_payload_json) {
+    let hash = sha256(r.evidence_payload_json);
+    let expected = JSON.parse(r.evidence_payload_json),
+      actual = { ...r };
+    delete actual.evidence_payload_json;
+    delete actual.evidence_sha256;
+    const sort = (x) =>
+      Array.isArray(x)
+        ? x.map(sort)
+        : x && typeof x === "object"
+          ? Object.fromEntries(
+              Object.keys(x)
+                .sort()
+                .map((k) => [k, sort(x[k])]),
+            )
+          : x;
+    if (
+      hash !== r.evidence_sha256 ||
+      JSON.stringify(sort(actual)) !== JSON.stringify(sort(expected))
+    )
+      throw Error("Report checksum / evidence mismatch");
+    state.reportIntegrity =
+      "Report checksum verified. This is an integrity check, not an issuer signature.";
+  } else if (!r.demo) throw Error("Missing integrity payload");
+  state.report = r;
+  state.step = 4;
+  state.view = "workspace";
+  render();
+}
+function download(name, data, type = "application/json") {
+  let url = URL.createObjectURL(new Blob([data], { type })),
+    a = document.createElement("a");
+  a.href = url;
+  a.download = name;
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(url), 2000);
+}
+async function act(fn, button) {
+  if (busyAction) return;
+  busyAction = true;
+  let wasDisabled = button?.disabled;
+  if (button) button.disabled = true;
+  try {
+    await fn();
+  } catch (e) {
+    toast(e.message);
+  } finally {
+    busyAction = false;
+    if (button?.isConnected) button.disabled = wasDisabled;
+  }
+}
+async function refreshStatus() {
+  if (state.local) state.status = await api("/api/status");
+}
+async function enableGps() {
+  if (!globalThis.isSecureContext)
+    return toast(
+      "Phone GPS requires HTTPS or localhost; it is unavailable on this ESP32 HTTP page.",
+    );
+  if (!state.local)
+    return toast("Open the local station on your phone to record GPS.");
+  if (gpsWatch !== null) return;
+  if (!navigator.geolocation)
+    return toast("GPS is unavailable in this browser.");
+  gpsWatch = navigator.geolocation.watchPosition(
+    async (p) => {
+      let c = p.coords;
+      try {
+        await api("/api/gps", {
+          fix_ms: p.timestamp,
+          latitude: c.latitude,
+          longitude: c.longitude,
+          accuracy_m: c.accuracy,
+          speed_kmh: c.speed === null ? null : c.speed * 3.6,
+          altitude_m: c.altitude,
+        });
+        if ($("#gpsStatus"))
+          $("#gpsStatus").textContent =
+            "GPS active · " + Math.round(c.accuracy) + " m accuracy";
+      } catch (e) {
+        toast(e.message);
+      }
+    },
+    (e) => {
+      toast("GPS: " + e.message);
+      navigator.geolocation.clearWatch(gpsWatch);
+      gpsWatch = null;
+    },
+    { enableHighAccuracy: true, maximumAge: 0, timeout: 15000 },
+  );
+}
+document.addEventListener("input", (e) => {
+  if (e.target.id === "catalogueSearch") {
+    catalogueSearch = e.target.value;
+    renderCatalogueRows();
+    return;
+  }
+  let k = e.target.dataset.field;
+  if (k) {
+    state.draft[k] =
+      e.target.type === "checkbox" ? e.target.checked : e.target.value;
+    if (k === "manufacturer") {
+      state.draft.model = e.target.value === "Ather" ? "Rizta" : "";
+      state.draft.variant = e.target.value === "Ather" ? "2.9 kWh" : "";
+      render();
+    } else if (k === "model" || k === "variant") {
+      if (e.target.tagName === "SELECT") {
+        if (k === "model")
+          state.draft.variant = catalogueBatteries(state.draft.model)[0];
+        render();
+      }
+    }
+  }
+  if (e.target.dataset.manual)
+    state.manual[e.target.dataset.manual] = e.target.value;
+  if (e.target.id === "techNotes") state.notes = e.target.value;
+});
+document.addEventListener("click", (e) => {
+  let b = e.target.closest("button");
+  if (!b) return;
+  let action = b.dataset.action;
+  if (b.id === "mobileNavToggle") {
+    let open = b.closest("aside").classList.toggle("nav-open");
+    b.setAttribute("aria-expanded", String(open));
+    return;
+  }
+  if (b.dataset.family) {
+    catalogueFilter = b.dataset.family;
+    document.querySelectorAll("[data-family]").forEach((el) => {
+      let on = el.dataset.family === catalogueFilter;
+      el.classList.toggle("active", on);
+      el.setAttribute("aria-pressed", String(on));
+    });
+    renderCatalogueRows();
+    return;
+  }
+  if (b.dataset.spec) {
+    showCatalogueSpec(b.dataset.spec);
+    return;
+  }
+  if (b.dataset.view) {
+    document.querySelector("aside").classList.remove("nav-open");
+    $("#mobileNavToggle").setAttribute("aria-expanded", "false");
+    state.view = b.dataset.view;
+    render();
+    return;
+  }
+  if (b.dataset.step !== undefined) {
+    state.step = Number(b.dataset.step);
+    render();
+    return;
+  }
+  if (b.dataset.check) {
+    state.selected = b.dataset.check;
+    updateChecks();
+    return;
+  }
+  if (b.dataset.report)
+    return act(async () =>
+      openReport(await api("/api/report/" + b.dataset.report)),
+    );
+  if (b.dataset.export) {
+    act(() => downloadEvidence(b.dataset.export));
+    return;
+  }
+  act(async () => {
+    switch (action) {
+      case "catalogue-notes":
+        catalogueNotes();
+        break;
+      case "connect":
+        connectDevice();
+        break;
+      case "profile-info":
+        profileInfo();
+        break;
+      case "copy-command":
+        await navigator.clipboard.writeText("python3 station.py");
+        toast("Command copied");
+        break;
+      case "setup":
+        state.view = "setup";
+        render();
+        break;
+      case "demo":
+        if ($("#modal").open) $("#modal").close();
+        if (state.local && state.status?.active)
+          throw Error("Finish the live inspection before previewing a demo");
+        state.demo = true;
+        state.local = false;
+        state.view = "workspace";
+        state.step = 0;
+        state.status = null;
+        state.draft = {
+          ...state.draft,
+          station: "Demo resale centre",
+          technician: "Demo technician",
+          owner_name: "Example owner",
+          registration: "DEMO-VEHICLE",
+          owner_phone: "",
+          vin: "",
+          consent: false,
+        };
+        render();
+        break;
+      case "vehicle-next":
+        if (mapped()) {
+          state.step = 1;
+          render();
+        }
+        break;
+      case "back":
+        state.step = Math.max(0, state.step - 1);
+        render();
+        break;
+      case "begin-check":
+        if (state.demo) {
+          demoCurrent = {
+            ...steps.find((s) => s.id === state.selected),
+            phase: "prepare",
+          };
+          demoChecks[state.selected] = {
+            id: state.selected,
+            title: demoCurrent.title,
+            status: "running",
+            phase: "prepare",
+            evidence: [],
+          };
+          state.status.checks = demoChecks;
+        } else await api("/api/check", { id: state.selected });
+        await refreshStatus();
+        updateChecks();
+        break;
+      case "simulate": {
+        let r = demoChecks[state.selected],
+          s = steps.find((s) => s.id === state.selected);
+        state.status.signals[s.signal] = {
+          value: r.phase === "prepare" ? s.from : s.to,
+          age_ms: 0,
+          fresh: true,
+        };
+        r.evidence.push({
+          demo: true,
+          phase: r.phase,
+          value: r.phase === "prepare" ? s.from : s.to,
+        });
+        if (r.phase === "prepare") r.phase = "action";
+        else {
+          r.status = "observed";
+          r.phase = "done";
+        }
+        state.status.checks = demoChecks;
+        updateChecks();
+        break;
+      }
+      case "skip": {
+        let reason = await askReason();
