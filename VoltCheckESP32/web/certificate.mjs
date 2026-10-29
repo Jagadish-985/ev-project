@@ -358,7 +358,297 @@ export function buildCertificate(
     8.1,
     GREY,
     2,
-
-// DRAFT_PDF_GRID_GUIDES
-// doc.setDrawColor(200); doc.line(10, 10, 200, 10);
-// END_GRID_GUIDES
+  );
+  const columns = [218, 374, 530];
+  ["Urban riding", "Mixed riding", "Highway riding"].forEach((v, i) =>
+    text(v, columns[i], 707, 11, false, GREY, "center"),
+  );
+  ["Summer", "Winter"].forEach((season, i) => {
+    text(season, L, 731 + i * 24, 12, false, GREY);
+    columns.forEach((x) =>
+      text("Not assessed", x, 732 + i * 24, 10, true, BLACK, "center"),
+    );
+  });
+  footer(1);
+  // Page 2: cell bars, measured spread and pack data in the same positions as reference.
+  doc.addPage();
+  subHeader();
+  heading("Cell voltage balance", L, 138);
+  const chart = { x: 65, y: 182, w: 495, h: 188 };
+  let min = actual.length ? Math.min(...actual) : 0,
+    max = actual.length ? Math.max(...actual) : 0;
+  let lo = actual.length ? Math.max(0, min - 0.2) : 0,
+    hi = actual.length ? Math.max(max + 0.01, lo + 0.2) : 4.5;
+  doc.setDrawColor(GREY);
+  doc.setLineWidth(1);
+  doc.line(chart.x, chart.y, chart.x, chart.y + chart.h);
+  doc.line(chart.x, chart.y + chart.h, chart.x + chart.w, chart.y + chart.h);
+  text(
+    actual.length ? hi.toFixed(3) + " V" : "V",
+    59,
+    chart.y - 2,
+    7,
+    false,
+    GREY,
+    "right",
+  );
+  text(
+    actual.length ? lo.toFixed(3) + " V" : "No data",
+    59,
+    chart.y + chart.h - 5,
+    7,
+    false,
+    GREY,
+    "right",
+  );
+  doc.setFont("Montserrat", "normal");
+  doc.setFontSize(10);
+  doc.setTextColor(GREY);
+  doc.text("Voltage (V)", 45, 280, { angle: 90 });
+  text("Cells", 312, 379, 10, false, GREY, "center");
+  const gap = chart.w / 14,
+    bw = gap * 0.48;
+  cells.forEach((v, i) => {
+    let x = chart.x + i * gap + gap * 0.25;
+    if (v !== null) {
+      let h = ((v - lo) / (hi - lo)) * chart.h;
+      doc.setFillColor(BLUE);
+      doc.rect(x, chart.y + chart.h - h, bw, h, "F");
+    } else {
+      doc.setDrawColor("#D7DCE7");
+      doc.rect(x, chart.y + 8, bw, chart.h - 8);
+    }
+    text(i + 1, x + bw / 2, chart.y + chart.h + 4, 6.5, false, GREY, "center");
+  });
+  if (!actual.length)
+    text(
+      "No fresh cell-voltage channels were recorded.",
+      314,
+      266,
+      11,
+      false,
+      GREY,
+      "center",
+    );
+  heading("Voltage difference between cells", L, 410, 260, 12);
+  heading("Battery pack data", 306, 410, 259, 12);
+  row(
+    "Min voltage",
+    complete ? min.toFixed(3) + " V" : "Not assessed",
+    L,
+    439,
+    260,
+    11.5,
+  );
+  row(
+    "Max voltage",
+    complete ? max.toFixed(3) + " V" : "Not assessed",
+    L,
+    463,
+    260,
+    11.5,
+  );
+  doc.setFillColor("#DCE1EA");
+  doc.roundedRect(38, 503, 245, 23, 11, 11, "F");
+  if (delta !== null) {
+    let x = 38 + (Math.min(100, delta) / 100) * 245;
+    doc.setDrawColor(BLUE);
+    doc.setLineWidth(2.5);
+    doc.line(x, 503, x, 526);
+    text(
+      Math.round(delta) + " mV",
+      Math.min(260, Math.max(50, x)),
+      489,
+      8,
+      false,
+      GREY,
+      "center",
+    );
+  } else text("Not assessed", 160, 509, 9, false, GREY, "center");
+  text("0 mV", L, 532, 8.5, false, GREY);
+  text("100 mV", 290, 532, 8.5, false, GREY, "right");
+  para(
+    "A voltage spread is a snapshot, not an internal-resistance or capacity test. Retest under controlled conditions before drawing conclusions.",
+    L,
+    561,
+    260,
+    8.2,
+    GREY,
+    4,
+  );
+  const pack = [
+    ["Fresh reference channels", actual.length + " / 14"],
+    ["State of charge*", value("soc", "%", 1)],
+    ["Pack temperature*", value("temp1", "°C", 1)],
+    ["Pack voltage*", value("voltage", "V", 2)],
+    ["Pack current*", value("current", "A", 2)],
+  ];
+  pack.forEach(([k, v], i) => row(k, v, 306, 439 + i * 24, 259, 11.5));
+  text(
+    "*As observed at time of test; reference units.",
+    306,
+    561,
+    8,
+    false,
+    GREY,
+  );
+  heading("About this assessment", L, 607);
+  para(
+    "This report records observations made by " +
+      (d.station || "the inspection station") +
+      ". CAN signal names, units and channel counts follow the supplied Ather reference decoder and require validation on the inspected vehicle.",
+    L,
+    640,
+    R - L,
+    8.5,
+    GREY,
+    4,
+  );
+  para(
+    "Battery state of health, if shown, is BMS-reported. Usable capacity, manufacturer warranty, internal resistance, fault-code status and real-world range have not been independently established by this passive inspection.",
+    L,
+    686,
+    R - L,
+    8.5,
+    GREY,
+    4,
+  );
+  para(
+    appendix
+      ? "The diagnostic appendix lists the guided switch observations, manual checks and data-quality findings. Raw evidence and CSV data are retained with the local station record."
+      : "Raw evidence, guided switch observations and CSV data are retained with the local station record.",
+    L,
+    731,
+    R - L,
+    8.2,
+    GREY,
+    3,
+  );
+  footer(2);
+  if (appendix) {
+    doc.addPage();
+    subHeader();
+    heading("Diagnostic inspection record", L, 138);
+    row("Owner", d.owner_name || "Not recorded", L, 175, 260, 10);
+    row("Technician", d.technician || "Not recorded", 306, 175, 259, 10);
+    row("Contact", d.owner_phone || "Not recorded", L, 195, 260, 10);
+    row("VIN / chassis", d.vin || "Not recorded", 306, 195, 259, 10);
+    text("Guided CAN observations", L, 230, 13, true);
+    let y = 256;
+    text("CHECK", L, y, 8, true, GREY);
+    text("RESULT", 220, y, 8, true, GREY);
+    text("EVIDENCE / REASON", 330, y, 8, true, GREY);
+    line(L, y + 15, R, 0.7, LIGHT);
+    y += 25;
+    for (let c of report.checks || []) {
+      text(c.title, L, y, 10);
+      text(
+        c.status === "observed" ? "Observed" : "Not observed",
+        220,
+        y,
+        9,
+        true,
+        c.status === "observed" ? BLUE : GREY,
+      );
+      para(
+        c.status === "observed"
+          ? report.demo
+            ? "Simulated transition"
+            : "Fresh initial and target state; CAN 0x102"
+          : c.reason || "Not recorded",
+        330,
+        y,
+        235,
+        8,
+        GREY,
+        2,
+      );
+      y += 35;
+    }
+    heading("Manual checks", L, 595, 260, 12);
+    heading("Data quality", 306, 595, 259, 12);
+    Object.entries(report.manual || {}).forEach(([k, v], i) =>
+      row(
+        k.replaceAll("_", " "),
+        v.replaceAll("_", " "),
+        L,
+        627 + i * 19,
+        260,
+        9,
+      ),
+    );
+    let q = report.quality || {};
+    para(
+      "Overall result: " +
+        report.status.replaceAll("_", " ") +
+        ". Missing / stale essential measurements: " +
+        (q.missing_or_stale_essential_signals?.join(", ") ||
+          "See station record") +
+        ".",
+      306,
+      627,
+      259,
+      8.5,
+      GREY,
+      4,
+    );
+    para(
+      "Technician notes: " + (report.technician_notes || "None recorded."),
+      306,
+      685,
+      259,
+      8.2,
+      GREY,
+      5,
+    );
+    text(
+      "Report integrity checksum (not an issuer signature)",
+      L,
+      741,
+      7.5,
+      false,
+      GREY,
+    );
+    fit(
+      report.evidence_sha256 || "DEMONSTRATION - NO LIVE EVIDENCE",
+      L,
+      756,
+      R - L,
+      7,
+      false,
+      GREY,
+    );
+    footer(3);
+  }
+  doc.setProperties({
+    title: "Battery Health Check - " + report.session_id,
+    subject: "Passive inspection record; reference decoding",
+    author: d.station || "VoltCheck Station",
+    creator: "VoltCheck Station 1.0",
+  });
+  return doc;
+}
+let fontsPromise;
+async function browserFonts() {
+  if (!fontsPromise)
+    fontsPromise = Promise.all(
+      ["Regular", "Bold"].map(async (name) => {
+        let r = await fetch("fonts/Montserrat-" + name + ".ttf");
+        if (!r.ok) throw Error("Bundled certificate font unavailable");
+        let b = new Uint8Array(await r.arrayBuffer()),
+          str = "";
+        for (let i = 0; i < b.length; i += 8192)
+          str += String.fromCharCode(...b.subarray(i, i + 8192));
+        return btoa(str);
+      }),
+    ).then(([regular, bold]) => ({ regular, bold }));
+  return fontsPromise;
+}
+export async function downloadCertificate(report) {
+  let doc = buildCertificate(report, {
+    jsPDF: window.jspdf.jsPDF,
+    qr: window.qrcode,
+    fonts: await browserFonts(),
+  });
+  doc.save(report.session_id + "-certificate.pdf");
+}
