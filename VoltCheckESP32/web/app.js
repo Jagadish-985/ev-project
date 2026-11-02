@@ -990,3 +990,178 @@ document.addEventListener("click", (e) => {
       }
       case "skip": {
         let reason = await askReason();
+        if (!reason?.trim()) return;
+        if (state.demo) {
+          demoChecks[state.selected] = {
+            id: state.selected,
+            title: steps.find((s) => s.id === state.selected).title,
+            status: "not_observed",
+            reason,
+            evidence: [],
+          };
+          state.status.checks = demoChecks;
+        } else await api("/api/skip", { id: state.selected, reason });
+        await refreshStatus();
+        updateChecks();
+        break;
+      }
+      case "next-check":
+        state.selected =
+          steps[
+            Math.min(
+              steps.length - 1,
+              steps.findIndex((s) => s.id === state.selected) + 1,
+            )
+          ].id;
+        updateChecks();
+        document
+          .querySelector(`[data-check="${state.selected}"]`)
+          ?.scrollIntoView({
+            block: "nearest",
+            inline: "nearest",
+            behavior: matchMedia("(prefers-reduced-motion: reduce)").matches
+              ? "instant"
+              : "smooth",
+          });
+        break;
+      case "review":
+        state.step = 3;
+        render();
+        break;
+      case "gps":
+        await enableGps();
+        break;
+      case "road":
+      case "stationary":
+        if (state.demo) {
+          state.status.phase = action === "road" ? "road" : "stationary";
+          toast("Demo phase changed; no riding data is generated.");
+        } else {
+          await api("/api/phase", {
+            phase: action === "road" ? "road" : "stationary",
+          });
+          await refreshStatus();
+          if (action === "road" && navigator.wakeLock)
+            try {
+              wake = await navigator.wakeLock.request("screen");
+            } catch {}
+          if (action === "stationary" && wake) await wake.release();
+        }
+        updateRoad();
+        break;
+      case "finalize":
+        if (Object.values(state.manual).some((x) => !x))
+          throw Error(
+            "Select an observation for every manual inspection field.",
+          );
+        if (state.status.phase === "road")
+          throw Error("Park and end road recording before finalizing.");
+        if (state.demo) {
+          state.report = {
+            schema: "voltcheck-inspection-v1",
+            demo: true,
+            session_id: state.draft.session_id,
+            intake: { ...state.draft },
+            finished_ms: Date.now(),
+            checks: Object.values(demoChecks),
+            manual: { ...state.manual },
+            technician_notes: state.notes,
+            snapshot: {},
+            status: "attention_or_incomplete",
+            scope: "DEMONSTRATION ONLY. No vehicle data was collected.",
+          };
+          state.step = 4;
+          render();
+        } else
+          await openReport(
+            await api("/api/finalize", {
+              manual: state.manual,
+              notes: state.notes,
+            }),
+          );
+        break;
+      case "pdf":
+        await downloadCertificate(state.report);
+        break;
+      case "print": {
+        let details = document.querySelector(".report-details"),
+          wasOpen = details?.open;
+        if (details) details.open = true;
+        window.print();
+        if (details && !wasOpen) details.open = false;
+        break;
+      }
+      case "report-json":
+        download(
+          state.report.session_id + "-report.json",
+          JSON.stringify(state.report, null, 2),
+        );
+        break;
+      case "export":
+        if (state.report.demo)
+          throw Error("Demo mode has no vehicle dataset to export.");
+        if (!state.local)
+          throw Error("Download the dataset from the original local station.");
+        await downloadEvidence(state.report.session_id);
+        break;
+      case "import":
+        $("#reportFile").click();
+        break;
+      case "new":
+        if (!state.demo && state.status?.active)
+          throw Error(
+            "An inspection is still recording. Resume and finalize it first.",
+          );
+        location.reload();
+        break;
+    }
+  });
+});
+async function poll() {
+  if (polling || !state.local) return;
+  polling = true;
+  try {
+    await refreshStatus();
+    updateConnection();
+    if (state.step === 2 && state.view === "workspace") updateChecks();
+    if (state.step === 3 && state.view === "workspace") updateRoad();
+  } catch (e) {
+    $("#connection").dataset.status = "offline";
+    $("#connection").setAttribute("aria-label", "Station unavailable");
+    $("#connection").innerHTML =
+      '<span class="status-dot"></span><span class="connection-label">Station unavailable</span>';
+  } finally {
+    polling = false;
+  }
+}
+async function init() {
+  try {
+    let r = await fetch("catalogue/ather-catalogue.json");
+    if (r.ok) catalogue = await r.json();
+  } catch {}
+  try {
+    let j = await api("/api/status");
+    if (!j.local_service) throw Error("Hosted");
+    state.local = true;
+    state.status = j;
+    state.token = (await api("/api/token")).token;
+    if (j.active) {
+      state.draft = { ...state.draft, ...j.intake };
+      state.step = 2;
+      toast(
+        "An inspection is already recording. Continue checks or finalize its record.",
+      );
+    }
+  } catch {
+    state.local = false;
+  }
+  render();
+  setInterval(poll, 600);
+}
+init();
+
+const storageNotice = document.createElement("div");
+storageNotice.className = "standalone-notice";
+storageNotice.textContent =
+  "ESP32 standalone · Records on this browser · Keep page visible during capture";
+document.querySelector(".main").prepend(storageNotice);
