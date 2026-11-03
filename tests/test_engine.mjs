@@ -6,7 +6,10 @@ import {decode,Check,STEPS,sha256,csv,zip,canonical} from '../VoltCheckESP32/web
 const f=(seq,t,key=false,rest={})=>({seq,t,id:0x102,ext:false,rtr:false,dlc:8,data:[0,0,0,0,key?8:0,0,0,0],...rest});
 test('signed current, SOC, short and unsupported frames',()=>{assert.equal(decode(f(1,1,false,{id:0x135,data:[0x10,0x94,0x10,0x94,0,0,0x85,0xff]})).current,-1.23);assert.equal(decode(f(1,1,false,{id:0x131,data:[0,0,0,0,0x02,0x17,0,0]})).soc,58.9);assert.deepEqual(decode(f(1,1,true,{rtr:true})),{});assert.deepEqual(decode(f(1,1,true,{ext:true})),{});assert.deepEqual(decode(f(1,1,false,{data:[1]})),{});});
 test('both states, distinct frames and 200 ms dwell',()=>{const c=new Check(STEPS[0],1,0,0,0);c.observe(1,f(1,100000,true),0,0);assert.equal(c.phase,'prepare');c.observe(1,f(2,200000),0,0);c.observe(1,f(3,400000),0,0,400000);assert.equal(c.phase,'action');c.observe(1,f(4,500000,true),0,0);c.observe(1,f(4,900000,true),0,0);assert.equal(c.status,'running');c.observe(1,f(5,900000,true),0,0);assert.equal(c.status,'observed');assert.equal(c.evidence.length,2);});
-
-// TEMPORARY_TEST_FIXTURE_HELPER
-const sampleRawFrame = [1, 1000, 0x123, 0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0];
-// END_TEMP_FIXTURE
+test('action cannot reuse initial-state batch frames',()=>{const c=new Check(STEPS[0],1,0,0,0);c.observe(1,f(1,100000),0,0,1000000);c.observe(1,f(2,300000),0,0,1000000);c.observe(1,f(3,400000,true),0,0,1000000);c.observe(1,f(4,700000,true),0,0,1000000);assert.equal(c.status,'running');assert.equal(c.count,0);});
+test('stale and pre-prompt frames ignored',()=>{const c=new Check(STEPS[0],1,0,500000,0);c.observe(1,f(1,100000),0,0);c.observe(1,f(2,600000),0,2000);assert.equal(c.first,null);});
+test('timeout and restart produce not observed',()=>{const a=new Check(STEPS[0],1,0,0,0);a.tick(60001);assert.equal(a.status,'not_observed');const b=new Check(STEPS[0],1,0,0,0);b.observe(2,f(1,1),0,0);assert.equal(b.status,'not_observed');});
+test('HTTP-compatible SHA256 matches trusted implementation',()=>{for(const s of ['','abc','owner ₹ ಕನ್ನಡ','x'.repeat(55),'x'.repeat(56),'x'.repeat(1000)])assert.equal(sha256(s),createHash('sha256').update(s).digest('hex'));});
+test('canonical hash input sorts nested keys',()=>{assert.equal(canonical({b:1,a:2}),canonical({a:2,b:1}));assert.notEqual(canonical([1,2]),canonical([2,1]));});
+test('CSV preserves zero and escapes quoted fields',()=>{assert.ok(csv([{x:0}]).includes('"0"'));assert.ok(csv([{x:'a,b'}]).includes('"a,b"'));});
+test('evidence ZIP is portable',async()=>{const b=zip({'telemetry.csv':csv([{a:1}]),'report.json':JSON.stringify({ok:true})});await fs.writeFile(new URL('./test-evidence.zip',import.meta.url),new Uint8Array(await b.arrayBuffer()));});
