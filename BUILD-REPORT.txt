@@ -1,0 +1,11 @@
+Readable modular edition
+
+Target: classic ESP32-WROOM, 4 MB, Huge APP partition.
+Arduino-ESP32 core: 3.3.2.
+Firmware split into Config.h, CanCapture.h, LocalWebServer.h and the main sketch.
+First-party browser JavaScript, HTML and CSS formatted with Prettier 3.6.2.
+Website header regenerated from the formatted sources; all 28 manifest hashes verified.
+All 14 JavaScript tests pass using synthetic inputs.
+Target compilation passed after regenerating embedded assets.
+
+Draft partition check: default 1.2MB app partition overflowed; switched to Huge APP 3MB.
