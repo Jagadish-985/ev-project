@@ -30,7 +30,35 @@ The editable web files are in `VoltCheckESP32/web/`:
 - `styles.css`: responsive appearance and transitions.
 - `app.js`: screens, owner intake, vehicle selection, guided workflow and actions.
 - `engine.mjs`: CAN decoding, inspection transition rules, SHA-256, CSV and ZIP helpers.
+- `standalone.mjs`: browser-side station API, IndexedDB records, capture coordination and export.
+- `certificate.mjs`: PDF report layout and generation.
+- `profiles.json` and `catalogue/`: mapping metadata and dated manufacturer catalogue.
+- `images/`, `fonts/`, `vendor/`: bundled images, licensed fonts and third-party libraries.
 
-<!-- DRAFT_ARCHITECTURE_SCRATCHPAD -->
-- Initial polling interval benchmark notes (replaced by FreeRTOS core-1 task).
-<!-- END_SCRATCHPAD -->
+Application JavaScript, HTML and CSS are formatted for reading. Third-party vendor files retain their supplied distribution format and notices.
+
+## How data travels
+
+1. The CAN receive task stores raw frames in ESP32 RAM.
+2. The browser requests `/frames?since=N` with its next desired sequence number.
+3. The ESP32 copies up to 128 frames and sends JSON.
+4. Browser code decodes supported signals and checks initial/changed control states.
+5. IndexedDB retains raw evidence, samples, events, intake and reports on that phone.
+6. The browser produces PDF reports and downloadable CSV/evidence ZIP files.
+
+The compact frame array is `[sequence, time_us, CAN_ID, extended, remote, DLC, byte0, ...]`. The response includes `boot` for restart detection, `cursor` for the next request, `lost` for overwritten frames, controller error counters and free heap. Preserve these field names and order when modifying either side of the protocol.
+
+## Editing without losing synchronization
+
+1. Edit firmware logic in the named `.h` files or `.ino`.
+2. Edit webpage logic in `web/`; do not modify compressed byte arrays manually.
+3. After web edits, run `python3 build_assets.py` from this package directory.
+4. Compile/upload the Arduino sketch again. No filesystem upload is required.
+
+`build_assets.py` compresses each web file and generates WebAssets.h and asset-manifest.json. Asset hashes allow checking that the embedded bytes correspond to the supplied source.
+
+## Verification and limitations
+
+Run `node --test tests/test_engine.mjs tests/test_station.mjs` for synthetic browser-engine tests. See BUILD-REPORT.txt for target compilation results. A successful compile does not establish physical scooter operation.
+
+Only the generic Rizta 2.9 reference profile has live mappings. No independent SOH or city/highway range model is provided. Phone GPS normally cannot run on the ESP32's ordinary HTTP origin. Keep capture in the foreground and export records before clearing browser data. A report checksum checks integrity, not measurement accuracy or accredited certification.
