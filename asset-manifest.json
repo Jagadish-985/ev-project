@@ -93,3 +93,81 @@
     },
     {
       "path": "images/450s.webp",
+      "bytes": 32784,
+      "gzip_bytes": 32068,
+      "sha256": "abd442e2f354426f6c26d33bc5dffee911a46840eb7ad91a86bef92062db8d58"
+    },
+    {
+      "path": "images/450x.webp",
+      "bytes": 35196,
+      "gzip_bytes": 34486,
+      "sha256": "52ac9ed11d4cb291e2efc91c213b42167cecb08e52453b0ec0f60f507ba091e5"
+    },
+    {
+      "path": "images/konarc.webp",
+      "bytes": 33536,
+      "gzip_bytes": 33420,
+      "sha256": "bd9e8b7199f51e732e86549b583dd5c5c52ebddf13ffaebab48be245176d0e66"
+    },
+    {
+      "path": "images/rizta-grey.png",
+      "bytes": 221947,
+      "gzip_bytes": 220957,
+      "sha256": "a687f2eef2a99b7cb44a3d0d8e7cbc4de26ffedfb8c1b5889f17e1abb9b270a0"
+    },
+    {
+      "path": "images/rizta-s.webp",
+      "bytes": 26224,
+      "gzip_bytes": 25567,
+      "sha256": "ff2449aec5f52d3e65d6af3f204354758851cdfc966c152d8e0892504bde7802"
+    },
+    {
+      "path": "images/rizta-z.webp",
+      "bytes": 29082,
+      "gzip_bytes": 28423,
+      "sha256": "5f62822fd716839ed08a8fbed3394234801a33e70c39fd9a50c5b77f7bd701b5"
+    },
+    {
+      "path": "images/sources.json",
+      "bytes": 932,
+      "gzip_bytes": 222,
+      "sha256": "6c6afd7b5ac5a2a72a1cde3309a058ed9d527d065b0ce877fd43e631ae472d21"
+    },
+    {
+      "path": "index.html",
+      "bytes": 4100,
+      "gzip_bytes": 1141,
+      "sha256": "8f4479555049b64b0983fe4cd995bf89a6db6c8b7b08ff7148639978385fe892"
+    },
+    {
+      "path": "profiles.json",
+      "bytes": 266,
+      "gzip_bytes": 189,
+      "sha256": "e6f56ee29d4908d1db08da3b86e8c636410d18d458f5a40f5e3b4db56ebc7da5"
+    },
+    {
+      "path": "standalone.mjs",
+      "bytes": 23621,
+      "gzip_bytes": 6595,
+      "sha256": "33e58a489e2f23339197c92e97ca907f54d674ae4ccc24a65ef8a7a480ec3351"
+    },
+    {
+      "path": "styles.css",
+      "bytes": 64192,
+      "gzip_bytes": 12132,
+      "sha256": "09dde2a7173881540561dadcbc2bddcf57cd6f9803dd9f97773829a8420ae194"
+    },
+    {
+      "path": "vendor/jspdf.umd.min.js",
+      "bytes": 365730,
+      "gzip_bytes": 115578,
+      "sha256": "85ba2cc3ff858a20fa49fe6e457bec863ea40b55a9f3725e58a940e62f6f61a4"
+    },
+    {
+      "path": "vendor/qrcode.js",
+      "bytes": 56694,
+      "gzip_bytes": 11653,
+      "sha256": "18ae399f81182bc9de916e9c77b195df20cc58d6f2d55a62b085a299f1bf1780"
+    }
+  ]
+}
